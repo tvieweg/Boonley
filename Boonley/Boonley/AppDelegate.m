@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "Plaid.h"
+#import <Parse/Parse.h>
 
 @interface AppDelegate ()
 
@@ -17,6 +19,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //Plaid setup
+    [Plaid setClient:@"PLACE_PRODUCTION_CLIENT_HERE" setSecret:@"PLACE_PRODUCTION_SECRET_HERE" inProduction:NO];
+    
+    // [Optional] Power your app with Local Datastore. For more info, go to
+    // https://parse.com/docs/ios_guide#localdatastore/iOS
+    [Parse enableLocalDatastore];
+    
+    // Initialize Parse.
+    [Parse setApplicationId:@"BXcfMAz5qcYeRjN4vzZDry6l5BmPi14ily77zdn8"
+                  clientKey:@"9PGoZkb4pGlF0he7fr40dorsTC3DYWfw48OznCS7"];
+    
+    // [Optional] Track statistics around application opens.
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
     return YES;
 }
 
