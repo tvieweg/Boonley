@@ -21,6 +21,10 @@
 @property (strong, nonatomic) Bank *bankForFunding;
 
 @property (strong, nonatomic) NSString *userCharitySelection;
+@property (assign, nonatomic) BOOL showTrackingAccountController;
+
+@property (assign, nonatomic) NSInteger minDonation;
+@property (assign, nonatomic) NSInteger maxDonation;
 
 + (instancetype) sharedInstance;
 

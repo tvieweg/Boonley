@@ -156,7 +156,8 @@
                 if (!error) {
                     
                     NSLog(@"Signed up!");
-                    //[[DataSource sharedInstance] getUserIDandProfilePicture];                                             [[DataSource sharedInstance] getStoredConversations];
+                    
+                    [self performSegueWithIdentifier:@"goFromLoginToDoneeSelection" sender:self];
 
                     //[self performSegueWithIdentifier:@"goToConversationView" sender:self];
                     //TODO Go to next bank signup sheet.
@@ -183,6 +184,8 @@
                     NSLog(@"Logged in!");
                     //[[Datasource sharedInstance] getUserIDandProfilePicture];
                     //[[Datasource sharedInstance] getStoredConversations];
+                    [self performSegueWithIdentifier:@"goToAccountOverviewFromLogin" sender:self];
+
                     //[self performSegueWithIdentifier:@"goToConversationView" sender:self];
                     //TODO: Go to account overviews, user has already signed up.
                     //TODO: Will need to be able to handle check for all relevant information at Account Overview page.
@@ -205,11 +208,12 @@
             NSLog(@"Uh oh. The user cancelled the Facebook login.");
         } else if (user.isNew) {
             NSLog(@"User signed up and logged in through Facebook!");
-            NSLog(@"%@", [PFUser currentUser]);
+            [self performSegueWithIdentifier:@"goFromLoginToDoneeSelection" sender:self];
 
         } else {
             NSLog(@"User logged in through Facebook!");
-            NSLog(@"%@", [[PFUser currentUser] username]);
+            [self performSegueWithIdentifier:@"goToAccountOverviewFromLogin" sender:self];
+
 
         }
     }];
@@ -222,11 +226,13 @@
             return;
         } else if (user.isNew) {
             NSLog(@"User signed up and logged in with Twitter!");
-            NSLog(@"%@", [PFUser currentUser]);
+            [self performSegueWithIdentifier:@"goFromLoginToDoneeSelection" sender:self];
+
 
         } else {
             NSLog(@"User logged in with Twitter!");
-            NSLog(@"%@", [[PFUser currentUser] username]);
+            [self performSegueWithIdentifier:@"goToAccountOverviewFromLogin" sender:self];
+
         }
     }];
 }

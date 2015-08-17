@@ -1,5 +1,5 @@
 //
-//  TrackingInstitutionTableViewController.h
+//  InstitutionTableViewController.h
 //  Boonley
 //
 //  Created by Trevor Vieweg on 8/14/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TrackingInstitutionTableViewController : UITableViewController
+@interface InstitutionTableViewController : UITableViewController
 
 @end

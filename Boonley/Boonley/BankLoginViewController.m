@@ -34,8 +34,18 @@
             //TODO add alert view here
         } else {
             NSLog(@"Logged into %@", output);
-            [Datasource sharedInstance].bankForTracking = [[Bank alloc] initWithBankInfo:output];
-            [self performSegueWithIdentifier:@"goToAccountOverviewFromBankLogin" sender:self]; 
+            if ([Datasource sharedInstance].showTrackingAccountController) {
+                
+                [Datasource sharedInstance].bankForTracking = [[Bank alloc] initWithBankInfo:output];
+            
+            } else {
+            
+                [Datasource sharedInstance].bankForFunding = [[Bank alloc] initWithBankInfo:output];
+            
+            }
+            
+            [self performSegueWithIdentifier:@"goToAccountOverviewFromBankLogin" sender:self];
+            
         }
     }];
 }
