@@ -12,6 +12,13 @@
 
 + (void)setClient:(NSString *)inputC setSecret:(NSString *)inputS inProduction:(BOOL)production;
 
+//Used for basic account adds.
++ (void)addUserWithUsername:(NSString *)username
+                   Password:(NSString *)password
+                       Type:(NSString *)type
+      WithCompletionHandler:(void (^)(NSDictionary *output))handler;
+
+//Optional parameters for advance account adds.
 + (void)addUserWithUsername:(NSString *)username
                    Password:(NSString *)password
                        Type:(NSString *)type

@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "Plaid.h"
 #import <Parse/Parse.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <ParseFacebookUtilsV4/PFFacebookUtils.h>
+#import <ParseTwitterUtils/ParseTwitterUtils.h>
 
 @interface AppDelegate ()
 
@@ -30,7 +33,10 @@
     // Initialize Parse.
     [Parse setApplicationId:@"BXcfMAz5qcYeRjN4vzZDry6l5BmPi14ily77zdn8"
                   clientKey:@"9PGoZkb4pGlF0he7fr40dorsTC3DYWfw48OznCS7"];
-    
+    [PFFacebookUtils initializeFacebookWithApplicationLaunchOptions:launchOptions];
+    [PFTwitterUtils initializeWithConsumerKey:@"jcvsAKoYG1mgeM2xPn8vFzHiB"
+                               consumerSecret:@"2Kx6c2PhQaKvPwj3hnxURGbgryo40fecwYXRi9Q3Ng8XQOSfsV"];
+
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
@@ -53,10 +59,26 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    [FBSDKAppEvents activateApp];
+
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+#pragma mark Facebook/Parse Integration
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation];
+}
+
 
 @end

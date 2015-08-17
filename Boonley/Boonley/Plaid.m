@@ -31,9 +31,8 @@ static NSString *secret;
 + (void)addUserWithUsername:(NSString *)username
                    Password:(NSString *)password
                        Type:(NSString *)type
-                      Email:(NSString *)email
       WithCompletionHandler:(void (^)(NSDictionary *output))handler {
-    NSDictionary *params = @{@"client_id":client, @"secret":secret, @"credentials":@{@"username":username, @"password":password}, @"type":type, @"email":email};
+    NSDictionary *params = @{@"client_id":client, @"secret":secret, @"credentials":@{@"username":username, @"password":password}, @"type":type};
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager POST:[API stringByAppendingString:@"connect"]
@@ -41,7 +40,7 @@ static NSString *secret;
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               handler(responseObject);
           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              handler(@{@"error":@"error"});
+              handler(@{@"error":error});
           }];
 }
 
@@ -60,7 +59,7 @@ static NSString *secret;
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              handler(responseObject);
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             handler(@{@"error":@"error"});
+             handler(@{@"error":error});
          }];
 }
 
@@ -75,7 +74,7 @@ static NSString *secret;
               handler(responseObject);
           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
               NSLog(@"error %@", error);
-              handler(@{@"error":@"error"});
+              handler(@{@"error":error});
           }];
 }
 
@@ -88,7 +87,7 @@ static NSString *secret;
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
         handler(responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        handler(@{@"error":@"error"});
+        handler(@{@"error":error});
     }];
 }
 
@@ -104,7 +103,7 @@ static NSString *secret;
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              handler(responseObject);
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             handler(@{@"error":@"error"});
+             handler(@{@"error":error});
          }];
 }
 
@@ -119,7 +118,7 @@ static NSString *secret;
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              handler(responseObject);
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             handler(@{@"error":@"error"});
+             handler(@{@"error":error});
          }];
 }
 
@@ -131,7 +130,7 @@ static NSString *secret;
             success:^(AFHTTPRequestOperation *operation, id responseObject) {
                 handler(responseObject);
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                handler(@[@"error"]);
+                handler(@[error]);
             }];
 }
 
@@ -144,7 +143,7 @@ static NSString *secret;
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              handler(responseObject);
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             handler(@{@"error":@"error"});
+             handler(@{@"error":error});
          }];
 }
 
@@ -171,7 +170,7 @@ static NSString *secret;
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              handler(responseObject);
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             handler(@{@"error":@"error"});
+             handler(@{@"error":error});
          }];
 }
 
@@ -184,7 +183,7 @@ static NSString *secret;
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              handler(responseObject);
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             handler(@{@"error":@"error"});
+             handler(@{@"error":error});
          }];
 }
 
@@ -197,7 +196,7 @@ WithCompletionHandler:(void (^)(NSDictionary *output))handler
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              handler(responseObject);
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             handler(@{@"error":@"error"});
+             handler(@{@"error":error});
          }];
 }
 
