@@ -7,6 +7,7 @@
 //
 
 #import "LimitsViewController.h"
+#import "Datasource.h"
 
 @interface LimitsViewController () <UITextFieldDelegate>
 
@@ -24,7 +25,13 @@
 }
 
 - (void) didPressNext {
-    //Segue to next view controller here.
+    if ([self.minimumDonation.text integerValue] >= 5 && [self.maximumDonation.text integerValue] > [self.minimumDonation.text integerValue]) {
+        [Datasource sharedInstance].minDonation = [self.minimumDonation.text integerValue];
+        [Datasource sharedInstance].maxDonation = [self.maximumDonation.text integerValue];
+        [self performSegueWithIdentifier:@"goToAccountOverviewFromSignup" sender:self];
+    } else {
+        NSLog(@"There's something wrong with the inputs. Inform the user.");
+    }
 }
 
 

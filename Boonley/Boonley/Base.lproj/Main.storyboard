@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Efz-70-syF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Efz-70-syF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -154,30 +154,12 @@
                         <outlet property="signupButton" destination="H8D-Tz-by6" id="9Pi-8z-PqA"/>
                         <outlet property="username" destination="Ibe-uj-eEg" id="0al-vd-zGY"/>
                         <segue destination="u7Z-Sq-1ha" kind="show" identifier="goFromLoginToDoneeSelection" id="5Si-bI-V9R"/>
-                        <segue destination="2Gq-dO-1RR" kind="show" identifier="goToAccountOverviewFromLogin" id="ATa-hO-Jny"/>
+                        <segue destination="s7s-dj-hxA" kind="show" identifier="goToAccountOverviewFromBankLogin" id="stO-vR-WKw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30I-B6-Ht9" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="448.5" y="785.5"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="MTy-jJ-kwj">
-            <objects>
-                <viewController id="2Gq-dO-1RR" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ynm-Cb-7oA"/>
-                        <viewControllerLayoutGuide type="bottom" id="oEF-Df-Rt5"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="abf-M7-tQ8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9h7-xH-bmz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1122.5" y="317.5"/>
         </scene>
         <!--Donee Selection Table View Controller-->
         <scene sceneID="2pA-7h-nZc">
@@ -217,7 +199,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XTd-pO-zqu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1122.5" y="1101.5"/>
+            <point key="canvasLocation" x="1070.5" y="1221.5"/>
         </scene>
         <!--Institution Table View Controller-->
         <scene sceneID="IUj-Gt-DaE">
@@ -255,7 +237,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0f3-Nj-r6Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1614.5" y="1101.5"/>
+            <point key="canvasLocation" x="1562.5" y="1221.5"/>
         </scene>
         <!--Bank Login View Controller-->
         <scene sceneID="Cde-J5-zQD">
@@ -325,7 +307,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Szd-jx-H0v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2154.5" y="1101.5"/>
+            <point key="canvasLocation" x="2054.5" y="1221.5"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="Mwq-Du-Gkq">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="s7s-dj-hxA" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aL7-z7-pE0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2634.5" y="785.5"/>
         </scene>
         <!--Bank Account Table View Controller-->
         <scene sceneID="5Pp-qO-4xJ">
@@ -372,7 +362,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lEz-B0-hKv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2704.5" y="1101.5"/>
+            <point key="canvasLocation" x="1562.5" y="2057.5"/>
         </scene>
         <!--Limits View Controller-->
         <scene sceneID="Vrh-7U-wag">
@@ -420,11 +410,15 @@
                     <connections>
                         <outlet property="maximumDonation" destination="eaA-Kc-IYx" id="EXW-fx-AbC"/>
                         <outlet property="minimumDonation" destination="eZi-J8-iXk" id="fjn-Zh-UQd"/>
+                        <segue destination="s7s-dj-hxA" kind="show" identifier="goToAccountOverviewFromSignup" id="JFT-wV-bbz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Amh-wX-pul" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3304.5" y="1101.5"/>
+            <point key="canvasLocation" x="2054.5" y="2057.5"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="stO-vR-WKw"/>
+    </inferredMetricsTieBreakers>
 </document>
