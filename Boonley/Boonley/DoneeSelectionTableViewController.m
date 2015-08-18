@@ -49,7 +49,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [Datasource sharedInstance].userCharitySelection = [Datasource sharedInstance].availableDonees[indexPath.row];
     [Datasource sharedInstance].showTrackingAccountController = YES;
-    [self performSegueWithIdentifier:@"goFromDoneeSelectionToInstitutionTracking" sender:self];
+    [self performSegueWithIdentifier:@"goToLinkFromDonees" sender:self];
 }
 
 @end
