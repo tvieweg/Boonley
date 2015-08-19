@@ -3,7 +3,7 @@
 //  Plaid Link UIWebView
 //
 //  Created by Paolo Bernasconi.
-//  Copyright (c) 2015 Plaid LLC. All rights reserved.
+//  Copyright (c) 2015 Trevor Vieweg. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -14,11 +14,11 @@
 @property (strong, nonatomic) NSArray *availableDonees;
 @property (strong, nonatomic) NSArray *availableInstitutions;
 
-@property (strong, nonatomic) NSString *selectedBankType;
-
 //User properties THESE CONTAIN ACCESS TOKENS AND MUST BE REMOVED ON LOGOUT
 @property (strong, nonatomic) Bank *bankForTracking;
 @property (strong, nonatomic) Bank *bankForFunding;
+
+@property (strong, nonatomic) NSMutableDictionary *accessTokens;
 
 @property (strong, nonatomic) NSString *userCharitySelection;
 @property (assign, nonatomic) BOOL showTrackingAccountController;

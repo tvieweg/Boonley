@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5D16FF89110A85F5647C0087 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B64AB42E6A67CE43465CF485 /* libPods.a */; };
 		69220E741B82823E00AAF426 /* LimitsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69220E731B82823E00AAF426 /* LimitsViewController.m */; };
+		B103F6101B84F91700696FAC /* AccountPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B103F60F1B84F91700696FAC /* AccountPageViewController.m */; };
+		B103F6131B8501D500696FAC /* AccountSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B103F6121B8501D500696FAC /* AccountSummaryViewController.m */; };
 		B108B1561B82F0F200B56CB0 /* LinkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B108B1551B82F0F200B56CB0 /* LinkViewController.m */; };
 		B108B1581B82F37C00B56CB0 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = B108B1571B82F37C00B56CB0 /* index.html */; };
 		B1258A7F1B7AFADB0097D322 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B1258A7E1B7AFADB0097D322 /* main.m */; };
@@ -58,6 +60,10 @@
 		69220E731B82823E00AAF426 /* LimitsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LimitsViewController.m; sourceTree = "<group>"; };
 		6D0325B1533F6AE5CDF94CF4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		715C5048D9C9D5650340C748 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B103F60E1B84F91700696FAC /* AccountPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountPageViewController.h; sourceTree = "<group>"; };
+		B103F60F1B84F91700696FAC /* AccountPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountPageViewController.m; sourceTree = "<group>"; };
+		B103F6111B8501D500696FAC /* AccountSummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountSummaryViewController.h; sourceTree = "<group>"; };
+		B103F6121B8501D500696FAC /* AccountSummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountSummaryViewController.m; sourceTree = "<group>"; };
 		B108B1541B82F0F200B56CB0 /* LinkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkViewController.h; sourceTree = "<group>"; };
 		B108B1551B82F0F200B56CB0 /* LinkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkViewController.m; sourceTree = "<group>"; };
 		B108B1571B82F37C00B56CB0 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
@@ -256,6 +262,10 @@
 				69220E731B82823E00AAF426 /* LimitsViewController.m */,
 				B108B1541B82F0F200B56CB0 /* LinkViewController.h */,
 				B108B1551B82F0F200B56CB0 /* LinkViewController.m */,
+				B103F60E1B84F91700696FAC /* AccountPageViewController.h */,
+				B103F60F1B84F91700696FAC /* AccountPageViewController.m */,
+				B103F6111B8501D500696FAC /* AccountSummaryViewController.h */,
+				B103F6121B8501D500696FAC /* AccountSummaryViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -421,6 +431,8 @@
 			files = (
 				B108B1561B82F0F200B56CB0 /* LinkViewController.m in Sources */,
 				69220E741B82823E00AAF426 /* LimitsViewController.m in Sources */,
+				B103F6101B84F91700696FAC /* AccountPageViewController.m in Sources */,
+				B103F6131B8501D500696FAC /* AccountSummaryViewController.m in Sources */,
 				B1DFB54A1B7E881B00901DC5 /* DoneeSelectionTableViewController.m in Sources */,
 				B16BE1251B7BD34E003FA670 /* Plaid.m in Sources */,
 				B1258A821B7AFADB0097D322 /* AppDelegate.m in Sources */,

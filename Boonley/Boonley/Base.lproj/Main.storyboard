@@ -155,7 +155,7 @@
                         <outlet property="signupButton" destination="H8D-Tz-by6" id="9Pi-8z-PqA"/>
                         <outlet property="username" destination="Ibe-uj-eEg" id="0al-vd-zGY"/>
                         <segue destination="u7Z-Sq-1ha" kind="show" identifier="goFromLoginToDoneeSelection" id="5Si-bI-V9R"/>
-                        <segue destination="s7s-dj-hxA" kind="show" identifier="goToAccountOverviewFromBankLogin" id="stO-vR-WKw"/>
+                        <segue destination="s7s-dj-hxA" kind="show" identifier="goToAccountOverviewFromLogin" id="stO-vR-WKw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30I-B6-Ht9" sceneMemberID="firstResponder"/>
@@ -166,14 +166,14 @@
         <scene sceneID="2pA-7h-nZc">
             <objects>
                 <tableViewController id="u7Z-Sq-1ha" customClass="DoneeSelectionTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="97" sectionHeaderHeight="22" sectionFooterHeight="22" id="h00-E8-RFW">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="22" sectionFooterHeight="22" id="h00-E8-RFW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.13725490200000001" green="0.75294117650000003" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexTrackingBackgroundColor" red="0.13725490200000001" green="0.75294117650000003" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="doneeCell" textLabel="5aa-Sn-x7C" rowHeight="100" style="IBUITableViewCellStyleDefault" id="kgp-WW-8eR">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="doneeCell" textLabel="5aa-Sn-x7C" rowHeight="140" style="IBUITableViewCellStyleDefault" id="kgp-WW-8eR">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kgp-WW-8eR" id="0K1-n1-KFp">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -202,13 +202,70 @@
             </objects>
             <point key="canvasLocation" x="1070.5" y="1221.5"/>
         </scene>
-        <!--Page View Controller-->
+        <!--Account Page View Controller-->
         <scene sceneID="Mwq-Du-Gkq">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="s7s-dj-hxA" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="PageController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="s7s-dj-hxA" customClass="AccountPageViewController" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aL7-z7-pE0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2304.5" y="785.5"/>
+        </scene>
+        <!--Account Summary View Controller-->
+        <scene sceneID="jzf-Dd-eb7">
+            <objects>
+                <viewController storyboardIdentifier="accountView1" id="KNB-wE-yg6" customClass="AccountSummaryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EaT-hh-sck"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfR-P9-H7o"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xVh-NF-hab">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is the first view" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YA9-wv-ytW">
+                                <rect key="frame" x="112" y="69" width="151" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.13725490200000001" green="0.75294117650000003" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="pageTitle" destination="YA9-wv-ytW" id="22Q-jL-5K8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kdg-vK-1v7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2304.5" y="1536.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="zOn-pf-EWZ">
+            <objects>
+                <viewController storyboardIdentifier="accountView2" id="olk-RO-Hih" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HaO-NL-CpL"/>
+                        <viewControllerLayoutGuide type="bottom" id="wO5-At-ujJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="e3v-v6-ohb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is the second view" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McO-c1-Plg">
+                                <rect key="frame" x="98" y="68" width="179" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.13725490200000001" green="0.75294117650000003" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XDK-Tc-zSj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2760.5" y="1536.5"/>
         </scene>
         <!--Bank Account Table View Controller-->
         <scene sceneID="5Pp-qO-4xJ">
@@ -322,9 +379,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="noy-RN-sfo">
-                                <rect key="frame" x="0.0" y="82" width="375" height="585"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="noy-RN-sfo">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.13725490200000001" green="0.75294117650000003" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -336,7 +393,7 @@
                     </view>
                     <connections>
                         <outlet property="webview" destination="noy-RN-sfo" id="pPe-Oh-3P8"/>
-                        <segue destination="p5A-zg-HDl" kind="show" identifier="goToAccountsFromLink" id="ukX-jO-leY"/>
+                        <segue destination="p5A-zg-HDl" kind="show" identifier="goToAccountSelectionFromLink" id="ukX-jO-leY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ehf-GA-WJc" sceneMemberID="firstResponder"/>

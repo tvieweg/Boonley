@@ -26,6 +26,7 @@
     //Plaid setup
     [Plaid setClient:@"PLACE_PRODUCTION_CLIENT_HERE" setSecret:@"PLACE_PRODUCTION_SECRET_HERE" inProduction:NO];
     
+    //Parse Setup
     // [Optional] Power your app with Local Datastore. For more info, go to
     // https://parse.com/docs/ios_guide#localdatastore/iOS
     [Parse enableLocalDatastore];
