@@ -7,8 +7,11 @@
 //
 
 #import <Parse/Parse.h>
+#import <ParseFacebookUtilsV4/PFFacebookUtils.h>
+#import <ParseTwitterUtils/ParseTwitterUtils.h>
 #import "LoginViewController.h"
 #import "Datasource.h"
+#import "Plaid.h"
 
 @interface LoginViewController () <UIAlertViewDelegate>
 
@@ -22,6 +25,9 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *password;
+
+- (IBAction)facebookButtonPressed:(id)sender;
+- (IBAction)twitterLoginPressed:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIButton *signupButton;
 - (IBAction)signUp:(id)sender;
@@ -42,7 +48,7 @@
     [super viewDidAppear:YES]; 
     if ([PFUser currentUser] != nil) {
         NSLog(@"User is already logged in!");
-        //[self performSegueWithIdentifier:@"goToAccountOverview" sender:self];
+        [self performSegueWithIdentifier:@"goFromLoginToDoneeSelection" sender:self];
     }
     
 }
@@ -150,7 +156,8 @@
                 if (!error) {
                     
                     NSLog(@"Signed up!");
-                    //[[DataSource sharedInstance] getUserIDandProfilePicture];                                             [[DataSource sharedInstance] getStoredConversations];
+                    
+                    [self performSegueWithIdentifier:@"goFromLoginToDoneeSelection" sender:self];
 
                     //[self performSegueWithIdentifier:@"goToConversationView" sender:self];
                     //TODO Go to next bank signup sheet.
@@ -177,6 +184,8 @@
                     NSLog(@"Logged in!");
                     //[[Datasource sharedInstance] getUserIDandProfilePicture];
                     //[[Datasource sharedInstance] getStoredConversations];
+                    [self performSegueWithIdentifier:@"goToAccountOverviewFromLogin" sender:self];
+
                     //[self performSegueWithIdentifier:@"goToConversationView" sender:self];
                     //TODO: Go to account overviews, user has already signed up.
                     //TODO: Will need to be able to handle check for all relevant information at Account Overview page.
@@ -193,4 +202,38 @@
     }
 }
 
+- (IBAction)facebookButtonPressed:(id)sender {
+    [PFFacebookUtils logInInBackgroundWithReadPermissions:nil block:^(PFUser *user, NSError *error) {
+        if (!user) {
+            NSLog(@"Uh oh. The user cancelled the Facebook login.");
+        } else if (user.isNew) {
+            NSLog(@"User signed up and logged in through Facebook!");
+            [self performSegueWithIdentifier:@"goFromLoginToDoneeSelection" sender:self];
+
+        } else {
+            NSLog(@"User logged in through Facebook!");
+            [self performSegueWithIdentifier:@"goToAccountOverviewFromLogin" sender:self];
+
+
+        }
+    }];
+}
+
+- (IBAction)twitterLoginPressed:(id)sender {
+    [PFTwitterUtils logInWithBlock:^(PFUser *user, NSError *error) {
+        if (!user) {
+            NSLog(@"Uh oh. The user cancelled the Twitter login.");
+            return;
+        } else if (user.isNew) {
+            NSLog(@"User signed up and logged in with Twitter!");
+            [self performSegueWithIdentifier:@"goFromLoginToDoneeSelection" sender:self];
+
+
+        } else {
+            NSLog(@"User logged in with Twitter!");
+            [self performSegueWithIdentifier:@"goToAccountOverviewFromLogin" sender:self];
+
+        }
+    }];
+}
 @end
