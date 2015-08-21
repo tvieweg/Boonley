@@ -32,8 +32,23 @@
         [Plaid allInstitutionsWithCompletionHandler:^(NSArray *output) {
             self.availableInstitutions = output;
         }];
+        self.accountTransactions = [[NSMutableArray alloc] init];
+        [self updateAccountTransactions];
     }
     return self;
+}
+
+- (void) updateAccountTransactions {
+    if (![self.accessTokens[@"trackingToken"] isEqualToString:@""]) {
+        //We have an access token, get available transactions for that account.
+        NSString *accountID = self.bankForTracking.selectedAccount[@"_id"];
+        
+        [Plaid getTransactionalDataWithAccessToken:self.accessTokens[@"trackingToken"] WithCompletionHandler:^(NSDictionary *output) {
+            NSDictionary *recentTransactions = //something about transactions
+        }];
+        
+        
+    }
 }
 
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="s7s-dj-hxA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Efz-70-syF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -258,16 +258,16 @@
             </objects>
             <point key="canvasLocation" x="2304.5" y="1536.5"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Account Transactions Table View Controller-->
         <scene sceneID="Q01-PA-x4A">
             <objects>
-                <tableViewController storyboardIdentifier="accountView2" id="8Jl-F4-YTB" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="accountView2" id="8Jl-F4-YTB" customClass="AccountTransactionsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="117" sectionHeaderHeight="22" sectionFooterHeight="22" id="gHR-Wg-qox">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="MwR-JK-CWQ" detailTextLabel="o02-yP-VOE" rowHeight="117" style="IBUITableViewCellStyleValue1" id="JT9-q8-Pp7">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="transactionCell" textLabel="MwR-JK-CWQ" detailTextLabel="o02-yP-VOE" rowHeight="117" style="IBUITableViewCellStyleValue1" id="JT9-q8-Pp7">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JT9-q8-Pp7" id="bZP-BE-EU1">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -435,6 +435,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="JFT-wV-bbz"/>
+        <segue reference="stO-vR-WKw"/>
     </inferredMetricsTieBreakers>
 </document>

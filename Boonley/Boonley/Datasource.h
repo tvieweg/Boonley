@@ -19,6 +19,7 @@
 @property (strong, nonatomic) Bank *bankForFunding;
 
 @property (strong, nonatomic) NSMutableDictionary *accessTokens;
+@property (strong, nonatomic) NSMutableArray *accountTransactions; 
 
 @property (strong, nonatomic) NSString *userCharitySelection;
 @property (assign, nonatomic) BOOL showTrackingAccountController;

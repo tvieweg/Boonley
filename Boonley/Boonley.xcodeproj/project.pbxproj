@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5D16FF89110A85F5647C0087 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B64AB42E6A67CE43465CF485 /* libPods.a */; };
+		690FC7071B879276003C8D02 /* AccountTransactionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 690FC7061B879276003C8D02 /* AccountTransactionsTableViewController.m */; };
 		69220E741B82823E00AAF426 /* LimitsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69220E731B82823E00AAF426 /* LimitsViewController.m */; };
 		B103F6101B84F91700696FAC /* AccountPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B103F60F1B84F91700696FAC /* AccountPageViewController.m */; };
 		B103F6131B8501D500696FAC /* AccountSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B103F6121B8501D500696FAC /* AccountSummaryViewController.m */; };
@@ -56,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		690FC7051B879276003C8D02 /* AccountTransactionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTransactionsTableViewController.h; sourceTree = "<group>"; };
+		690FC7061B879276003C8D02 /* AccountTransactionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTransactionsTableViewController.m; sourceTree = "<group>"; };
 		69220E721B82823E00AAF426 /* LimitsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LimitsViewController.h; sourceTree = "<group>"; };
 		69220E731B82823E00AAF426 /* LimitsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LimitsViewController.m; sourceTree = "<group>"; };
 		6D0325B1533F6AE5CDF94CF4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -266,6 +269,8 @@
 				B103F60F1B84F91700696FAC /* AccountPageViewController.m */,
 				B103F6111B8501D500696FAC /* AccountSummaryViewController.h */,
 				B103F6121B8501D500696FAC /* AccountSummaryViewController.m */,
+				690FC7051B879276003C8D02 /* AccountTransactionsTableViewController.h */,
+				690FC7061B879276003C8D02 /* AccountTransactionsTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -434,6 +439,7 @@
 				B103F6101B84F91700696FAC /* AccountPageViewController.m in Sources */,
 				B103F6131B8501D500696FAC /* AccountSummaryViewController.m in Sources */,
 				B1DFB54A1B7E881B00901DC5 /* DoneeSelectionTableViewController.m in Sources */,
+				690FC7071B879276003C8D02 /* AccountTransactionsTableViewController.m in Sources */,
 				B16BE1251B7BD34E003FA670 /* Plaid.m in Sources */,
 				B1258A821B7AFADB0097D322 /* AppDelegate.m in Sources */,
 				B1F57AD11B819AA700A03B45 /* BankAccountTableViewController.m in Sources */,
