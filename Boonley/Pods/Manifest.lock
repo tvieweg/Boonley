@@ -20,11 +20,14 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - GRKBarGraphView (1.1.2)
 
 DEPENDENCIES:
   - AFNetworking
+  - GRKBarGraphView
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  GRKBarGraphView: 7ead7c4cebcc34e3e1e249845d101cc4c4adb468
 
 COCOAPODS: 0.38.2

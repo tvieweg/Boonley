@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GRKBarGraphView/GRKBarGraphView.h>
 
 @interface AccountSummaryViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UILabel *pageTitle;
+
+@property (weak, nonatomic) IBOutlet GRKBarGraphView *monthlyTransactionTotal;
+
+@property (weak, nonatomic) IBOutlet GRKBarGraphView *monthlyDonationTotal;
 
 @end

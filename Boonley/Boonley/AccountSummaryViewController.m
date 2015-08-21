@@ -17,6 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.pageTitle.text = @"This is the first page";
+    
+    self.monthlyTransactionTotal.percent = 0.50;
+    self.monthlyTransactionTotal.tintColor = [UIColor whiteColor];
+    self.monthlyDonationTotal.barStyle = GRKBarStyleFromBottom;
+    self.monthlyTransactionTotal.barStyle = GRKBarStyleFromBottom; 
+    self.monthlyDonationTotal.percent = 0.50;
+    self.monthlyDonationTotal.tintColor = [UIColor whiteColor];
+    
 }
 
 - (void)didReceiveMemoryWarning {
