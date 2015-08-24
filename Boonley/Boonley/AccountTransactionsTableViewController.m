@@ -7,6 +7,7 @@
 //
 
 #import "AccountTransactionsTableViewController.h"
+#import "Datasource.h"
 
 @interface AccountTransactionsTableViewController ()
 
@@ -16,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[Datasource sharedInstance] updateAccountTransactions];
 
 }
 
@@ -32,20 +34,21 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [Datasource sharedInstance].accountTransactions.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"transactionCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    cell.textLabel.text = [Datasource sharedInstance].accountTransactions[indexPath.row][@"name"];
+    NSNumber *amount = (NSNumber *)[Datasource sharedInstance].accountTransactions[indexPath.row][@"amount"];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", amount]; 
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

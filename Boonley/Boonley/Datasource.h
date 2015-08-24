@@ -26,6 +26,7 @@
 
 @property (assign, nonatomic) NSInteger minDonation;
 @property (assign, nonatomic) NSInteger maxDonation;
+- (void) updateAccountTransactions; 
 
 + (instancetype) sharedInstance;
 

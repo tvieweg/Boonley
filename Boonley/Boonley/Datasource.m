@@ -44,10 +44,16 @@
         NSString *accountID = self.bankForTracking.selectedAccount[@"_id"];
         
         [Plaid getTransactionalDataWithAccessToken:self.accessTokens[@"trackingToken"] WithCompletionHandler:^(NSDictionary *output) {
-            NSDictionary *recentTransactions = //something about transactions
+            NSDictionary *recentTransactions = output[@"transactions"];
+            //Remove objects from account transactions to make way for new ones.
+            [self.accountTransactions removeAllObjects];
+            for (NSDictionary *transaction in recentTransactions) {
+                if ([transaction[@"_account"] isEqualToString:accountID]) {
+                    [self.accountTransactions addObject:transaction];
+
+                }
+            }
         }];
-        
-        
     }
 }
 

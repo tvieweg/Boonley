@@ -7,6 +7,7 @@
 //
 
 #import "AccountSummaryViewController.h"
+#import "Datasource.h"
 
 @interface AccountSummaryViewController ()
 
@@ -18,18 +19,21 @@
     [super viewDidLoad];
     self.pageTitle.text = @"This is the first page";
     
-    self.monthlyTransactionTotal.percent = 0.50;
     self.monthlyTransactionTotal.tintColor = [UIColor whiteColor];
-    self.monthlyDonationTotal.barStyle = GRKBarStyleFromBottom;
-    self.monthlyTransactionTotal.barStyle = GRKBarStyleFromBottom; 
-    self.monthlyDonationTotal.percent = 0.50;
+    self.monthlyTransactionTotal.barStyle = GRKBarStyleFromBottom;
+    [self.monthlyTransactionTotal setAnimationDuration:0.5];
+
     self.monthlyDonationTotal.tintColor = [UIColor whiteColor];
+    self.monthlyDonationTotal.barStyle = GRKBarStyleFromBottom;
+    self.monthlyDonationTotal.animationDuration = 1.0; 
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.monthlyDonationTotal.percent = 1.0;
+
 }
+
 
 @end
