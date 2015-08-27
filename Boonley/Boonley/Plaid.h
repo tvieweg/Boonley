@@ -63,4 +63,6 @@
 + (void)entityWithId:(NSString *)ID
 WithCompletionHandler:(void (^)(NSDictionary *output))handler;
 
++ (void)getAccessTokenForPublicToken:(NSString *)publicToken withCompletionHandler:(void (^)(NSDictionary *output))handler; 
+
 @end

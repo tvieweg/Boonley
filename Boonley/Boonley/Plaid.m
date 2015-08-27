@@ -91,6 +91,18 @@ static NSString *secret;
     }];
 }
 
++ (void)getAccessTokenForPublicToken:(NSString *)publicToken withCompletionHandler:(void (^)(NSDictionary *output))handler {
+    NSDictionary *params = @{@"client_id":client, @"secret":secret, @"public_token":publicToken};
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager POST:[API stringByAppendingString:@"exchange_token"]
+       parameters:params
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              handler(responseObject);
+          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              handler(@{@"error":error});
+          }];
+}
+
 + (void)updateCredentialsWithAccessToken:(NSString *)accessToken
                                 Username:(NSString *)username
                                 Password:(NSString *)password

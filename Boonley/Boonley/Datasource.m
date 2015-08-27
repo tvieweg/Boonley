@@ -27,7 +27,7 @@
     if (self) {
         //Placeholder data until we build this out.
         self.availableDonees = @[@"United Way", @"Salvation Army", @"Feeding America", @"American National Red Cross", @"Heifer International", @"Mayo Clinic"];
-        
+        self.accessTokens = [[NSMutableDictionary alloc] initWithObjects:@[@"", @""] forKeys:@[@"trackingToken", @"fundingToken"]];
         //Get available institution types from Plaid.
         [Plaid allInstitutionsWithCompletionHandler:^(NSArray *output) {
             self.availableInstitutions = output;
@@ -35,5 +35,6 @@
     }
     return self;
 }
+
 
 @end
