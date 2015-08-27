@@ -8,6 +8,7 @@
 
 #import "Datasource.h"
 #import "Plaid.h"
+#import <Parse/Parse.h>
 
 @implementation Datasource
 
@@ -57,5 +58,19 @@
     }
 }
 
+- (void) getUserIDandProfilePicture {
+    if ([PFUser currentUser]) {
+        self.username = [PFUser currentUser].username;
+        PFFile *userProfilePicture = [PFUser currentUser][@"profilePicture"];
+        [userProfilePicture getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+            if (imageData && !error) {
+                self.userProfilePicture = [UIImage imageWithData:imageData];
+            } else {
+                self.userProfilePicture = nil;
+            }
+        }];
+        
+    }
+}
 
 @end

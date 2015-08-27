@@ -48,7 +48,7 @@
     [super viewDidAppear:YES]; 
     if ([PFUser currentUser] != nil) {
         NSLog(@"User is already logged in!");
-        [self performSegueWithIdentifier:@"goFromLoginToDoneeSelection" sender:self];
+        [self performSegueWithIdentifier:@"goToAccountOverviewFromLogin" sender:self];
     }
     
 }
@@ -56,6 +56,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    _signupButton.layer.borderColor = [[UIColor whiteColor] CGColor];
+    _signupButton.layer.borderWidth = 1.0;
+    _signupButton.layer.cornerRadius = 5.0;
+    
+    _loginToggleButton.layer.borderColor = [[UIColor whiteColor] CGColor];
+    _loginToggleButton.layer.borderWidth = 1.0;
+    _loginToggleButton.layer.cornerRadius = 5.0; 
 
     _activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
     _activityIndicator.center = self.view.center;
@@ -182,13 +190,7 @@
                 if (user) {
                     
                     NSLog(@"Logged in!");
-                    //[[Datasource sharedInstance] getUserIDandProfilePicture];
-                    //[[Datasource sharedInstance] getStoredConversations];
                     [self performSegueWithIdentifier:@"goToAccountOverviewFromLogin" sender:self];
-
-                    //[self performSegueWithIdentifier:@"goToConversationView" sender:self];
-                    //TODO: Go to account overviews, user has already signed up.
-                    //TODO: Will need to be able to handle check for all relevant information at Account Overview page.
                     
                 } else {
                     if ([error userInfo][@"error"]) {

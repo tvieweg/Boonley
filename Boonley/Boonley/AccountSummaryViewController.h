@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <GRKBarGraphView/GRKBarGraphView.h>
+#import <UICountingLabel/UICountingLabel.h>
 
 @interface AccountSummaryViewController : UIViewController
 
@@ -16,5 +17,8 @@
 @property (weak, nonatomic) IBOutlet GRKBarGraphView *monthlyTransactionTotal;
 
 @property (weak, nonatomic) IBOutlet GRKBarGraphView *monthlyDonationTotal;
+
+@property (weak, nonatomic) IBOutlet UICountingLabel *monthlyTransactionCountingLabel;
+@property (weak, nonatomic) IBOutlet UICountingLabel *monthlyDonationCountingLabel;
 
 @end

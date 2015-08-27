@@ -7,6 +7,7 @@
 //
 
 #import "AccountPageViewController.h"
+#import <Parse/Parse.h>
 
 @interface AccountPageViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
@@ -16,25 +17,42 @@
 
 @implementation AccountPageViewController
 
+-(void)viewWillAppear:(BOOL)animated {
+    
+    //Check if user is logged in and if not, return to login screen.
+    if (![PFUser currentUser]) {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
+
+}
+
 -(void)viewDidLoad
 {
     [super viewDidLoad];
     
+    //set page controller background
+    self.view.backgroundColor = [UIColor colorWithRed:35/255.0 green:192/255.0 blue:161/255.0 alpha:1.0];
+    
+    //make sure navigation bar is visible if coming in from login page.
+    self.navigationController.navigationBarHidden = NO;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"settings"] style:UIBarButtonItemStylePlain target:self action:@selector(didPressSettingButton)];
+    
+    //set delegate and datasource, and instantiate view controllers. 
     self.delegate = self;
     self.dataSource = self;
         
-    UIViewController *p1 = [self.storyboard
-                            instantiateViewControllerWithIdentifier:@"accountView1"];
-    UIViewController *p2 = [self.storyboard
-                            instantiateViewControllerWithIdentifier:@"accountView2"];
+    UIViewController *p1 = [self.storyboard instantiateViewControllerWithIdentifier:@"accountView1"];
+    UIViewController *p2 = [self.storyboard instantiateViewControllerWithIdentifier:@"accountView2"];
+    UIViewController *p3 = [self.storyboard instantiateViewControllerWithIdentifier:@"accountView3"];
     
-    self.accountViewControllers = @[p1,p2];
+    self.accountViewControllers = @[p1,p2, p3];
     
     [self setViewControllers:@[p1]
                    direction:UIPageViewControllerNavigationDirectionForward
-                    animated:NO completion:nil];
+                    animated:NO
+                  completion:nil];
     
-    NSLog(@"loaded!");
+    
 }
 
 -(UIViewController *)viewControllerAtIndex:(NSUInteger)index
@@ -72,6 +90,10 @@
 (UIPageViewController *)pageViewController
 {
     return 0;
+}
+
+-(void) didPressSettingButton {
+    [self performSegueWithIdentifier:@"goToProfilePage" sender:self]; 
 }
 
 @end

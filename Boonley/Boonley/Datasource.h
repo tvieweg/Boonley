@@ -7,14 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "Bank.h"
 
 @interface Datasource : NSObject
 
+//user ID, service type and advertiser set at initialization
+@property (nonatomic, strong) NSString *username;
+@property (nonatomic, strong) UIImage *userProfilePicture;
+
 @property (strong, nonatomic) NSArray *availableDonees;
 @property (strong, nonatomic) NSArray *availableInstitutions;
 
-//User properties THESE CONTAIN ACCESS TOKENS AND MUST BE REMOVED ON LOGOUT
+//User properties THESE CONTAIN ACCESS TOKENS
 @property (strong, nonatomic) Bank *bankForTracking;
 @property (strong, nonatomic) Bank *bankForFunding;
 
