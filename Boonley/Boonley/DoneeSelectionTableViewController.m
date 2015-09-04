@@ -12,41 +12,38 @@
 
 @interface DoneeSelectionTableViewController ()
 
-@property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
 
 @end
 
 @implementation DoneeSelectionTableViewController
 
-- (void) displayErrorAlertWithTitle:(NSString *)title andError:(NSString *)errorString {
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-                                                    message:errorString
-                                                   delegate:self
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles: nil];
-    [alert show];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
-    
-    _activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-    _activityIndicator.center = self.view.center;
-    _activityIndicator.hidesWhenStopped = YES;
-    _activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
-    
-    [self.view addSubview:_activityIndicator];
-    
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - Table view
+
+- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 120.0;
 }
 
-#pragma mark - Table view data source
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 80)];
+    /* Create custom view to display section header... */
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, tableView.frame.size.width, 80)];
+    label.font = [UIFont boldSystemFontOfSize:20];
+    label.textColor = [UIColor whiteColor];
+    label.numberOfLines = 0;
+    label.text = @"Select an institution to donate to (you can change this later)";
+        
+    [headerView addSubview:label];
+    [headerView setBackgroundColor:[UIColor colorWithRed:35/255.0 green:192/255.0 blue:161/255.0 alpha:1.0]];
+    return headerView;
+}
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
@@ -69,31 +66,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [Datasource sharedInstance].showTrackingAccountController = YES;
     
-    //Start progress spinner
-    [_activityIndicator startAnimating];
-    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
-
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        PFUser *currentuser = [PFUser currentUser];
-        currentuser[@"selectedDonee"] = [Datasource sharedInstance].availableDonees[indexPath.row];
-        [currentuser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            
-            [_activityIndicator stopAnimating];
-            [[UIApplication sharedApplication] endIgnoringInteractionEvents];
-            
-            if (succeeded) {
-                
-                [Datasource sharedInstance].userCharitySelection = [Datasource sharedInstance].availableDonees[indexPath.row];
-                [self performSegueWithIdentifier:@"goToLinkFromDonees" sender:self];
-            } else {
-                //show user error
-                NSString *errorString = [error userInfo][@"error"];   // Show the errorString somewhere and let the user try again.
-                
-                [self displayErrorAlertWithTitle:@"Something's wrong" andError:errorString];
-            }
-        }];
-    });
-
+    //Add data to parse (this will get saved at end of signup.
+    PFUser *currentuser = [PFUser currentUser];
+    currentuser[@"selectedDonee"] = [Datasource sharedInstance].availableDonees[indexPath.row];
+    
+    //Save data locally.
+    [Datasource sharedInstance].userCharitySelection = [Datasource sharedInstance].availableDonees[indexPath.row];
+    
+    [self performSegueWithIdentifier:@"goToLinkFromDonees" sender:self];
     
 }
 

@@ -46,6 +46,11 @@
 
 - (void) didPressNext {
     if ([self.minimumDonation.text integerValue] >= 5 && [self.maximumDonation.text integerValue] > [self.minimumDonation.text integerValue]) {
+        
+        //Signup has been COMPLETED!! Save all data to parse.
+        [_activityIndicator startAnimating];
+        [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
             PFUser *currentuser = [PFUser currentUser];
             
@@ -61,8 +66,9 @@
                 
                 if (succeeded) {
                     
-                    [Datasource sharedInstance].minDonation = [self.minimumDonation.text integerValue];
-                    [Datasource sharedInstance].maxDonation = [self.maximumDonation.text integerValue];
+                    [Datasource sharedInstance].minDonation = currentuser[@"minDonation"];
+                    [Datasource sharedInstance].maxDonation = currentuser[@"maxDonation"];
+                    
                     [self performSegueWithIdentifier:@"goToAccountOverviewFromSignup" sender:self];
                 } else {
                     //show user error

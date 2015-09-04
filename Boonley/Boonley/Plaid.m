@@ -27,7 +27,8 @@ static NSString *secret;
         secret = @"test_secret";
     }
 }
-/* UNUSED FUNCTIONS
+
+//UNUSED FUNCTIONS
 + (void)addUserWithUsername:(NSString *)username
                    Password:(NSString *)password
                        Type:(NSString *)type
@@ -78,7 +79,7 @@ static NSString *secret;
           }];
 }
  
-END UNUSED FUNCTIONS */
+//END UNUSED FUNCTIONS
 
 + (void)getTransactionalDataWithAccessToken:(NSString *)accessToken
                       WithCompletionHandler:(void (^)(NSDictionary *output))handler

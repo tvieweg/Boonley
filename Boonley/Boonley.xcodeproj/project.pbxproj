@@ -42,6 +42,7 @@
 		B13518F71B7E801A000C6D19 /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13518F61B7E801A000C6D19 /* ParseTwitterUtils.framework */; };
 		B15B9F4A1B7BCA11002D7A72 /* Datasource.m in Sources */ = {isa = PBXBuildFile; fileRef = B15B9F491B7BCA11002D7A72 /* Datasource.m */; };
 		B162932C1B8F598A009C353A /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B162932B1B8F598A009C353A /* ProfileViewController.m */; };
+		B162932F1B935770009C353A /* Donation.m in Sources */ = {isa = PBXBuildFile; fileRef = B162932E1B935770009C353A /* Donation.m */; };
 		B16BE1251B7BD34E003FA670 /* Plaid.m in Sources */ = {isa = PBXBuildFile; fileRef = B16BE1241B7BD34E003FA670 /* Plaid.m */; };
 		B1DFB54A1B7E881B00901DC5 /* DoneeSelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DFB5491B7E881B00901DC5 /* DoneeSelectionTableViewController.m */; };
 		B1F57AD11B819AA700A03B45 /* BankAccountTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F57AD01B819AA700A03B45 /* BankAccountTableViewController.m */; };
@@ -109,6 +110,8 @@
 		B15B9F491B7BCA11002D7A72 /* Datasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Datasource.m; sourceTree = "<group>"; };
 		B162932A1B8F598A009C353A /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		B162932B1B8F598A009C353A /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		B162932D1B935770009C353A /* Donation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Donation.h; sourceTree = "<group>"; };
+		B162932E1B935770009C353A /* Donation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Donation.m; sourceTree = "<group>"; };
 		B16BE1231B7BD34E003FA670 /* Plaid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plaid.h; sourceTree = "<group>"; };
 		B16BE1241B7BD34E003FA670 /* Plaid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Plaid.m; sourceTree = "<group>"; };
 		B1DFB5481B7E881B00901DC5 /* DoneeSelectionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoneeSelectionTableViewController.h; sourceTree = "<group>"; };
@@ -208,7 +211,7 @@
 			children = (
 				B1F57AD71B81A52E00A03B45 /* View */,
 				B1F57AD51B81A4BD00A03B45 /* Model */,
-				B1F57AD61B81A4FC00A03B45 /* Controller */,
+				B1F57AD61B81A4FC00A03B45 /* Controllers */,
 				B1258A801B7AFADB0097D322 /* AppDelegate.h */,
 				B1258A811B7AFADB0097D322 /* AppDelegate.m */,
 				B1258A891B7AFADB0097D322 /* Images.xcassets */,
@@ -244,21 +247,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B1F57AD51B81A4BD00A03B45 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				B15B9F481B7BCA11002D7A72 /* Datasource.h */,
-				B15B9F491B7BCA11002D7A72 /* Datasource.m */,
-				B16BE1231B7BD34E003FA670 /* Plaid.h */,
-				B16BE1241B7BD34E003FA670 /* Plaid.m */,
-				B1F57AD21B81A4A600A03B45 /* Bank.h */,
-				B1F57AD31B81A4A600A03B45 /* Bank.m */,
-				B108B1571B82F37C00B56CB0 /* index.html */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		B1F57AD61B81A4FC00A03B45 /* Controller */ = {
+		B16293301B93C551009C353A /* Signup */ = {
 			isa = PBXGroup;
 			children = (
 				B1F57ACF1B819AA700A03B45 /* BankAccountTableViewController.h */,
@@ -271,6 +260,14 @@
 				69220E731B82823E00AAF426 /* LimitsViewController.m */,
 				B108B1541B82F0F200B56CB0 /* LinkViewController.h */,
 				B108B1551B82F0F200B56CB0 /* LinkViewController.m */,
+				B108B1571B82F37C00B56CB0 /* index.html */,
+			);
+			name = Signup;
+			sourceTree = "<group>";
+		};
+		B16293311B93C567009C353A /* Account */ = {
+			isa = PBXGroup;
+			children = (
 				B103F60E1B84F91700696FAC /* AccountPageViewController.h */,
 				B103F60F1B84F91700696FAC /* AccountPageViewController.m */,
 				B103F6111B8501D500696FAC /* AccountSummaryViewController.h */,
@@ -282,7 +279,31 @@
 				B162932A1B8F598A009C353A /* ProfileViewController.h */,
 				B162932B1B8F598A009C353A /* ProfileViewController.m */,
 			);
-			name = Controller;
+			name = Account;
+			sourceTree = "<group>";
+		};
+		B1F57AD51B81A4BD00A03B45 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B15B9F481B7BCA11002D7A72 /* Datasource.h */,
+				B15B9F491B7BCA11002D7A72 /* Datasource.m */,
+				B162932D1B935770009C353A /* Donation.h */,
+				B162932E1B935770009C353A /* Donation.m */,
+				B16BE1231B7BD34E003FA670 /* Plaid.h */,
+				B16BE1241B7BD34E003FA670 /* Plaid.m */,
+				B1F57AD21B81A4A600A03B45 /* Bank.h */,
+				B1F57AD31B81A4A600A03B45 /* Bank.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		B1F57AD61B81A4FC00A03B45 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B16293301B93C551009C353A /* Signup */,
+				B16293311B93C567009C353A /* Account */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		B1F57AD71B81A52E00A03B45 /* View */ = {
@@ -445,6 +466,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B108B1561B82F0F200B56CB0 /* LinkViewController.m in Sources */,
+				B162932F1B935770009C353A /* Donation.m in Sources */,
 				69220E741B82823E00AAF426 /* LimitsViewController.m in Sources */,
 				B103F6101B84F91700696FAC /* AccountPageViewController.m in Sources */,
 				B103F6131B8501D500696FAC /* AccountSummaryViewController.m in Sources */,

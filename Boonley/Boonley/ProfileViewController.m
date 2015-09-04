@@ -157,7 +157,7 @@
         PFUser *currentUser = [PFUser currentUser];
         currentUser[@"profilePicture"] = imageFile;
         [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            //Start progress spinner
+            //Stop progress spinner
             [_activityIndicator stopAnimating];
             [[UIApplication sharedApplication] endIgnoringInteractionEvents];
 

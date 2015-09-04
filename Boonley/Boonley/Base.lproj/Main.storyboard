@@ -234,6 +234,7 @@
         <scene sceneID="Mwq-Du-Gkq">
             <objects>
                 <pageViewController storyboardIdentifier="PageController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="s7s-dj-hxA" customClass="AccountPageViewController" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
                         <segue destination="rxk-lV-vyB" kind="presentation" identifier="goToProfilePage" id="Xck-Lc-c1q"/>
                     </connections>
@@ -323,7 +324,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Donation in 5 Days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wlb-fN-PmH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Donation in x Days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wlb-fN-PmH">
                                 <rect key="frame" x="69" y="430" width="237" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="237" id="Lz7-ys-IHr"/>
@@ -370,6 +371,7 @@
                         <outlet property="monthlyDonationTotal" destination="XUH-Q2-eJu" id="DNC-Z3-FlP"/>
                         <outlet property="monthlyTransactionCountingLabel" destination="FWs-MH-vQN" id="Xi9-cz-t5C"/>
                         <outlet property="monthlyTransactionTotal" destination="9g0-iF-tv4" id="qQN-88-7Qy"/>
+                        <outlet property="nextDonationDue" destination="Wlb-fN-PmH" id="N8C-dZ-yuQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kdg-vK-1v7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -539,7 +541,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Olc-UL-gy0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3329.5" y="1536.5"/>
+            <point key="canvasLocation" x="3263.5" y="1536.5"/>
         </scene>
         <!--Bank Account Table View Controller-->
         <scene sceneID="5Pp-qO-4xJ">
@@ -653,15 +655,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="noy-RN-sfo">
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="noy-RN-sfo">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.13725490200000001" green="0.75294117650000003" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.13725490200000001" green="0.75294117650000003" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="5i9-9S-FQa" firstAttribute="top" secondItem="noy-RN-sfo" secondAttribute="bottom" id="1kK-x9-8lg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="noy-RN-sfo" secondAttribute="trailing" constant="-16" id="3gd-f8-gAn"/>
                             <constraint firstItem="5i9-9S-FQa" firstAttribute="top" secondItem="noy-RN-sfo" secondAttribute="bottom" id="Vhb-S7-eOu"/>
+                            <constraint firstItem="noy-RN-sfo" firstAttribute="top" secondItem="l07-lg-VR7" secondAttribute="bottom" id="gTC-yL-LBs"/>
                             <constraint firstItem="noy-RN-sfo" firstAttribute="leading" secondItem="yh4-fc-ySl" secondAttribute="leadingMargin" constant="-16" id="teD-HH-6iT"/>
                         </constraints>
                     </view>
@@ -686,13 +691,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8E-2w-N8S">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8E-2w-N8S">
                                 <rect key="frame" x="150" y="336" width="76" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1DG-if-3My">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1DG-if-3My">
                                 <rect key="frame" x="118" y="177" width="140" height="140"/>
                                 <color key="backgroundColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -725,7 +730,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uUx-Xf-faz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2892.5" y="785.5"/>
+            <point key="canvasLocation" x="2782.5" y="785.5"/>
         </scene>
     </scenes>
     <resources>

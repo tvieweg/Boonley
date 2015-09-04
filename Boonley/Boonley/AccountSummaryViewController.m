@@ -17,7 +17,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.pageTitle.text = @"This is the first page";
     
     self.monthlyTransactionTotal.tintColor = [UIColor whiteColor];
     self.monthlyTransactionTotal.barStyle = GRKBarStyleFromBottom;
@@ -39,15 +38,17 @@
     self.monthlyDonationCountingLabel.font = [UIFont systemFontOfSize:36];
     self.monthlyDonationCountingLabel.textAlignment = NSTextAlignmentCenter;
     
+    self.nextDonationDue.text = [NSString stringWithFormat: @"Next donation in %d days!", (int)[Datasource sharedInstance].daysTillPayment];
     
-    //Dummy counting
-    [self.monthlyDonationCountingLabel countFrom:0 to:45];
-    [self.monthlyTransactionCountingLabel countFrom:0 to:90];
+    NSInteger numberOfMonthlyTransactions = [Datasource sharedInstance].accountTransactions.count;
+
+    [self.monthlyDonationCountingLabel countFrom:0 to:[Datasource sharedInstance].donationThisMonth];
+    [self.monthlyTransactionCountingLabel countFrom:0 to:numberOfMonthlyTransactions];
     
-    //Dummy counting. Must be in asynchronous call to work properly. 
     dispatch_async(dispatch_get_main_queue(), ^{
-        self.monthlyDonationTotal.percent = 0.8;
-        self.monthlyTransactionTotal.percent = 0.7;
+        self.monthlyDonationTotal.percent = MAX([Datasource sharedInstance].donationThisMonth / [[Datasource sharedInstance].maxDonation doubleValue], 0.05);
+        NSLog(@"%@", [Datasource sharedInstance].maxDonation); 
+        self.monthlyTransactionTotal.percent = MAX(numberOfMonthlyTransactions / 100, 0.05);
         
     });
 }

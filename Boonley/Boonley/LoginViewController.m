@@ -48,7 +48,7 @@
     [super viewDidAppear:YES]; 
     if ([PFUser currentUser] != nil) {
         NSLog(@"User is already logged in!");
-        [self performSegueWithIdentifier:@"goToAccountOverviewFromLogin" sender:self];
+        [self proceedToAccountOverviewOrSignup];
     }
     
 }
@@ -190,12 +190,13 @@
                 if (user) {
                     
                     NSLog(@"Logged in!");
-                    [self performSegueWithIdentifier:@"goToAccountOverviewFromLogin" sender:self];
+                    //TODO repeat this anywhere user logs in.
+                    [self proceedToAccountOverviewOrSignup];
+                    
                     
                 } else {
                     if ([error userInfo][@"error"]) {
                         NSString *errorString = [error userInfo][@"error"];
-                        
                         [self displayErrorAlertWithTitle:@"Login failed" andError:errorString];
                     }
                 }
@@ -210,11 +211,11 @@
             NSLog(@"Uh oh. The user cancelled the Facebook login.");
         } else if (user.isNew) {
             NSLog(@"User signed up and logged in through Facebook!");
-            [self performSegueWithIdentifier:@"goFromLoginToDoneeSelection" sender:self];
+            [self proceedToAccountOverviewOrSignup];
 
         } else {
             NSLog(@"User logged in through Facebook!");
-            [self performSegueWithIdentifier:@"goToAccountOverviewFromLogin" sender:self];
+            [self proceedToAccountOverviewOrSignup];
 
 
         }
@@ -228,14 +229,26 @@
             return;
         } else if (user.isNew) {
             NSLog(@"User signed up and logged in with Twitter!");
-            [self performSegueWithIdentifier:@"goFromLoginToDoneeSelection" sender:self];
+            [self proceedToAccountOverviewOrSignup];
 
 
         } else {
             NSLog(@"User logged in with Twitter!");
-            [self performSegueWithIdentifier:@"goToAccountOverviewFromLogin" sender:self];
+            [self proceedToAccountOverviewOrSignup];
 
         }
     }];
+}
+
+- (void) proceedToAccountOverviewOrSignup {
+
+    if ([PFUser currentUser][@"selectedDonee"]) {
+        //user completed signup (data was saved to Parse), continue to account overview.
+        [[Datasource sharedInstance] getUserDataForReturningUser];
+        [self performSegueWithIdentifier:@"goToAccountOverviewFromLogin" sender:self];
+    } else {
+        //user did not complete signup. Go back to first signup page. 
+        [self performSegueWithIdentifier:@"goFromLoginToDoneeSelection" sender:self];
+    }
 }
 @end

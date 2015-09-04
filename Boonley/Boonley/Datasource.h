@@ -12,12 +12,15 @@
 
 @interface Datasource : NSObject
 
+@property (nonatomic) BOOL hasCompletedSignUp; 
 //user ID, service type and advertiser set at initialization
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) UIImage *userProfilePicture;
 
 @property (strong, nonatomic) NSArray *availableDonees;
 @property (strong, nonatomic) NSArray *availableInstitutions;
+
+@property (strong, nonatomic) NSArray *donations; 
 
 //User properties THESE CONTAIN ACCESS TOKENS
 @property (strong, nonatomic) Bank *bankForTracking;
@@ -29,8 +32,13 @@
 @property (strong, nonatomic) NSString *userCharitySelection;
 @property (assign, nonatomic) BOOL showTrackingAccountController;
 
-@property (assign, nonatomic) NSInteger minDonation;
-@property (assign, nonatomic) NSInteger maxDonation;
+@property (strong, nonatomic) NSNumber *minDonation;
+@property (strong, nonatomic) NSNumber *maxDonation;
+@property (nonatomic) double donationThisMonth;
+
+@property (nonatomic) NSTimeInterval daysTillPayment;
+
+- (void) getUserDataForReturningUser; 
 - (void) updateAccountTransactions; 
 
 + (instancetype) sharedInstance;

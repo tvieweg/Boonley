@@ -7,6 +7,7 @@
 //
 
 #import "AccountPageViewController.h"
+#import "Datasource.h"
 #import <Parse/Parse.h>
 
 @interface AccountPageViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
@@ -22,6 +23,8 @@
     //Check if user is logged in and if not, return to login screen.
     if (![PFUser currentUser]) {
         [self.navigationController popToRootViewControllerAnimated:YES];
+    } else {
+        [[Datasource sharedInstance] updateAccountTransactions];
     }
 
 }
