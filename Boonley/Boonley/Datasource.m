@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Trevor Vieweg. All rights reserved.
 //
 
+#import <Parse/Parse.h>
 #import "Datasource.h"
 #import "Plaid.h"
-#import <Parse/Parse.h>
 
 @implementation Datasource
 
@@ -33,12 +33,13 @@
         [Plaid allInstitutionsWithCompletionHandler:^(NSArray *output) {
             self.availableInstitutions = output;
         }];
-        self.accountTransactions = [[NSMutableArray alloc] init];
+        self.monthlySummaries = [[NSMutableArray alloc] init];
         
     }
     return self;
 }
 
+#pragma mark - Data Gathering
 //Get all data to be local. This way account overview is Parse independent. TODO: This data is never stored so if user logs out, data is removed.
 - (void) getUserDataForReturningUser {
     if ([PFUser currentUser][@"selectedDonee"] != nil) {
@@ -48,12 +49,87 @@
         _maxDonation = currentUser[@"maxDonation"];
         
         [self getUsernameandProfilePicture];
+        [self retrieveMonthlySummaries];
 
         //Sets access tokens, banks, and selected accounts.
         [self retrieveBankInfoForReturningUser];
         [self updateAccountTransactions]; 
         [self calculateDueDate];
+        [self calculateUserMetrics];
         
+    }
+}
+
+- (void) getUsernameandProfilePicture {
+    if ([PFUser currentUser]) {
+        self.username = [PFUser currentUser].username;
+        PFFile *userProfilePicture = [PFUser currentUser][@"profilePicture"];
+        [userProfilePicture getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+            if (imageData && !error) {
+                self.userProfilePicture = [UIImage imageWithData:imageData];
+            } else {
+                self.userProfilePicture = nil;
+            }
+        }];
+    }
+}
+
+- (void) calculateUserMetrics {
+    
+    //Reset any previous values.
+    _donationsAllTime = 0;
+    _donationsThisYear = 0;
+    _averageDonation = 0;
+    
+    for (MonthlySummary *summary in _monthlySummaries) {
+        
+        //Add all transactions to all time and average donations
+        _donationsAllTime += summary.donation;
+        _averageDonation += summary.donation;
+        
+        
+        //See if summary is in same calendar year and if so, add it to donations this year.
+        NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+        NSCalendar *calendar = [NSCalendar currentCalendar];
+        dateComponents = [calendar components:(NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear ) fromDate:[NSDate date]];
+        
+        if([self date:summary.monthCreated fallsWithYear:dateComponents.year]){
+            _donationsThisYear += summary.donation;
+        }
+    }
+    
+    //Divide total donations by count for average.
+    _averageDonation /= self.monthlySummaries.count;
+    
+}
+
+- (void) retrieveMonthlySummaries {
+    PFUser *currentUser = [PFUser currentUser];
+    
+    if (currentUser[@"monthlySummaries"] != nil) {
+        
+        _monthlySummaries = currentUser[@"monthlySummaries"];
+        
+        NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+        NSCalendar *calendar = [NSCalendar currentCalendar];
+        dateComponents = [calendar components:(NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear ) fromDate:[NSDate date]];
+        
+        BOOL foundCurrentSummary = NO;
+        
+        for (MonthlySummary *summary in currentUser[@"monthlySummaries"]) {
+            
+            if([self date:summary.monthCreated fallsWithYear:dateComponents.year andMonth:dateComponents.month]){
+                foundCurrentSummary = YES;
+                self.currentMonthlySummary = summary;
+            }
+        }
+        
+        if (!foundCurrentSummary) {
+            self.currentMonthlySummary = [[MonthlySummary alloc] init];
+        }
+        
+    } else {
+        self.currentMonthlySummary = [[MonthlySummary alloc] init];
     }
 }
 
@@ -79,8 +155,9 @@
             }
         }
     }];
-
 }
+
+#pragma mark - Payment Date
 
 - (void) calculateDueDate {
     NSDate *today = [NSDate date];
@@ -129,6 +206,38 @@
     NSLog(@"%f days until payment due!", self.daysTillPayment);
 }
 
+#pragma mark - Date Helper Functions
+
+-(BOOL)date:(NSDate *)date fallsWithYear:(NSInteger)year {
+    
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    dateComponents = [calendar components:(NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear ) fromDate:date];
+    
+    if(dateComponents.year == year) {
+        
+        return YES;
+    }
+    
+    return NO;
+}
+
+-(BOOL)date:(NSDate *)date fallsWithYear:(NSInteger)year andMonth:(NSInteger)month {
+    
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    dateComponents = [calendar components:(NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear ) fromDate:date];
+    
+    
+    if(dateComponents.year == year && dateComponents.month == month) {
+        
+        return YES;
+    }
+    
+    return NO;
+}
+
+#pragma mark - Transaction Updates
 //TODO - add function to specify date to plaid. Setup key value items for changing values.
 - (void) updateAccountTransactions {
     if (![self.accessTokens[@"trackingToken"] isEqualToString:@""]) {
@@ -138,12 +247,12 @@
         [Plaid getTransactionalDataWithAccessToken:self.accessTokens[@"trackingToken"] WithCompletionHandler:^(NSDictionary *output) {
             NSDictionary *recentTransactions = output[@"transactions"];
             //Remove objects from account transactions to make way for new ones.
-            [self.accountTransactions removeAllObjects];
-            self.donationThisMonth = 0;
+            [self.currentMonthlySummary.transactions removeAllObjects];
+            self.currentMonthlySummary.donation = 0;
             
             for (NSDictionary *transaction in recentTransactions) {
                 if ([transaction[@"_account"] isEqualToString:accountID]) {
-                    [self.accountTransactions addObject:transaction];
+                    [self.currentMonthlySummary.transactions addObject:transaction];
                     [self roundUpTransaction:transaction];
                 }
             }
@@ -155,22 +264,8 @@
     double transactionAmount = [transaction[@"amount"] doubleValue]; 
     double roundedUpTransactionAmount = ceil(transactionAmount);
     double roundUpAmount = roundedUpTransactionAmount - transactionAmount;
-    self.donationThisMonth += roundUpAmount;
+    self.currentMonthlySummary.donation += roundUpAmount;
 
-}
-
-- (void) getUsernameandProfilePicture {
-    if ([PFUser currentUser]) {
-        self.username = [PFUser currentUser].username;
-        PFFile *userProfilePicture = [PFUser currentUser][@"profilePicture"];
-        [userProfilePicture getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
-            if (imageData && !error) {
-                self.userProfilePicture = [UIImage imageWithData:imageData];
-            } else {
-                self.userProfilePicture = nil;
-            }
-        }];
-    }
 }
 
 @end

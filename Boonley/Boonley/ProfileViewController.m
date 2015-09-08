@@ -10,12 +10,14 @@
 #import "DataSource.h"
 #import <Parse/Parse.h>
 
-@interface ProfileViewController () <UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface ProfileViewController () <UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, strong) UINavigationBar *navBar;
 @property (weak, nonatomic) IBOutlet UIButton *profilePicture;
 @property (weak, nonatomic) IBOutlet UILabel *displayName;
+
+@property (nonatomic, strong) NSArray *settingsTitles;
 
 - (IBAction)changeProfilePicture:(id)sender;
 
@@ -39,8 +41,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
+    self.settingsTitles = @[@"Accounts", @"Password", @"Options", @"About"];
     self.navigationItem.title = @"Profile";
     self.navBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width,64)];
     [self.view addSubview:self.navBar];
@@ -66,6 +67,19 @@
     
     [self.view addSubview:_activityIndicator];
     
+}
+
+#pragma mark - Table View
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.settingsTitles.count;
+}
+
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"accountCell"];
+    cell.textLabel.text = self.settingsTitles[indexPath.row];
+    
+    return cell;
 }
 
 #pragma mark - button methods

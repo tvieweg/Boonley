@@ -24,7 +24,7 @@
     if (![PFUser currentUser]) {
         [self.navigationController popToRootViewControllerAnimated:YES];
     } else {
-        [[Datasource sharedInstance] updateAccountTransactions];
+        //[[Datasource sharedInstance] updateAccountTransactions];
     }
 
 }

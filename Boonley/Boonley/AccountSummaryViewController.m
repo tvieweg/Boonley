@@ -40,17 +40,21 @@
     
     self.nextDonationDue.text = [NSString stringWithFormat: @"Next donation in %d days!", (int)[Datasource sharedInstance].daysTillPayment];
     
-    NSInteger numberOfMonthlyTransactions = [Datasource sharedInstance].accountTransactions.count;
+}
 
-    [self.monthlyDonationCountingLabel countFrom:0 to:[Datasource sharedInstance].donationThisMonth];
+- (void) viewWillAppear:(BOOL)animated {
+    NSInteger numberOfMonthlyTransactions = [Datasource sharedInstance].currentMonthlySummary.transactions.count;
+    
+    [self.monthlyDonationCountingLabel countFrom:0 to:[Datasource sharedInstance].currentMonthlySummary.donation];
     [self.monthlyTransactionCountingLabel countFrom:0 to:numberOfMonthlyTransactions];
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        self.monthlyDonationTotal.percent = MAX([Datasource sharedInstance].donationThisMonth / [[Datasource sharedInstance].maxDonation doubleValue], 0.05);
-        NSLog(@"%@", [Datasource sharedInstance].maxDonation); 
+        self.monthlyDonationTotal.percent = MAX([Datasource sharedInstance].currentMonthlySummary.donation / [[Datasource sharedInstance].maxDonation doubleValue], 0.05);
+        NSLog(@"%@", [Datasource sharedInstance].maxDonation);
         self.monthlyTransactionTotal.percent = MAX(numberOfMonthlyTransactions / 100, 0.05);
         
     });
+
 }
 
 
