@@ -10,6 +10,11 @@
 #import "Datasource.h"
 #import "Plaid.h"
 
+@interface Datasource()
+
+
+@end
+
 @implementation Datasource
 
 + (instancetype) sharedInstance {
@@ -20,6 +25,25 @@
     });
     
     return sharedInstance;
+}
+
+- (void) fakeMonthlySummaries {
+    for (int i = 0; i < 10; i++) {
+        MonthlySummary *fakeSummary = [[MonthlySummary alloc] init];
+        
+        //Subtract month to current date.
+        NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+        dateComponents.month = -i;
+        NSCalendar *calendar = [NSCalendar currentCalendar];
+        fakeSummary.monthCreated = [calendar dateByAddingComponents:dateComponents toDate:fakeSummary.monthCreated options:0];
+
+        fakeSummary.transactions = self.currentMonthlySummary.transactions;
+        fakeSummary.donation = 12 * i;
+        
+        [self.monthlySummaries addObject:fakeSummary]; 
+        
+    }
+    
 }
 
 - (instancetype) init {
@@ -39,7 +63,7 @@
     return self;
 }
 
-#pragma mark - Data Gathering
+#pragma mark - Data Gathering and Calcuation
 //Get all data to be local. This way account overview is Parse independent. TODO: This data is never stored so if user logs out, data is removed.
 - (void) getUserDataForReturningUser {
     if ([PFUser currentUser][@"selectedDonee"] != nil) {
@@ -52,8 +76,7 @@
         [self retrieveMonthlySummaries];
 
         //Sets access tokens, banks, and selected accounts.
-        [self retrieveBankInfoForReturningUser];
-        [self updateAccountTransactions]; 
+        [self retrieveBankInfoForReturningUserWithCompletionHandler:nil];
         [self calculateDueDate];
         [self calculateUserMetrics];
         
@@ -75,32 +98,32 @@
 }
 
 - (void) calculateUserMetrics {
-    
-    //Reset any previous values.
-    _donationsAllTime = 0;
-    _donationsThisYear = 0;
-    _averageDonation = 0;
-    
-    for (MonthlySummary *summary in _monthlySummaries) {
+    if (_monthlySummaries.count) {
+        //Reset any previous values.
+        _donationsAllTime = 0;
+        _donationsThisYear = 0;
+        _averageDonation = 0;
         
-        //Add all transactions to all time and average donations
-        _donationsAllTime += summary.donation;
-        _averageDonation += summary.donation;
-        
-        
-        //See if summary is in same calendar year and if so, add it to donations this year.
-        NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
-        NSCalendar *calendar = [NSCalendar currentCalendar];
-        dateComponents = [calendar components:(NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear ) fromDate:[NSDate date]];
-        
-        if([self date:summary.monthCreated fallsWithYear:dateComponents.year]){
-            _donationsThisYear += summary.donation;
+        for (MonthlySummary *summary in _monthlySummaries) {
+            
+            //Add all transactions to all time and average donations
+            _donationsAllTime += summary.donation;
+            _averageDonation += summary.donation;
+            
+            
+            //See if summary is in same calendar year and if so, add it to donations this year.
+            NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+            NSCalendar *calendar = [NSCalendar currentCalendar];
+            dateComponents = [calendar components:(NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear ) fromDate:[NSDate date]];
+            
+            if([self date:summary.monthCreated fallsWithYear:dateComponents.year]){
+                _donationsThisYear += summary.donation;
+            }
         }
+        
+        //Divide total donations by count for average.
+        _averageDonation /= self.monthlySummaries.count;
     }
-    
-    //Divide total donations by count for average.
-    _averageDonation /= self.monthlySummaries.count;
-    
 }
 
 - (void) retrieveMonthlySummaries {
@@ -133,7 +156,7 @@
     }
 }
 
-- (void) retrieveBankInfoForReturningUser {
+- (void) retrieveBankInfoForReturningUserWithCompletionHandler:(CompletionHandler)handler {
     PFUser *currentUser = [PFUser currentUser];
     _accessTokens[@"trackingToken"] = currentUser[@"trackingToken"];
     _accessTokens[@"fundingToken"] = currentUser[@"fundingToken"];
@@ -144,6 +167,8 @@
                 _bankForTracking.selectedAccount = account;
             }
         }
+        
+        [self updateAccountTransactionsWithCompletionHandler:handler];
     }];
     
     [Plaid getTransactionalDataWithAccessToken:currentUser[@"fundingToken"] WithCompletionHandler:^(NSDictionary *output) {
@@ -239,7 +264,7 @@
 
 #pragma mark - Transaction Updates
 //TODO - add function to specify date to plaid. Setup key value items for changing values.
-- (void) updateAccountTransactions {
+- (void) updateAccountTransactionsWithCompletionHandler:(CompletionHandler)handler {
     if (![self.accessTokens[@"trackingToken"] isEqualToString:@""]) {
         //We have an access token, get available transactions for that account.
         NSString *accountID = self.bankForTracking.selectedAccount[@"_id"];
@@ -256,7 +281,14 @@
                     [self roundUpTransaction:transaction];
                 }
             }
+            
+            [self fakeMonthlySummaries]; 
+
+            if (handler) {
+                handler();
+            }
         }];
+        
     }
 }
 

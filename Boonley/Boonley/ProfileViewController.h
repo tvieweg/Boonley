@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, PVSettingRow) {
+    PVSettingRowAccounts = 0,
+    PVSettingRowPassword,
+    PVSettingRowOptions,
+    PVSettingRowAbout
+};
+
 @interface ProfileViewController : UIViewController
 
 @end

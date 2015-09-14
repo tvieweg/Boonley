@@ -13,6 +13,8 @@
 
 @interface Datasource : NSObject
 
+typedef void (^CompletionHandler)();
+
 @property (nonatomic) BOOL hasCompletedSignUp; 
 
 //user ID, service type and advertiser set at initialization
@@ -47,9 +49,9 @@
 
 @property (nonatomic) NSTimeInterval daysTillPayment;
 
-- (void) getUserDataForReturningUser; 
-- (void) updateAccountTransactions;
-- (void) calculateUserMetrics; 
+- (void) getUserDataForReturningUser;
+- (void) retrieveBankInfoForReturningUserWithCompletionHandler:(CompletionHandler)handler; 
+- (void) calculateUserMetrics;
 
 + (instancetype) sharedInstance;
 

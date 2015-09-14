@@ -11,12 +11,21 @@
 
 @interface AccountSummaryViewController ()
 
+@property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
+
 @end
 
 @implementation AccountSummaryViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+    _activityIndicator.center = self.view.center;
+    _activityIndicator.hidesWhenStopped = YES;
+    _activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    
+    [self.view addSubview:_activityIndicator];
     
     self.monthlyTransactionTotal.tintColor = [UIColor whiteColor];
     self.monthlyTransactionTotal.barStyle = GRKBarStyleFromBottom;
@@ -40,21 +49,25 @@
     
     self.nextDonationDue.text = [NSString stringWithFormat: @"Next donation in %d days!", (int)[Datasource sharedInstance].daysTillPayment];
     
+    
+    
 }
 
 - (void) viewWillAppear:(BOOL)animated {
-    NSInteger numberOfMonthlyTransactions = [Datasource sharedInstance].currentMonthlySummary.transactions.count;
     
-    [self.monthlyDonationCountingLabel countFrom:0 to:[Datasource sharedInstance].currentMonthlySummary.donation];
-    [self.monthlyTransactionCountingLabel countFrom:0 to:numberOfMonthlyTransactions];
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.monthlyDonationTotal.percent = MAX([Datasource sharedInstance].currentMonthlySummary.donation / [[Datasource sharedInstance].maxDonation doubleValue], 0.05);
-        NSLog(@"%@", [Datasource sharedInstance].maxDonation);
-        self.monthlyTransactionTotal.percent = MAX(numberOfMonthlyTransactions / 100, 0.05);
+        NSInteger numberOfMonthlyTransactions = [Datasource sharedInstance].currentMonthlySummary.transactions.count;
         
-    });
+        [self.monthlyDonationCountingLabel countFrom:0 to:[Datasource sharedInstance].currentMonthlySummary.donation];
+        [self.monthlyTransactionCountingLabel countFrom:0 to:numberOfMonthlyTransactions];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.monthlyDonationTotal.percent = MAX([Datasource sharedInstance].currentMonthlySummary.donation / [[Datasource sharedInstance].maxDonation doubleValue], 0.05);
+            NSLog(@"%@", [Datasource sharedInstance].maxDonation);
+            self.monthlyTransactionTotal.percent = MAX(numberOfMonthlyTransactions / 100, 0.05);
+            
+        });
 
+    
 }
 
 

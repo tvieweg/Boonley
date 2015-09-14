@@ -27,6 +27,7 @@
         countingLabel.textColor = [UIColor whiteColor];
         countingLabel.font = [UIFont systemFontOfSize:36];
         countingLabel.textAlignment = NSTextAlignmentCenter;
+        countingLabel.animationDuration = 2.0; 
     }
     
     [self.averageDonationCountingLabel countFrom:0 to:[Datasource sharedInstance].averageDonation];

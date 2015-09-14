@@ -82,6 +82,29 @@
     return cell;
 }
 
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    switch (indexPath.row) {
+        case PVSettingRowAbout:
+            [self performSegueWithIdentifier:@"goToAboutPage" sender:self];
+            break;
+            
+        case PVSettingRowAccounts:
+            [self performSegueWithIdentifier:@"goToProfileAccountSettings" sender:self];
+            break;
+            
+        case PVSettingRowOptions:
+            [self performSegueWithIdentifier:@"goToProfileOptions" sender:self];
+            break;
+            
+        case PVSettingRowPassword:
+            [self performSegueWithIdentifier:@"goToPasswordPage" sender:self];
+            break;
+            
+        default:
+            break;
+    }
+}
+
 #pragma mark - button methods
 
 - (void) didPressDone {
