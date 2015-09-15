@@ -34,6 +34,7 @@ typedef void (^CompletionHandler)();
 
 @property (strong, nonatomic) NSString *userCharitySelection;
 @property (assign, nonatomic) BOOL showTrackingAccountController;
+@property (assign, nonatomic) BOOL changingSettings; 
 
 //Track history for this month in current MonthlySummary
 @property (strong, nonatomic) MonthlySummary *currentMonthlySummary;

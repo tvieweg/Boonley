@@ -57,6 +57,7 @@
     //make sure navigation bar is visible if coming in from login page.
     self.navigationController.navigationBarHidden = NO;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"settings"] style:UIBarButtonItemStylePlain target:self action:@selector(didPressSettingButton)];
+    self.navigationItem.hidesBackButton = YES;
     
     [_activityIndicator startAnimating];
     [[UIApplication sharedApplication] beginIgnoringInteractionEvents];

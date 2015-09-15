@@ -83,6 +83,7 @@
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES]; 
     switch (indexPath.row) {
         case PVSettingRowAbout:
             [self performSegueWithIdentifier:@"goToAboutPage" sender:self];
