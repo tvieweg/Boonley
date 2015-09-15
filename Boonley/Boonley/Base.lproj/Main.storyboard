@@ -767,10 +767,10 @@
             </objects>
             <point key="canvasLocation" x="2782.5" y="785.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Bank Account Settings View Controller-->
         <scene sceneID="WzN-eY-rr6">
             <objects>
-                <viewController id="pZK-eu-gbb" sceneMemberID="viewController">
+                <viewController id="pZK-eu-gbb" customClass="BankAccountSettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FEw-e7-iV3"/>
                         <viewControllerLayoutGuide type="bottom" id="kh3-fJ-8VI"/>
@@ -778,7 +778,7 @@
                     <view key="view" contentMode="scaleToFill" id="y1w-Dz-glP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.13725490200000001" green="0.75294117650000003" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
@@ -833,7 +833,7 @@
                     <view key="view" contentMode="scaleToFill" id="GlI-mI-BjW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.13725490200000001" green="0.75294117650000003" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4yk-to-xCi" userLabel="First Responder" sceneMemberID="firstResponder"/>

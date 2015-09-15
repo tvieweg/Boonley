@@ -45,6 +45,7 @@
 		B162932C1B8F598A009C353A /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B162932B1B8F598A009C353A /* ProfileViewController.m */; };
 		B162932F1B935770009C353A /* Donation.m in Sources */ = {isa = PBXBuildFile; fileRef = B162932E1B935770009C353A /* Donation.m */; };
 		B16BE1251B7BD34E003FA670 /* Plaid.m in Sources */ = {isa = PBXBuildFile; fileRef = B16BE1241B7BD34E003FA670 /* Plaid.m */; };
+		B1D28F741BA7BA900051E38D /* BankAccountSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D28F731BA7BA900051E38D /* BankAccountSettingsViewController.m */; };
 		B1DFB54A1B7E881B00901DC5 /* DoneeSelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DFB5491B7E881B00901DC5 /* DoneeSelectionTableViewController.m */; };
 		B1F57AD11B819AA700A03B45 /* BankAccountTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F57AD01B819AA700A03B45 /* BankAccountTableViewController.m */; };
 		B1F57AD41B81A4A600A03B45 /* Bank.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F57AD31B81A4A600A03B45 /* Bank.m */; };
@@ -117,6 +118,8 @@
 		B162932E1B935770009C353A /* Donation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Donation.m; sourceTree = "<group>"; };
 		B16BE1231B7BD34E003FA670 /* Plaid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plaid.h; sourceTree = "<group>"; };
 		B16BE1241B7BD34E003FA670 /* Plaid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Plaid.m; sourceTree = "<group>"; };
+		B1D28F721BA7BA900051E38D /* BankAccountSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankAccountSettingsViewController.h; sourceTree = "<group>"; };
+		B1D28F731BA7BA900051E38D /* BankAccountSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankAccountSettingsViewController.m; sourceTree = "<group>"; };
 		B1DFB5481B7E881B00901DC5 /* DoneeSelectionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoneeSelectionTableViewController.h; sourceTree = "<group>"; };
 		B1DFB5491B7E881B00901DC5 /* DoneeSelectionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoneeSelectionTableViewController.m; sourceTree = "<group>"; };
 		B1F57ACF1B819AA700A03B45 /* BankAccountTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankAccountTableViewController.h; sourceTree = "<group>"; };
@@ -281,6 +284,8 @@
 				B10D3DE91B8E53D4007D2DD7 /* AccountTotalsOverviewViewController.m */,
 				B162932A1B8F598A009C353A /* ProfileViewController.h */,
 				B162932B1B8F598A009C353A /* ProfileViewController.m */,
+				B1D28F721BA7BA900051E38D /* BankAccountSettingsViewController.h */,
+				B1D28F731BA7BA900051E38D /* BankAccountSettingsViewController.m */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -479,6 +484,7 @@
 				B162932C1B8F598A009C353A /* ProfileViewController.m in Sources */,
 				B10D3DEA1B8E53D4007D2DD7 /* AccountTotalsOverviewViewController.m in Sources */,
 				B1DFB54A1B7E881B00901DC5 /* DoneeSelectionTableViewController.m in Sources */,
+				B1D28F741BA7BA900051E38D /* BankAccountSettingsViewController.m in Sources */,
 				690FC7071B879276003C8D02 /* AccountTransactionsTableViewController.m in Sources */,
 				B16BE1251B7BD34E003FA670 /* Plaid.m in Sources */,
 				B1258A821B7AFADB0097D322 /* AppDelegate.m in Sources */,
