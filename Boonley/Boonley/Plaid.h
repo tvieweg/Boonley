@@ -12,13 +12,13 @@
 
 + (void)setClient:(NSString *)inputC setSecret:(NSString *)inputS inProduction:(BOOL)production;
 
-//Used for basic account adds.
+//Used for basic account adds. Using link module instead.
 + (void)addUserWithUsername:(NSString *)username
                    Password:(NSString *)password
                        Type:(NSString *)type
       WithCompletionHandler:(void (^)(NSDictionary *output))handler;
 
-//Optional parameters for advance account adds.
+//Optional parameters for advance account adds. Using link module instead. 
 + (void)addUserWithUsername:(NSString *)username
                    Password:(NSString *)password
                        Type:(NSString *)type

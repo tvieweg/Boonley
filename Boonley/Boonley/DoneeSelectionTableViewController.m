@@ -8,8 +8,10 @@
 
 #import "DoneeSelectionTableViewController.h"
 #import "Datasource.h"
+#import <Parse/Parse.h>
 
 @interface DoneeSelectionTableViewController ()
+
 
 @end
 
@@ -18,15 +20,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
-    
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - Table view
+
+- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 120.0;
 }
 
-#pragma mark - Table view data source
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 80)];
+    /* Create custom view to display section header... */
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, tableView.frame.size.width, 80)];
+    label.font = [UIFont boldSystemFontOfSize:20];
+    label.textColor = [UIColor whiteColor];
+    label.numberOfLines = 0;
+    label.text = @"Select an institution to donate to (you can change this later)";
+        
+    [headerView addSubview:label];
+    [headerView setBackgroundColor:[UIColor colorWithRed:35/255.0 green:192/255.0 blue:161/255.0 alpha:1.0]];
+    return headerView;
+}
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
@@ -47,9 +64,17 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [Datasource sharedInstance].userCharitySelection = [Datasource sharedInstance].availableDonees[indexPath.row];
     [Datasource sharedInstance].showTrackingAccountController = YES;
+    
+    //Add data to parse (this will get saved at end of signup.
+    PFUser *currentuser = [PFUser currentUser];
+    currentuser[@"selectedDonee"] = [Datasource sharedInstance].availableDonees[indexPath.row];
+    
+    //Save data locally.
+    [Datasource sharedInstance].userCharitySelection = [Datasource sharedInstance].availableDonees[indexPath.row];
+    
     [self performSegueWithIdentifier:@"goToLinkFromDonees" sender:self];
+    
 }
 
 @end

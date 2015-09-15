@@ -9,11 +9,28 @@
 #import "LinkViewController.h"
 #import "Datasource.h"
 #import "Plaid.h"
+#import <Parse/Parse.h>
+
+@interface LinkViewController()
+
+@end
 
 @implementation LinkViewController
 
+- (void) displayErrorAlertWithTitle:(NSString *)title andError:(NSString *)errorString {
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                    message:errorString
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles: nil];
+    [alert show];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //Load webview
     [_webview setDelegate: self];
     self.view.backgroundColor = [UIColor colorWithRed:35/255.0 green:192/255.0 blue:161/255.0 alpha:1.0];
     _webview.backgroundColor = [UIColor clearColor];
@@ -31,8 +48,12 @@
             // Load the html into the web view
             [_webview loadHTMLString:html baseURL:baseURL];
             
-        } // handle error here
-    } // handle error here
+        } else {
+            [self displayErrorAlertWithTitle:@"Error" andError:@"Could not load Banking data. Please try again later"];
+        }
+    } else {
+        [self displayErrorAlertWithTitle:@"Error" andError:@"Could not load Banking data. Please try again later"];
+    }
 }
 
 #pragma mark - UIWebViewDelegate methods
@@ -64,8 +85,8 @@
                 [Plaid getTransactionalDataWithAccessToken:[Datasource sharedInstance].accessTokens[@"trackingToken"] WithCompletionHandler:^(NSDictionary *output) {
                     NSLog(@"%@", output);
                     [Datasource sharedInstance].bankForTracking = [[Bank alloc] initWithBankInfo:output];
-                    
-                    [self performSegueWithIdentifier:@"goToAccountSelectionFromLink" sender:self];
+                    //Save access tokens
+                    [self saveAccessTokensToParse];
                 }];
 
             } else {
@@ -73,9 +94,9 @@
                 [[Datasource sharedInstance].accessTokens setValue:output[@"access_token"] forKey:@"fundingToken"];
                 [Plaid getTransactionalDataWithAccessToken:[Datasource sharedInstance].accessTokens[@"fundingToken"] WithCompletionHandler:^(NSDictionary *output) {
                     NSLog(@"%@", output);
-                    [Datasource sharedInstance].bankForTracking = [[Bank alloc] initWithBankInfo:output];
-                    
-                    [self performSegueWithIdentifier:@"goToAccountSelectionFromLink" sender:self];
+                    [Datasource sharedInstance].bankForFunding = [[Bank alloc] initWithBankInfo:output];
+                    //Save access tokens
+                    [self saveAccessTokensToParse];
                 }];
             }
         }]; 
@@ -103,6 +124,15 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)saveAccessTokensToParse {
+    
+    PFUser *currentuser = [PFUser currentUser];
+    currentuser[@"trackingToken"] = [Datasource sharedInstance].accessTokens[@"trackingToken"];
+    currentuser[@"fundingToken"] = [Datasource sharedInstance].accessTokens[@"fundingToken"];
+    
+    [self performSegueWithIdentifier:@"goToAccountSelectionFromLink" sender:self];
 }
 
 @end

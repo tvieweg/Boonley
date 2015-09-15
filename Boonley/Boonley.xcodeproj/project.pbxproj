@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		5D16FF89110A85F5647C0087 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B64AB42E6A67CE43465CF485 /* libPods.a */; };
+		690FC7071B879276003C8D02 /* AccountTransactionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 690FC7061B879276003C8D02 /* AccountTransactionsTableViewController.m */; };
 		69220E741B82823E00AAF426 /* LimitsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69220E731B82823E00AAF426 /* LimitsViewController.m */; };
 		B103F6101B84F91700696FAC /* AccountPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B103F60F1B84F91700696FAC /* AccountPageViewController.m */; };
 		B103F6131B8501D500696FAC /* AccountSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B103F6121B8501D500696FAC /* AccountSummaryViewController.m */; };
 		B108B1561B82F0F200B56CB0 /* LinkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B108B1551B82F0F200B56CB0 /* LinkViewController.m */; };
 		B108B1581B82F37C00B56CB0 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = B108B1571B82F37C00B56CB0 /* index.html */; };
+		B10D3DEA1B8E53D4007D2DD7 /* AccountTotalsOverviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B10D3DE91B8E53D4007D2DD7 /* AccountTotalsOverviewViewController.m */; };
 		B1258A7F1B7AFADB0097D322 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B1258A7E1B7AFADB0097D322 /* main.m */; };
 		B1258A821B7AFADB0097D322 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1258A811B7AFADB0097D322 /* AppDelegate.m */; };
 		B1258A881B7AFADB0097D322 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1258A861B7AFADB0097D322 /* Main.storyboard */; };
@@ -39,6 +41,8 @@
 		B13518F51B7E7F1E000C6D19 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13518F41B7E7F1E000C6D19 /* Social.framework */; };
 		B13518F71B7E801A000C6D19 /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13518F61B7E801A000C6D19 /* ParseTwitterUtils.framework */; };
 		B15B9F4A1B7BCA11002D7A72 /* Datasource.m in Sources */ = {isa = PBXBuildFile; fileRef = B15B9F491B7BCA11002D7A72 /* Datasource.m */; };
+		B162932C1B8F598A009C353A /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B162932B1B8F598A009C353A /* ProfileViewController.m */; };
+		B162932F1B935770009C353A /* Donation.m in Sources */ = {isa = PBXBuildFile; fileRef = B162932E1B935770009C353A /* Donation.m */; };
 		B16BE1251B7BD34E003FA670 /* Plaid.m in Sources */ = {isa = PBXBuildFile; fileRef = B16BE1241B7BD34E003FA670 /* Plaid.m */; };
 		B1DFB54A1B7E881B00901DC5 /* DoneeSelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DFB5491B7E881B00901DC5 /* DoneeSelectionTableViewController.m */; };
 		B1F57AD11B819AA700A03B45 /* BankAccountTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F57AD01B819AA700A03B45 /* BankAccountTableViewController.m */; };
@@ -56,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		690FC7051B879276003C8D02 /* AccountTransactionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTransactionsTableViewController.h; sourceTree = "<group>"; };
+		690FC7061B879276003C8D02 /* AccountTransactionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTransactionsTableViewController.m; sourceTree = "<group>"; };
 		69220E721B82823E00AAF426 /* LimitsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LimitsViewController.h; sourceTree = "<group>"; };
 		69220E731B82823E00AAF426 /* LimitsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LimitsViewController.m; sourceTree = "<group>"; };
 		6D0325B1533F6AE5CDF94CF4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,6 +73,8 @@
 		B108B1541B82F0F200B56CB0 /* LinkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkViewController.h; sourceTree = "<group>"; };
 		B108B1551B82F0F200B56CB0 /* LinkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkViewController.m; sourceTree = "<group>"; };
 		B108B1571B82F37C00B56CB0 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		B10D3DE81B8E53D4007D2DD7 /* AccountTotalsOverviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTotalsOverviewViewController.h; sourceTree = "<group>"; };
+		B10D3DE91B8E53D4007D2DD7 /* AccountTotalsOverviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTotalsOverviewViewController.m; sourceTree = "<group>"; };
 		B1258A791B7AFADB0097D322 /* Boonley.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boonley.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1258A7D1B7AFADB0097D322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1258A7E1B7AFADB0097D322 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -100,6 +108,10 @@
 		B13518F61B7E801A000C6D19 /* ParseTwitterUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseTwitterUtils.framework; sourceTree = "<group>"; };
 		B15B9F481B7BCA11002D7A72 /* Datasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Datasource.h; sourceTree = "<group>"; };
 		B15B9F491B7BCA11002D7A72 /* Datasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Datasource.m; sourceTree = "<group>"; };
+		B162932A1B8F598A009C353A /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		B162932B1B8F598A009C353A /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		B162932D1B935770009C353A /* Donation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Donation.h; sourceTree = "<group>"; };
+		B162932E1B935770009C353A /* Donation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Donation.m; sourceTree = "<group>"; };
 		B16BE1231B7BD34E003FA670 /* Plaid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plaid.h; sourceTree = "<group>"; };
 		B16BE1241B7BD34E003FA670 /* Plaid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Plaid.m; sourceTree = "<group>"; };
 		B1DFB5481B7E881B00901DC5 /* DoneeSelectionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoneeSelectionTableViewController.h; sourceTree = "<group>"; };
@@ -199,7 +211,7 @@
 			children = (
 				B1F57AD71B81A52E00A03B45 /* View */,
 				B1F57AD51B81A4BD00A03B45 /* Model */,
-				B1F57AD61B81A4FC00A03B45 /* Controller */,
+				B1F57AD61B81A4FC00A03B45 /* Controllers */,
 				B1258A801B7AFADB0097D322 /* AppDelegate.h */,
 				B1258A811B7AFADB0097D322 /* AppDelegate.m */,
 				B1258A891B7AFADB0097D322 /* Images.xcassets */,
@@ -235,21 +247,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B1F57AD51B81A4BD00A03B45 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				B15B9F481B7BCA11002D7A72 /* Datasource.h */,
-				B15B9F491B7BCA11002D7A72 /* Datasource.m */,
-				B16BE1231B7BD34E003FA670 /* Plaid.h */,
-				B16BE1241B7BD34E003FA670 /* Plaid.m */,
-				B1F57AD21B81A4A600A03B45 /* Bank.h */,
-				B1F57AD31B81A4A600A03B45 /* Bank.m */,
-				B108B1571B82F37C00B56CB0 /* index.html */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		B1F57AD61B81A4FC00A03B45 /* Controller */ = {
+		B16293301B93C551009C353A /* Signup */ = {
 			isa = PBXGroup;
 			children = (
 				B1F57ACF1B819AA700A03B45 /* BankAccountTableViewController.h */,
@@ -262,12 +260,50 @@
 				69220E731B82823E00AAF426 /* LimitsViewController.m */,
 				B108B1541B82F0F200B56CB0 /* LinkViewController.h */,
 				B108B1551B82F0F200B56CB0 /* LinkViewController.m */,
+				B108B1571B82F37C00B56CB0 /* index.html */,
+			);
+			name = Signup;
+			sourceTree = "<group>";
+		};
+		B16293311B93C567009C353A /* Account */ = {
+			isa = PBXGroup;
+			children = (
 				B103F60E1B84F91700696FAC /* AccountPageViewController.h */,
 				B103F60F1B84F91700696FAC /* AccountPageViewController.m */,
 				B103F6111B8501D500696FAC /* AccountSummaryViewController.h */,
 				B103F6121B8501D500696FAC /* AccountSummaryViewController.m */,
+				690FC7051B879276003C8D02 /* AccountTransactionsTableViewController.h */,
+				690FC7061B879276003C8D02 /* AccountTransactionsTableViewController.m */,
+				B10D3DE81B8E53D4007D2DD7 /* AccountTotalsOverviewViewController.h */,
+				B10D3DE91B8E53D4007D2DD7 /* AccountTotalsOverviewViewController.m */,
+				B162932A1B8F598A009C353A /* ProfileViewController.h */,
+				B162932B1B8F598A009C353A /* ProfileViewController.m */,
 			);
-			name = Controller;
+			name = Account;
+			sourceTree = "<group>";
+		};
+		B1F57AD51B81A4BD00A03B45 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B15B9F481B7BCA11002D7A72 /* Datasource.h */,
+				B15B9F491B7BCA11002D7A72 /* Datasource.m */,
+				B162932D1B935770009C353A /* Donation.h */,
+				B162932E1B935770009C353A /* Donation.m */,
+				B16BE1231B7BD34E003FA670 /* Plaid.h */,
+				B16BE1241B7BD34E003FA670 /* Plaid.m */,
+				B1F57AD21B81A4A600A03B45 /* Bank.h */,
+				B1F57AD31B81A4A600A03B45 /* Bank.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		B1F57AD61B81A4FC00A03B45 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B16293301B93C551009C353A /* Signup */,
+				B16293311B93C567009C353A /* Account */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		B1F57AD71B81A52E00A03B45 /* View */ = {
@@ -430,10 +466,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B108B1561B82F0F200B56CB0 /* LinkViewController.m in Sources */,
+				B162932F1B935770009C353A /* Donation.m in Sources */,
 				69220E741B82823E00AAF426 /* LimitsViewController.m in Sources */,
 				B103F6101B84F91700696FAC /* AccountPageViewController.m in Sources */,
 				B103F6131B8501D500696FAC /* AccountSummaryViewController.m in Sources */,
+				B162932C1B8F598A009C353A /* ProfileViewController.m in Sources */,
+				B10D3DEA1B8E53D4007D2DD7 /* AccountTotalsOverviewViewController.m in Sources */,
 				B1DFB54A1B7E881B00901DC5 /* DoneeSelectionTableViewController.m in Sources */,
+				690FC7071B879276003C8D02 /* AccountTransactionsTableViewController.m in Sources */,
 				B16BE1251B7BD34E003FA670 /* Plaid.m in Sources */,
 				B1258A821B7AFADB0097D322 /* AppDelegate.m in Sources */,
 				B1F57AD11B819AA700A03B45 /* BankAccountTableViewController.m in Sources */,
