@@ -1,16 +1,16 @@
 //
-//  LimitsViewController.m
+//  ChangeLimitsViewController.m
 //  Boonley
 //
-//  Created by Trevor Vieweg on 8/17/15.
+//  Created by Vieweg, Trevor on 9/15/15.
 //  Copyright (c) 2015 Trevor Vieweg. All rights reserved.
 //
 
-#import "LimitsViewController.h"
+#import "ChangeLimitsViewController.h"
 #import "Datasource.h"
 #import <Parse/Parse.h>
 
-@interface LimitsViewController () <UITextFieldDelegate>
+@interface ChangeLimitsViewController ()
 
 @property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UITextField *minimumDonation;
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation LimitsViewController
+@implementation ChangeLimitsViewController
 
 - (void) displayErrorAlertWithTitle:(NSString *)title andError:(NSString *)errorString {
     
@@ -33,25 +33,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:self action:@selector(didPressNext)];
-    
-    _activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-    _activityIndicator.center = self.view.center;
-    _activityIndicator.hidesWhenStopped = YES;
-    _activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
-    
-    [self.view addSubview:_activityIndicator];
-
-    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(didPressDone)];
+    _minimumDonation.text = [[Datasource sharedInstance].minDonation stringValue];
+    _maximumDonation.text = [[Datasource sharedInstance].maxDonation stringValue]; 
 }
 
-- (void) didPressNext {
+- (void) didPressDone {
     if ([self.minimumDonation.text integerValue] >= 5 && [self.maximumDonation.text integerValue] > [self.minimumDonation.text integerValue]) {
         
-        //Signup has been COMPLETED!! Save all data to parse.
+        //Changes have been made.
         [_activityIndicator startAnimating];
         [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
-
+        
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
             PFUser *currentuser = [PFUser currentUser];
             
@@ -70,7 +63,8 @@
                     [Datasource sharedInstance].minDonation = currentuser[@"minDonation"];
                     [Datasource sharedInstance].maxDonation = currentuser[@"maxDonation"];
                     
-                    [self performSegueWithIdentifier:@"goToAccountOverviewFromSignup" sender:self];
+                    [self.navigationController popViewControllerAnimated:YES];
+                     
                 } else {
                     //show user error
                     NSString *errorString = [error userInfo][@"error"];   // Show the errorString somewhere and let the user try again.
@@ -84,5 +78,6 @@
         [self displayErrorAlertWithTitle:@"Error" andError:@"Miminum and maximums not set correctly. Please review your minimum and maximums"];
     }
 }
+
 
 @end

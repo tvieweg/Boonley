@@ -34,15 +34,15 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [Datasource sharedInstance].accountTransactions.count;
+    return [Datasource sharedInstance].currentMonthlySummary.transactions.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"transactionCell" forIndexPath:indexPath];
     
-    cell.textLabel.text = [Datasource sharedInstance].accountTransactions[indexPath.row][@"name"];
-    NSNumber *amount = (NSNumber *)[Datasource sharedInstance].accountTransactions[indexPath.row][@"amount"];
+    cell.textLabel.text = [Datasource sharedInstance].currentMonthlySummary.transactions[indexPath.row][@"name"];
+    NSNumber *amount = (NSNumber *)[Datasource sharedInstance].currentMonthlySummary.transactions[indexPath.row][@"amount"];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", amount]; 
     
     return cell;

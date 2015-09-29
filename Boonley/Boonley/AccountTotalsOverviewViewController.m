@@ -7,6 +7,7 @@
 //
 
 #import "AccountTotalsOverviewViewController.h"
+#import "Datasource.h"
 
 @interface AccountTotalsOverviewViewController ()
 
@@ -17,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    [[Datasource sharedInstance] calculateUserMetrics];
     NSArray *countingLabels = @[_averageDonationCountingLabel, _yearlyTotalDonationsCountingLabel, _allTimeTotalDonationsCountingLabel];
     
     for (UICountingLabel *countingLabel in countingLabels) {
@@ -26,18 +27,13 @@
         countingLabel.textColor = [UIColor whiteColor];
         countingLabel.font = [UIFont systemFontOfSize:36];
         countingLabel.textAlignment = NSTextAlignmentCenter;
+        countingLabel.animationDuration = 2.0; 
     }
     
-    //Dummy counting
-    [self.averageDonationCountingLabel countFrom:0 to:35];
-    [self.yearlyTotalDonationsCountingLabel countFrom:0 to:230];
-    [self.allTimeTotalDonationsCountingLabel countFrom:0 to:1265];
+    [self.averageDonationCountingLabel countFrom:0 to:[Datasource sharedInstance].averageDonation];
+    [self.yearlyTotalDonationsCountingLabel countFrom:0 to:[Datasource sharedInstance].donationsThisYear];
+    [self.allTimeTotalDonationsCountingLabel countFrom:0 to:[Datasource sharedInstance].donationsAllTime];
 
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

@@ -64,7 +64,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"bankAccountCell" forIndexPath:indexPath];
     
-    NSDictionary *accountInfo = [Datasource sharedInstance].bankForTracking.accounts[indexPath.row];
+    NSDictionary *accountInfo;
+    
+    if ([Datasource sharedInstance].showTrackingAccountController) {
+        accountInfo = [Datasource sharedInstance].bankForTracking.accounts[indexPath.row];
+    } else {
+        accountInfo = [Datasource sharedInstance].bankForFunding.accounts[indexPath.row];
+    }
     
     cell.textLabel.text = accountInfo[@"meta"][@"name"];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Available: $%@", accountInfo[@"balance"][@"available"]];
@@ -122,10 +128,7 @@
         
         [Datasource sharedInstance].bankForFunding.selectedAccount = [Datasource sharedInstance].bankForFunding.accounts[indexPath.row];
         
-        [self performSegueWithIdentifier:@"goToThresholdSelectionFromAccounts" sender:self];
     }
 }
-
-
 
 @end
