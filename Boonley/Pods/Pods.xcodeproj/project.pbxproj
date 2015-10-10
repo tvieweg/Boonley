@@ -7,302 +7,296 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0006BBD11DA1ED37F8A2689D6509ED70 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC59C77815462388B27DD5300E715FCD /* AFNetworkReachabilityManager.m */; };
-		061F43A4D78FBE6C29EB1C9F7E87D049 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 580F06D0011EF506FB2828D20A2FE791 /* CoreGraphics.framework */; };
-		0636DF68B55743145538D3B390890A83 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0230C55C20349D68B34C9C81938EFA19 /* AFNetworkActivityIndicatorManager.m */; };
-		09D42890AA2342A9A2DB799CAA4BB47F /* UIAlertView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 2851D2A8DAB57CC7DA9FA04D96C2BC3D /* UIAlertView+AFNetworking.h */; };
-		0DCDE3D8F77958CCEB179C2178F3ED14 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF3EA1FE4AE0932122F8BB240E4A29E /* Foundation.framework */; };
-		0E12E71F8A5DF2FA60A095C9D02C7B58 /* UIWebView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D8FE4ED7CA524D1528EE5888F5BDF91 /* UIWebView+AFNetworking.h */; };
-		0FAC06F18A66332B9E7A608A16F64139 /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = E221211602A14E5F7FC606D592C9D103 /* AFURLResponseSerialization.h */; };
-		13AA52FF254BD2FBB1B8876D38D09852 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACE3AE15BB87D147F4702BEC0A46B01 /* AFSecurityPolicy.m */; };
-		173EA36B968BC1F4BAF7EE1C32B655AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF3EA1FE4AE0932122F8BB240E4A29E /* Foundation.framework */; };
-		1B915AAF902BCDF1FB09EC069E495E56 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5C09D1ACEBCA5159D38EFC58B8C867 /* AFURLRequestSerialization.m */; };
-		1DF8E4B77E0ABE9F2B4E6EB86C0A2308 /* GRKBarGraphLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EBDBA1C9D7FF268BBDCC2352FF8713 /* GRKBarGraphLayer.m */; };
-		1EB4E9C581A9057AA6287DFD19252F3E /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 41DDFF5CBFDE9207D78DE1FC8C68C8A4 /* AFURLSessionManager.h */; };
-		20BA1AA21B55F4F05EC81DBEDC7E9822 /* AFHTTPRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 66973689201C6853C4CF95959431264F /* AFHTTPRequestOperation.h */; };
-		236D3E2DFDF56B7C226259EB48FBFF5B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48382550801BAB5D89FAB30426C1DACD /* SystemConfiguration.framework */; };
-		23C0FEA9FFD552E6AD23FD93E02BC616 /* UIKit+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = C62EE006DD585CF35D1DD0A338D1D55A /* UIKit+AFNetworking.h */; };
-		2DCACAF984979ADDEA3028B29ADEB902 /* GRKBarGraphLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = BDFDD04F2238A978DB47BC173AF263AA /* GRKBarGraphLayer.h */; };
-		35DC96D7C128235BE147D114F2865656 /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE7B136278A06118F17B3D756453528 /* UICountingLabel.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		3B3B23DE3AC080CA26D825946C9E865E /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 18D9F3626B361B8631BF29DF7727EA29 /* UIActivityIndicatorView+AFNetworking.h */; };
-		42C2EF576819A1FE446EB8D8FD4A1DC3 /* UIButton+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F0B3997C547199E6406A1EA341924F4 /* UIButton+AFNetworking.h */; };
-		49427982060865845312B0DE1F09DAD0 /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = C51E6A254BE6088727571D24CB7FF650 /* UIRefreshControl+AFNetworking.h */; };
-		496C3BB949163A901C9D3F8667B51A3E /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 577F000A9D744C7BEAA8F1553C04B2FD /* AFNetworkActivityIndicatorManager.h */; };
-		57E3BEC87E92B9B653DBC6805464BF30 /* AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 306AB6947354158FCFAF66FE5BDD3BAE /* AFNetworking-dummy.m */; };
-		5E3BF9736270F4EB4B8BCE133F90218A /* AFHTTPRequestOperationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CD6FEFE0F966B495A40BC00CC8AEFF0 /* AFHTTPRequestOperationManager.h */; };
-		62A65CDFD727332AEA9CA0838DDFF854 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4957CDACF50660DCFB06AA1B097BEFA4 /* UIRefreshControl+AFNetworking.m */; };
-		6444B62FA79AA73B2C6DC7224A158A6F /* GRKBarGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D1B7489CF68BB77FE45B94BDF8E14C /* GRKBarGraphView.m */; };
-		6726DC3BB3E921F4CDE64344F307AE97 /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 885CD6C4E09217C54D4908583E1540E7 /* AFSecurityPolicy.h */; };
-		6A0C4A23130E27F7C2A9F5598CCBA940 /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 500BB5DD87FE00E2B2973C107F292838 /* UIButton+AFNetworking.m */; };
-		740587207C7DF8284E064A9BBDFDEDAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF3EA1FE4AE0932122F8BB240E4A29E /* Foundation.framework */; };
-		7517D48061C9685448E53D5843915067 /* GRKBarGraphView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F70C513F3FD2016ACE8813E822783AC /* GRKBarGraphView-dummy.m */; };
-		7D48DB88510812A8F1049E03FB858629 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDE63EDC0A7281D2F21624C60778439 /* Security.framework */; };
-		86E1394D4D919C5190036C48D9F32045 /* UICountingLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 70627154351CFC96604FECC70DF678FC /* UICountingLabel.h */; };
-		8DA2198615962C32CABFA0E697177CE5 /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = E60BF2FA4F080847F796B87C9AF6CBAE /* UIAlertView+AFNetworking.m */; };
-		931AE0ED726F0499E9C97E80E8772EF2 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 359213CAC3A62B94356505862E16EE05 /* UIActivityIndicatorView+AFNetworking.m */; };
-		9BB212FDE02F7BDF64A811E4959B964B /* GRKBarGraphBackingLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 666651200F16E9022D0CFD6F1A97E94B /* GRKBarGraphBackingLayer.h */; };
-		A2C765C37985DBA1FF9D314961E5736A /* GRKBarGraphBackingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C297F89E2DE46D16F88D252A9D8F5FD /* GRKBarGraphBackingLayer.m */; };
-		A53C86F2E84866BB7AECB9B242C3F031 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 25516323BF44A71B4EBCDABF4C53ACDC /* AFURLResponseSerialization.m */; };
-		B09F1A5B11A709CDC781089F6EA9CC05 /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 776484185B976F025E40356E29817A9E /* AFHTTPSessionManager.h */; };
-		B3C4F5DD7D54A8F925679767728BB815 /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = CE531E5B49385DC159B7C451914C3627 /* AFNetworking.h */; };
-		B3CB214E02719D11F83D0C3F430894FC /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3DF99C36E5915B26BCFF14391688B7 /* UIImageView+AFNetworking.m */; };
-		B60C6002116A15963C97010F4D445019 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF3EA1FE4AE0932122F8BB240E4A29E /* Foundation.framework */; };
-		B6FA722A6DC3122E5E9DDA80D26E0840 /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C470D17FD8F6542E49C82FC60AD1CDD /* UIImageView+AFNetworking.h */; };
-		B86F79197E290C612BEBDC44D709C260 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6378FD9E7EF8F80CD180A5AFF1AD4004 /* AFHTTPRequestOperation.m */; };
-		BBF044E57FF7AD547D9311E2C2F5C6CB /* AFURLConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 737412A843F2A88F1D114FD3C131BB2B /* AFURLConnectionOperation.h */; };
-		BFFA59C85614BA74B219D7E43EF53CE5 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 608E524A0066AFB3041C7F7A216DB32A /* UIProgressView+AFNetworking.m */; };
-		C31DD436FE2A980AE828D4A0CE2AC37F /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B45C0FBBAC8658C9A955C39B8D9174 /* UIWebView+AFNetworking.m */; };
-		C350E5805DDDE8B69E2CB317857FC6A8 /* GRKBarGraphView.h in Headers */ = {isa = PBXBuildFile; fileRef = DA433B55BF74898348CE049F7B12CF18 /* GRKBarGraphView.h */; };
-		CA4758F085C2D11694166B2424767DF9 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D776849DF2BE0C98A8316B8A503933 /* AFHTTPSessionManager.m */; };
-		CD9470F5C7B0DB1E34E3319985942EA6 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E800D52F2BBD087B15967432669E67 /* Pods-dummy.m */; };
-		D2F87DF371A26313363A95C0E5FCD2DC /* UIProgressView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = CD201ECEEED52F34C93755FCB23E1AC4 /* UIProgressView+AFNetworking.h */; };
-		D7D1CD92D5B5597012E9E1F5472CD434 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EBE810E31844E73BADDBB9DA5115AD /* AFURLConnectionOperation.m */; };
-		DDB3C2E90CB41E9730559B2C5F0420C0 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B673444A2F750397C59B5B47674B833 /* AFHTTPRequestOperationManager.m */; };
-		DE0FC2A0BE9836FDB58595737BD1D259 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E661C3450E11359A13CEE7FCA747B30 /* MobileCoreServices.framework */; };
-		EA073C5F66B294510EC1480E5CFDB72B /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 44B63761CADFF8F5171FAA1543965464 /* AFURLRequestSerialization.h */; };
-		F67D333A058C8F7290C6D512E093B810 /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B1D957C60A84DEDAF14D288334A7023 /* AFNetworkReachabilityManager.h */; };
-		FDA7921514C8A0E8466A7F1A1BB822AB /* UICountingLabel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AEDA512E080495C2C44697CC9ACE2F0 /* UICountingLabel-dummy.m */; };
-		FE215674C0D6D58D4F3E71FF92212029 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C17D8B12CCBABC103F6EC02FFE4A92DF /* AFURLSessionManager.m */; };
+		002486FAC0BAA839FA0AEC30608C449E /* GRKBarGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBB9786DA39E9645BE5CEAB845F56C6 /* GRKBarGraphView.m */; };
+		04A416BF54F937DAE3D19FE50DA72202 /* UIButton+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 96CA5D730EA07A9B24C8CA03ECB7CAFC /* UIButton+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		061340DEF07BC22CA664B03043C8B947 /* UICountingLabel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0876099CD67381BBD3290925BA661A43 /* UICountingLabel-dummy.m */; };
+		0659C55D67614156ACE73EF681E30DC7 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F97CE7B7A0AA1F7053E4EBB81E6BD /* UIRefreshControl+AFNetworking.m */; };
+		09A108638EC1B5D18292996C8D6CC527 /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7002C6C8695D49F3E890E9ACCF16BD /* UICountingLabel.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		0BC78A0BD69453042722F2A4A796A781 /* GRKBarGraphLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 19101E38D2FAB9289780987DE5166899 /* GRKBarGraphLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0E4FD75ECCFD6A179057653D9BA711CD /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E5279902ACD03FDE11F9B55584DE96F /* AFURLRequestSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1050F5E599DEA3C0FA7990B9C56E4073 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A19DF616941A51576DD057A9FD8F4AD8 /* Security.framework */; };
+		136FB41CEB8D026BA1B0E0C514CD90F7 /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AEF6A91B7FADC2BF5A37C420E43889A /* AFURLResponseSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		205F51216177E22CD1AE443745B8A119 /* AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9424075E7056651EE38F420226D7C0B4 /* AFNetworking-dummy.m */; };
+		23F5B559815FF24B03A7D5D76F19E740 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C2726B38C34C90B4029517CAC19BCC /* AFURLConnectionOperation.m */; };
+		263D08D54C23AAE447AC8A0E6BD02B39 /* UIKit+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E940065DDB9BB94187200E627F370D6 /* UIKit+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		270D0D7DCF78170B1F481DDF511C07D6 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 0417CFCE29927033DA6FD5322F9D7970 /* AFURLResponseSerialization.m */; };
+		27AFE404AA450432596D55D44B871E62 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F66D96FFA59E2B65CAF841F3C6ED08 /* UIProgressView+AFNetworking.m */; };
+		3940747A9B6BDD5DC55DFD9ECD8DC300 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 349D63BC9CF31F1C8214368AAD410E6D /* UIWebView+AFNetworking.m */; };
+		3A60E1AA43C09B68A26EF2579E98D725 /* AFHTTPRequestOperationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1970BE7F25A10B71267AC214CD69CA5C /* AFHTTPRequestOperationManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3AFA0E9B3A76D8E2387D07D3A581306B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C31A9B26388001B26382C7C355DA572 /* Foundation.framework */; };
+		3B1575769C2E1566036FFF2F22917E72 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F2B5E013FD1D42752E768761E043FC /* CoreGraphics.framework */; };
+		3CE08E61AA9A53953E30A442440E4D8F /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D129715DBA9C86481B26E6C3E9AFE1 /* AFURLRequestSerialization.m */; };
+		43E2B22CDD34DC9E3AC42491D4E0C7B6 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B2D000F6ADE702FE8DB214F653DEB0 /* AFHTTPRequestOperation.m */; };
+		4AD68C44057762C862EB902673B98C56 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C31A9B26388001B26382C7C355DA572 /* Foundation.framework */; };
+		5675E7169016543A92985F6EBC0C1411 /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CA3780681A9BB463D3AA3630308446B /* AFURLSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58B3A1ECCB7C9B804E6E041C7D5FBFAC /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = CA759B4B3F9A7906C48FC614643CEC07 /* UIImageView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DFB5A46A57DE37A4FEAD5E01C998A05 /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A948D604A6C0378FAFB576B103F3F32E /* AFHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64E2F6C4451B570E7D7E8AF9225ACEC8 /* GRKBarGraphView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C559375890F4C425A5FD7894CD407984 /* GRKBarGraphView-dummy.m */; };
+		71B329BED4556FEA3535C2178FDE97C8 /* GRKBarGraphBackingLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 208F7EBBB31155AA192655B0BAE62823 /* GRKBarGraphBackingLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		86A345B686DF337CC22C577DFD08F6D6 /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D90BE74C1BE9C82A2CDD41379E011173 /* AFNetworkReachabilityManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8ECDC8579C378C32DF77180991C08E38 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 272643F56613CA0D336AE3DBF19DC404 /* Pods-dummy.m */; };
+		95E69A233A1D42F7E36D4D4C79E5AF46 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C168D5DBDB78691493E24B13EF6B6A8 /* SystemConfiguration.framework */; };
+		96C7E8AA9881FF1B1EC3EED102DF287D /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = DE754AF6990603711EDC8197418DC9AE /* AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		98D00CD3E197EAA6C7450281537CD79C /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 085D7F6FB72FD1DE4AEE1683538E6621 /* AFSecurityPolicy.m */; };
+		9C5A2CD706CA4688C9F4BC6D63BAB935 /* UIAlertView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EB0E5228A4C03CC097F8F338F2F31D4 /* UIAlertView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9ECCBA3A8092E326BE8CAD2075001BB2 /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 189B24AF3492251155E44422F8758A35 /* UIRefreshControl+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F56B2A232106CEC99383ADACDC85C4A /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2219C527631BD11329AE517DC76DF5 /* UIImageView+AFNetworking.m */; };
+		AAF2E61730FAA37AF5A03D4571D30E8B /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D92D7B764E1782B763D4CB7FEC115 /* UIActivityIndicatorView+AFNetworking.m */; };
+		BF4D15595DFEE63F366804461CB98F6F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C31A9B26388001B26382C7C355DA572 /* Foundation.framework */; };
+		C2D9B8F82D04BDD22AE84A18C08A19C9 /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 5251CF50C6DC611015C71F8C8647AE07 /* UIActivityIndicatorView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C4D34910F4D6673E3B9E99D7A781DC6C /* UIWebView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = F47F13EE9F5EE387BCF6694174560F69 /* UIWebView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C59584009765D8E13DBD8C23AFC54E2B /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 06DFCF92C842A16386F3425E1EB3515F /* AFHTTPRequestOperationManager.m */; };
+		CB57C323C1FBAA7AA1530AEA6F7D40BA /* UICountingLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 95076B0474AADDD91D60B62245817088 /* UICountingLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE7E0CA5DEA7C2179D0D5D0D46E17906 /* GRKBarGraphBackingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 498448B61E8B64C15B726BDE5132C4C9 /* GRKBarGraphBackingLayer.m */; };
+		CF51D5F481F2C61913BDB6E6A1745D8E /* GRKBarGraphView.h in Headers */ = {isa = PBXBuildFile; fileRef = E4511EFFE3EEB60EEFB80AAB573A2372 /* GRKBarGraphView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D227CEAB5B8A915D6E65EA6DD91F51D6 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C21D68CC429E78B9FF66C711FB670C13 /* AFNetworkActivityIndicatorManager.m */; };
+		D53D346EDA02176B05B3EB0BC617354B /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EDE5267D6C57503D1C9CC438065A36 /* UIButton+AFNetworking.m */; };
+		D6D9125049BC87CDA2D57020C0153E75 /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 342A3376CF1996AF6BB517784A75F503 /* UIAlertView+AFNetworking.m */; };
+		D962DD71043B18FC810A006F7A05CA81 /* GRKBarGraphLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A0D24A72B1CE573A7D907063D5BBB /* GRKBarGraphLayer.m */; };
+		DDE0D58925DD54047C03938AA4841254 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C31A9B26388001B26382C7C355DA572 /* Foundation.framework */; };
+		DEA1065191A84F4399632F5DC5E5358B /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CCB97AF7B38B2403B92DD2AB3BE56B33 /* AFNetworkActivityIndicatorManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DF180E88C3E1BF35D93F31300FA4BC65 /* AFHTTPRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 41136ECE15D576949087C89796AE4AFA /* AFHTTPRequestOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E38C00106AD769DAA4E938F8878B7A7D /* UIProgressView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EEA579389A29143EA03D5F53A7F05CF /* UIProgressView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E4213D476018C8B58166DF22722C0463 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF49B2EC423FA92402E28A7E2EE5BE59 /* AFURLSessionManager.m */; };
+		E43F5D7E2C48C315DDA216F87E47B50B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2B240D99C3FC6A7DC6C66A2434CA799 /* MobileCoreServices.framework */; };
+		E6E2E57ADE1578E3ED86B1387009F3F8 /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = F8B626E2EF0136FF39AED90CD09D2488 /* AFSecurityPolicy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EAC33FF21DBF26381F425381F18B9965 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B66C5CD5D93E89CAF8938761EC56D60E /* AFNetworkReachabilityManager.m */; };
+		F3B32DA5C47A34B5B2609E632FFA8557 /* AFURLConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = E1884F19EFFED4D1744CA3CFD3CB71AF /* AFURLConnectionOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FB13976159230EA492199199181C64AC /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 90750EFD0EFD69AAAEC63B99F348FD66 /* AFHTTPSessionManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		532E14FC8005E3E0308336D9B9B01852 /* PBXContainerItemProxy */ = {
+		6731CD8974B4EFB533F321DAD784E234 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 58A47B6C58D3C3298022D594F74C1408;
+			remoteGlobalIDString = 2602F3D0DAC534568B6AD7EEA0DD1959;
+			remoteInfo = AFNetworking;
+		};
+		7A90B8B9B797D42CCDC7A0891FE3957E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7F4F5B2CB36A5C395B00283EA977E973;
 			remoteInfo = GRKBarGraphView;
 		};
-		B43A1661EAAB7AF71BFDFC946A361B2F /* PBXContainerItemProxy */ = {
+		A02A36FD5E14AB13190FC24ACCEB5A05 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DF6B62D79728EF0641BA03AAAE9C576B;
+			remoteGlobalIDString = 980FEB7FD82FD1F256B14FFAB6E8352B;
 			remoteInfo = UICountingLabel;
-		};
-		F886B739C0556E54D877CB892C6535FB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B084D4D840B849CC9EA68E024D739F5E;
-			remoteInfo = AFNetworking;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		000CD213BA11D4FE962D0B85C1D6F639 /* GRKBarGraphView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GRKBarGraphView.xcconfig; sourceTree = "<group>"; };
-		01E1061EBF71BC471C3F87C85424CFC0 /* GRKBarGraphView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GRKBarGraphView-prefix.pch"; sourceTree = "<group>"; };
-		0230C55C20349D68B34C9C81938EFA19 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
-		09EB593DA7B05775024F1596D615C04A /* UICountingLabel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UICountingLabel.xcconfig; sourceTree = "<group>"; };
-		14B45C0FBBAC8658C9A955C39B8D9174 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
-		15A529C27057E4A57D259CBC6E6CE49C /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		18D9F3626B361B8631BF29DF7727EA29 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
-		1B1D957C60A84DEDAF14D288334A7023 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
-		1F0B3997C547199E6406A1EA341924F4 /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "UIKit+AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
-		2098C6E3EB102B78C300616684A222A9 /* AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-prefix.pch"; sourceTree = "<group>"; };
-		25516323BF44A71B4EBCDABF4C53ACDC /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
-		2851D2A8DAB57CC7DA9FA04D96C2BC3D /* UIAlertView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+AFNetworking.h"; path = "UIKit+AFNetworking/UIAlertView+AFNetworking.h"; sourceTree = "<group>"; };
-		306AB6947354158FCFAF66FE5BDD3BAE /* AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFNetworking-dummy.m"; sourceTree = "<group>"; };
-		359213CAC3A62B94356505862E16EE05 /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIActivityIndicatorView+AFNetworking.m"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
-		36D18B44C66F9990F2D144D871E916B6 /* libGRKBarGraphView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGRKBarGraphView.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F70C513F3FD2016ACE8813E822783AC /* GRKBarGraphView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GRKBarGraphView-dummy.m"; sourceTree = "<group>"; };
-		3FDF8B43BC7D9085FF5942F5F3564DEB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		41DDFF5CBFDE9207D78DE1FC8C68C8A4 /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
-		44B63761CADFF8F5171FAA1543965464 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
-		48382550801BAB5D89FAB30426C1DACD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
-		4957CDACF50660DCFB06AA1B097BEFA4 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIRefreshControl+AFNetworking.m"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
-		500BB5DD87FE00E2B2973C107F292838 /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
-		577F000A9D744C7BEAA8F1553C04B2FD /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h"; sourceTree = "<group>"; };
-		580F06D0011EF506FB2828D20A2FE791 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		5B9E624494D79C330D99971E3FABD19F /* AFNetworking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AFNetworking.xcconfig; sourceTree = "<group>"; };
-		5C470D17FD8F6542E49C82FC60AD1CDD /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
-		5DE7B136278A06118F17B3D756453528 /* UICountingLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
-		608E524A0066AFB3041C7F7A216DB32A /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+AFNetworking.m"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
-		6378FD9E7EF8F80CD180A5AFF1AD4004 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperation.m; path = AFNetworking/AFHTTPRequestOperation.m; sourceTree = "<group>"; };
-		641AE05DD55E5E6AC1590CD7B4A18F97 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		666651200F16E9022D0CFD6F1A97E94B /* GRKBarGraphBackingLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GRKBarGraphBackingLayer.h; path = GRKBarGraphView/GRKBarGraphBackingLayer.h; sourceTree = "<group>"; };
-		66973689201C6853C4CF95959431264F /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = AFNetworking/AFHTTPRequestOperation.h; sourceTree = "<group>"; };
-		6AEDA512E080495C2C44697CC9ACE2F0 /* UICountingLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UICountingLabel-dummy.m"; sourceTree = "<group>"; };
-		6B673444A2F750397C59B5B47674B833 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperationManager.m; path = AFNetworking/AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
-		6C297F89E2DE46D16F88D252A9D8F5FD /* GRKBarGraphBackingLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GRKBarGraphBackingLayer.m; path = GRKBarGraphView/GRKBarGraphBackingLayer.m; sourceTree = "<group>"; };
-		70627154351CFC96604FECC70DF678FC /* UICountingLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
-		737412A843F2A88F1D114FD3C131BB2B /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLConnectionOperation.h; path = AFNetworking/AFURLConnectionOperation.h; sourceTree = "<group>"; };
-		75D1B7489CF68BB77FE45B94BDF8E14C /* GRKBarGraphView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GRKBarGraphView.m; path = GRKBarGraphView/GRKBarGraphView.m; sourceTree = "<group>"; };
-		776484185B976F025E40356E29817A9E /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
-		7CD6FEFE0F966B495A40BC00CC8AEFF0 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperationManager.h; path = AFNetworking/AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
-		7D8FE4ED7CA524D1528EE5888F5BDF91 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
-		7E661C3450E11359A13CEE7FCA747B30 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
-		839A96F1877D92CA92C2B6002182C8C6 /* UICountingLabel-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "UICountingLabel-Private.xcconfig"; sourceTree = "<group>"; };
-		83B218E428076731AD2A9D7C760462FF /* GRKBarGraphView-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "GRKBarGraphView-Private.xcconfig"; sourceTree = "<group>"; };
-		885CD6C4E09217C54D4908583E1540E7 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
-		8BF3EA1FE4AE0932122F8BB240E4A29E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		8FDAE58082A55756162D0DA750733611 /* UICountingLabel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UICountingLabel-prefix.pch"; sourceTree = "<group>"; };
-		95E800D52F2BBD087B15967432669E67 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		9ACE3AE15BB87D147F4702BEC0A46B01 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
-		9CA339EEB46D1F164BB1272D1B84BCED /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		9E5C09D1ACEBCA5159D38EFC58B8C867 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
-		A0EBDBA1C9D7FF268BBDCC2352FF8713 /* GRKBarGraphLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GRKBarGraphLayer.m; path = GRKBarGraphView/GRKBarGraphLayer.m; sourceTree = "<group>"; };
+		0417CFCE29927033DA6FD5322F9D7970 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		06DFCF92C842A16386F3425E1EB3515F /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperationManager.m; path = AFNetworking/AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		085D7F6FB72FD1DE4AEE1683538E6621 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
+		0876099CD67381BBD3290925BA661A43 /* UICountingLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UICountingLabel-dummy.m"; sourceTree = "<group>"; };
+		0A3D92D7B764E1782B763D4CB7FEC115 /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIActivityIndicatorView+AFNetworking.m"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
+		0B1F97CE7B7A0AA1F7053E4EBB81E6BD /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIRefreshControl+AFNetworking.m"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
+		10834806BD7B412BC24F347361FA2C8E /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		189B24AF3492251155E44422F8758A35 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
+		19101E38D2FAB9289780987DE5166899 /* GRKBarGraphLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GRKBarGraphLayer.h; path = GRKBarGraphView/GRKBarGraphLayer.h; sourceTree = "<group>"; };
+		1970BE7F25A10B71267AC214CD69CA5C /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperationManager.h; path = AFNetworking/AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		1AB44BF68DECD07EA4361F6ACA36B548 /* UICountingLabel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UICountingLabel.xcconfig; sourceTree = "<group>"; };
+		1EB0E5228A4C03CC097F8F338F2F31D4 /* UIAlertView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+AFNetworking.h"; path = "UIKit+AFNetworking/UIAlertView+AFNetworking.h"; sourceTree = "<group>"; };
+		208F7EBBB31155AA192655B0BAE62823 /* GRKBarGraphBackingLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GRKBarGraphBackingLayer.h; path = GRKBarGraphView/GRKBarGraphBackingLayer.h; sourceTree = "<group>"; };
+		22ACE9E117AC45DE0D09B6434F0D324A /* libGRKBarGraphView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGRKBarGraphView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		272643F56613CA0D336AE3DBF19DC404 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		2D2219C527631BD11329AE517DC76DF5 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		342A3376CF1996AF6BB517784A75F503 /* UIAlertView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+AFNetworking.m"; path = "UIKit+AFNetworking/UIAlertView+AFNetworking.m"; sourceTree = "<group>"; };
+		349D63BC9CF31F1C8214368AAD410E6D /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		37DB56D75062CC75FCB0966E1C6E8A8E /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		41136ECE15D576949087C89796AE4AFA /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = AFNetworking/AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		475E48BDBB5BC075284CCB727EA8FC9E /* GRKBarGraphView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GRKBarGraphView-prefix.pch"; sourceTree = "<group>"; };
+		498448B61E8B64C15B726BDE5132C4C9 /* GRKBarGraphBackingLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GRKBarGraphBackingLayer.m; path = GRKBarGraphView/GRKBarGraphBackingLayer.m; sourceTree = "<group>"; };
+		4A5A0D24A72B1CE573A7D907063D5BBB /* GRKBarGraphLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GRKBarGraphLayer.m; path = GRKBarGraphView/GRKBarGraphLayer.m; sourceTree = "<group>"; };
+		4AEF6A91B7FADC2BF5A37C420E43889A /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		4E762F23EC34ED4A6FF3312D84E33A40 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		4E940065DDB9BB94187200E627F370D6 /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "UIKit+AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
+		5251CF50C6DC611015C71F8C8647AE07 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
+		5299E184087B8C7FB34B6926E8B5B157 /* AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-prefix.pch"; sourceTree = "<group>"; };
+		57F2B5E013FD1D42752E768761E043FC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		5C59C4E7A7C5CC037102E6783146734A /* AFNetworking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AFNetworking.xcconfig; sourceTree = "<group>"; };
+		6911BECA35E7518D864239B7E898EEF3 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
+		6E5279902ACD03FDE11F9B55584DE96F /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		763F087EBF8BC5DE5CFF461924874979 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C168D5DBDB78691493E24B13EF6B6A8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		80F66D96FFA59E2B65CAF841F3C6ED08 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+AFNetworking.m"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
+		90750EFD0EFD69AAAEC63B99F348FD66 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		93E2BDB26961A49B41543C300C811C4B /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9424075E7056651EE38F420226D7C0B4 /* AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFNetworking-dummy.m"; sourceTree = "<group>"; };
+		94C2726B38C34C90B4029517CAC19BCC /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLConnectionOperation.m; path = AFNetworking/AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		95076B0474AADDD91D60B62245817088 /* UICountingLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
+		96CA5D730EA07A9B24C8CA03ECB7CAFC /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "UIKit+AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
+		98C98CDFB3F20F2925F6CD1F141BB14F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		9C31A9B26388001B26382C7C355DA572 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		9CA3780681A9BB463D3AA3630308446B /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
+		9EEA579389A29143EA03D5F53A7F05CF /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
+		9FBB9786DA39E9645BE5CEAB845F56C6 /* GRKBarGraphView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GRKBarGraphView.m; path = GRKBarGraphView/GRKBarGraphView.m; sourceTree = "<group>"; };
+		A19DF616941A51576DD057A9FD8F4AD8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		A1A36D34413696BE466E2CA0AFF194DA /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		A5D129715DBA9C86481B26E6C3E9AFE1 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		A948D604A6C0378FAFB576B103F3F32E /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		AB7002C6C8695D49F3E890E9ACCF16BD /* UICountingLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
+		B66C5CD5D93E89CAF8938761EC56D60E /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = AFNetworking/AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		B92B545CB817C571D917980E04A64614 /* UICountingLabel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UICountingLabel-prefix.pch"; sourceTree = "<group>"; };
+		B9B2D000F6ADE702FE8DB214F653DEB0 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperation.m; path = AFNetworking/AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BDFDD04F2238A978DB47BC173AF263AA /* GRKBarGraphLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GRKBarGraphLayer.h; path = GRKBarGraphView/GRKBarGraphLayer.h; sourceTree = "<group>"; };
-		BF3DF99C36E5915B26BCFF14391688B7 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
-		BF59BC15D23E1E1912C8F334E7236813 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		C17D8B12CCBABC103F6EC02FFE4A92DF /* AFURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
-		C51E6A254BE6088727571D24CB7FF650 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
-		C62EE006DD585CF35D1DD0A338D1D55A /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "UIKit+AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
-		C774832F3FFA1ACB3F3FA77662A98DCF /* libUICountingLabel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUICountingLabel.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD201ECEEED52F34C93755FCB23E1AC4 /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
-		CE531E5B49385DC159B7C451914C3627 /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
-		CEDE63EDC0A7281D2F21624C60778439 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
-		D4EBE810E31844E73BADDBB9DA5115AD /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLConnectionOperation.m; path = AFNetworking/AFURLConnectionOperation.m; sourceTree = "<group>"; };
-		DA433B55BF74898348CE049F7B12CF18 /* GRKBarGraphView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GRKBarGraphView.h; path = GRKBarGraphView/GRKBarGraphView.h; sourceTree = "<group>"; };
-		E221211602A14E5F7FC606D592C9D103 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
-		E60BF2FA4F080847F796B87C9AF6CBAE /* UIAlertView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+AFNetworking.m"; path = "UIKit+AFNetworking/UIAlertView+AFNetworking.m"; sourceTree = "<group>"; };
-		F7D776849DF2BE0C98A8316B8A503933 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
-		FA046E8CCBFCD19D6FE839B3D3B22998 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC59C77815462388B27DD5300E715FCD /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = AFNetworking/AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
-		FDE5CEDFBAD6AA24BD54077765903E0E /* AFNetworking-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "AFNetworking-Private.xcconfig"; sourceTree = "<group>"; };
-		FF71AA460CE1EB333C34E2F2F1923EEF /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C21D68CC429E78B9FF66C711FB670C13 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
+		C2B240D99C3FC6A7DC6C66A2434CA799 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		C2EDE5267D6C57503D1C9CC438065A36 /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
+		C559375890F4C425A5FD7894CD407984 /* GRKBarGraphView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GRKBarGraphView-dummy.m"; sourceTree = "<group>"; };
+		CA759B4B3F9A7906C48FC614643CEC07 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		CCB97AF7B38B2403B92DD2AB3BE56B33 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h"; sourceTree = "<group>"; };
+		D90BE74C1BE9C82A2CDD41379E011173 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		D9A5349C5FA284C98AE96337A0557B6A /* GRKBarGraphView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GRKBarGraphView.xcconfig; sourceTree = "<group>"; };
+		DE754AF6990603711EDC8197418DC9AE /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
+		E1884F19EFFED4D1744CA3CFD3CB71AF /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLConnectionOperation.h; path = AFNetworking/AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		E4511EFFE3EEB60EEFB80AAB573A2372 /* GRKBarGraphView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GRKBarGraphView.h; path = GRKBarGraphView/GRKBarGraphView.h; sourceTree = "<group>"; };
+		E8C9FC44BDD915ABA619CED275E21645 /* libUICountingLabel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUICountingLabel.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF49B2EC423FA92402E28A7E2EE5BE59 /* AFURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
+		F47F13EE9F5EE387BCF6694174560F69 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
+		F8B626E2EF0136FF39AED90CD09D2488 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0F28D8BBE5F656C0D678A1ACA8231394 /* Frameworks */ = {
+		04F6492DF0B7A5669B29FD4F7C390666 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DCDE3D8F77958CCEB179C2178F3ED14 /* Foundation.framework in Frameworks */,
+				3B1575769C2E1566036FFF2F22917E72 /* CoreGraphics.framework in Frameworks */,
+				4AD68C44057762C862EB902673B98C56 /* Foundation.framework in Frameworks */,
+				E43F5D7E2C48C315DDA216F87E47B50B /* MobileCoreServices.framework in Frameworks */,
+				1050F5E599DEA3C0FA7990B9C56E4073 /* Security.framework in Frameworks */,
+				95E69A233A1D42F7E36D4D4C79E5AF46 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3D72222698500B2F54DA5CF159D9A3FD /* Frameworks */ = {
+		13DA127309A71D346F001F01EFF315F2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				061F43A4D78FBE6C29EB1C9F7E87D049 /* CoreGraphics.framework in Frameworks */,
-				173EA36B968BC1F4BAF7EE1C32B655AF /* Foundation.framework in Frameworks */,
-				DE0FC2A0BE9836FDB58595737BD1D259 /* MobileCoreServices.framework in Frameworks */,
-				7D48DB88510812A8F1049E03FB858629 /* Security.framework in Frameworks */,
-				236D3E2DFDF56B7C226259EB48FBFF5B /* SystemConfiguration.framework in Frameworks */,
+				3AFA0E9B3A76D8E2387D07D3A581306B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		763C11758CD310BBF1D65CFF26663037 /* Frameworks */ = {
+		629754D06C5056D1C93DED9A62B35EB4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B60C6002116A15963C97010F4D445019 /* Foundation.framework in Frameworks */,
+				DDE0D58925DD54047C03938AA4841254 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E475907CFC75286954072AAFDB40DFE0 /* Frameworks */ = {
+		F7F45DE3A8979FDB2AEF702A6F2CC9B2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				740587207C7DF8284E064A9BBDFDEDAF /* Foundation.framework in Frameworks */,
+				BF4D15595DFEE63F366804461CB98F6F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04E1A10F5E908A52B880D1F96C39EEC9 /* Serialization */ = {
+		037C0CA694176A3C0915F62C9D20B3E6 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				44B63761CADFF8F5171FAA1543965464 /* AFURLRequestSerialization.h */,
-				9E5C09D1ACEBCA5159D38EFC58B8C867 /* AFURLRequestSerialization.m */,
-				E221211602A14E5F7FC606D592C9D103 /* AFURLResponseSerialization.h */,
-				25516323BF44A71B4EBCDABF4C53ACDC /* AFURLResponseSerialization.m */,
+				B3D1D13E0C6553800746CB8FD61CF946 /* Pods */,
 			);
-			name = Serialization;
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		1B2F07B7FB960F569D40E8C6B916D550 /* Security */ = {
+		0CE798C644F76BB2ACD3B14EECCD8260 /* NSURLConnection */ = {
 			isa = PBXGroup;
 			children = (
-				885CD6C4E09217C54D4908583E1540E7 /* AFSecurityPolicy.h */,
-				9ACE3AE15BB87D147F4702BEC0A46B01 /* AFSecurityPolicy.m */,
+				41136ECE15D576949087C89796AE4AFA /* AFHTTPRequestOperation.h */,
+				B9B2D000F6ADE702FE8DB214F653DEB0 /* AFHTTPRequestOperation.m */,
+				1970BE7F25A10B71267AC214CD69CA5C /* AFHTTPRequestOperationManager.h */,
+				06DFCF92C842A16386F3425E1EB3515F /* AFHTTPRequestOperationManager.m */,
+				E1884F19EFFED4D1744CA3CFD3CB71AF /* AFURLConnectionOperation.h */,
+				94C2726B38C34C90B4029517CAC19BCC /* AFURLConnectionOperation.m */,
 			);
-			name = Security;
+			name = NSURLConnection;
+			sourceTree = "<group>";
+		};
+		1017C1126C95C342C1145A0BED735EDD /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				CCB97AF7B38B2403B92DD2AB3BE56B33 /* AFNetworkActivityIndicatorManager.h */,
+				C21D68CC429E78B9FF66C711FB670C13 /* AFNetworkActivityIndicatorManager.m */,
+				5251CF50C6DC611015C71F8C8647AE07 /* UIActivityIndicatorView+AFNetworking.h */,
+				0A3D92D7B764E1782B763D4CB7FEC115 /* UIActivityIndicatorView+AFNetworking.m */,
+				1EB0E5228A4C03CC097F8F338F2F31D4 /* UIAlertView+AFNetworking.h */,
+				342A3376CF1996AF6BB517784A75F503 /* UIAlertView+AFNetworking.m */,
+				96CA5D730EA07A9B24C8CA03ECB7CAFC /* UIButton+AFNetworking.h */,
+				C2EDE5267D6C57503D1C9CC438065A36 /* UIButton+AFNetworking.m */,
+				CA759B4B3F9A7906C48FC614643CEC07 /* UIImageView+AFNetworking.h */,
+				2D2219C527631BD11329AE517DC76DF5 /* UIImageView+AFNetworking.m */,
+				4E940065DDB9BB94187200E627F370D6 /* UIKit+AFNetworking.h */,
+				9EEA579389A29143EA03D5F53A7F05CF /* UIProgressView+AFNetworking.h */,
+				80F66D96FFA59E2B65CAF841F3C6ED08 /* UIProgressView+AFNetworking.m */,
+				189B24AF3492251155E44422F8758A35 /* UIRefreshControl+AFNetworking.h */,
+				0B1F97CE7B7A0AA1F7053E4EBB81E6BD /* UIRefreshControl+AFNetworking.m */,
+				F47F13EE9F5EE387BCF6694174560F69 /* UIWebView+AFNetworking.h */,
+				349D63BC9CF31F1C8214368AAD410E6D /* UIWebView+AFNetworking.m */,
+			);
+			name = UIKit;
 			sourceTree = "<group>";
 		};
 		20B56609144CE204DFA8221F742B2D76 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D39F297F7432FCFAB7049A1566A95C1A /* iOS */,
+				FFD977C5D23FB16656C5D57197BAA49C /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		38C4BD0FB7E7E7012D7F2A9B1A5EB2A9 /* Support Files */ = {
+		3B71EC5168AED8937FA07AB81986CDC3 /* Serialization */ = {
 			isa = PBXGroup;
 			children = (
-				5B9E624494D79C330D99971E3FABD19F /* AFNetworking.xcconfig */,
-				FDE5CEDFBAD6AA24BD54077765903E0E /* AFNetworking-Private.xcconfig */,
-				306AB6947354158FCFAF66FE5BDD3BAE /* AFNetworking-dummy.m */,
-				2098C6E3EB102B78C300616684A222A9 /* AFNetworking-prefix.pch */,
+				6E5279902ACD03FDE11F9B55584DE96F /* AFURLRequestSerialization.h */,
+				A5D129715DBA9C86481B26E6C3E9AFE1 /* AFURLRequestSerialization.m */,
+				4AEF6A91B7FADC2BF5A37C420E43889A /* AFURLResponseSerialization.h */,
+				0417CFCE29927033DA6FD5322F9D7970 /* AFURLResponseSerialization.m */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/AFNetworking";
+			name = Serialization;
 			sourceTree = "<group>";
 		};
-		4F1DABF8CCC78E204D5D9687AFFDDDDC /* GRKBarGraphView */ = {
+		5972C68DD4C2CFA140710CE67ACD49F9 /* Security */ = {
 			isa = PBXGroup;
 			children = (
-				666651200F16E9022D0CFD6F1A97E94B /* GRKBarGraphBackingLayer.h */,
-				6C297F89E2DE46D16F88D252A9D8F5FD /* GRKBarGraphBackingLayer.m */,
-				BDFDD04F2238A978DB47BC173AF263AA /* GRKBarGraphLayer.h */,
-				A0EBDBA1C9D7FF268BBDCC2352FF8713 /* GRKBarGraphLayer.m */,
-				DA433B55BF74898348CE049F7B12CF18 /* GRKBarGraphView.h */,
-				75D1B7489CF68BB77FE45B94BDF8E14C /* GRKBarGraphView.m */,
-				BDE0FCECC3F3D7AD7FF2350C5548F213 /* Support Files */,
+				F8B626E2EF0136FF39AED90CD09D2488 /* AFSecurityPolicy.h */,
+				085D7F6FB72FD1DE4AEE1683538E6621 /* AFSecurityPolicy.m */,
+			);
+			name = Security;
+			sourceTree = "<group>";
+		};
+		5A8A869DF19E0E4C553054DB3BC11B1E /* UICountingLabel */ = {
+			isa = PBXGroup;
+			children = (
+				95076B0474AADDD91D60B62245817088 /* UICountingLabel.h */,
+				AB7002C6C8695D49F3E890E9ACCF16BD /* UICountingLabel.m */,
+				D364E5AECDC4A812995AC7F804B4FC8E /* Support Files */,
+			);
+			path = UICountingLabel;
+			sourceTree = "<group>";
+		};
+		63AF521C84F4C187D0E161146B8AA83B /* GRKBarGraphView */ = {
+			isa = PBXGroup;
+			children = (
+				208F7EBBB31155AA192655B0BAE62823 /* GRKBarGraphBackingLayer.h */,
+				498448B61E8B64C15B726BDE5132C4C9 /* GRKBarGraphBackingLayer.m */,
+				19101E38D2FAB9289780987DE5166899 /* GRKBarGraphLayer.h */,
+				4A5A0D24A72B1CE573A7D907063D5BBB /* GRKBarGraphLayer.m */,
+				E4511EFFE3EEB60EEFB80AAB573A2372 /* GRKBarGraphView.h */,
+				9FBB9786DA39E9645BE5CEAB845F56C6 /* GRKBarGraphView.m */,
+				8E53DEE6027ADC63A9EF6F5BE2B33F60 /* Support Files */,
 			);
 			path = GRKBarGraphView;
-			sourceTree = "<group>";
-		};
-		5F9131896024876612AAC481EFB41B43 /* NSURLSession */ = {
-			isa = PBXGroup;
-			children = (
-				776484185B976F025E40356E29817A9E /* AFHTTPSessionManager.h */,
-				F7D776849DF2BE0C98A8316B8A503933 /* AFHTTPSessionManager.m */,
-				41DDFF5CBFDE9207D78DE1FC8C68C8A4 /* AFURLSessionManager.h */,
-				C17D8B12CCBABC103F6EC02FFE4A92DF /* AFURLSessionManager.m */,
-			);
-			name = NSURLSession;
-			sourceTree = "<group>";
-		};
-		62D8BEDC3A8409F5E6EBA1208849FC5C /* Reachability */ = {
-			isa = PBXGroup;
-			children = (
-				1B1D957C60A84DEDAF14D288334A7023 /* AFNetworkReachabilityManager.h */,
-				FC59C77815462388B27DD5300E715FCD /* AFNetworkReachabilityManager.m */,
-			);
-			name = Reachability;
-			sourceTree = "<group>";
-		};
-		6738612153B44B20E1AE09082EA5C3DD /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				09EB593DA7B05775024F1596D615C04A /* UICountingLabel.xcconfig */,
-				839A96F1877D92CA92C2B6002182C8C6 /* UICountingLabel-Private.xcconfig */,
-				6AEDA512E080495C2C44697CC9ACE2F0 /* UICountingLabel-dummy.m */,
-				8FDAE58082A55756162D0DA750733611 /* UICountingLabel-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/UICountingLabel";
-			sourceTree = "<group>";
-		};
-		7A2F51BDC7F1617E7C7556C227F459AE /* AFNetworking */ = {
-			isa = PBXGroup;
-			children = (
-				CE531E5B49385DC159B7C451914C3627 /* AFNetworking.h */,
-				AB1586B018AB759AE4A057450A4B4D4A /* NSURLConnection */,
-				5F9131896024876612AAC481EFB41B43 /* NSURLSession */,
-				62D8BEDC3A8409F5E6EBA1208849FC5C /* Reachability */,
-				1B2F07B7FB960F569D40E8C6B916D550 /* Security */,
-				04E1A10F5E908A52B880D1F96C39EEC9 /* Serialization */,
-				38C4BD0FB7E7E7012D7F2A9B1A5EB2A9 /* Support Files */,
-				FCDB76612659A8767A344AB28498A0C0 /* UIKit */,
-			);
-			path = AFNetworking;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -311,218 +305,184 @@
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				20B56609144CE204DFA8221F742B2D76 /* Frameworks */,
 				B83433EA3681E7D7DF0483FA72BDCE48 /* Pods */,
-				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
-				D2411A5FE7F7A004607BED49990C37F4 /* Targets Support Files */,
+				9BF1B9DCE9C442E3A115B8C17BE62172 /* Products */,
+				037C0CA694176A3C0915F62C9D20B3E6 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		952EEBFAF8F7E620423C9F156F25A506 /* Pods */ = {
+		8E53DEE6027ADC63A9EF6F5BE2B33F60 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				15A529C27057E4A57D259CBC6E6CE49C /* Pods-acknowledgements.markdown */,
-				BF59BC15D23E1E1912C8F334E7236813 /* Pods-acknowledgements.plist */,
-				95E800D52F2BBD087B15967432669E67 /* Pods-dummy.m */,
-				641AE05DD55E5E6AC1590CD7B4A18F97 /* Pods-resources.sh */,
-				9CA339EEB46D1F164BB1272D1B84BCED /* Pods.debug.xcconfig */,
-				3FDF8B43BC7D9085FF5942F5F3564DEB /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			path = "Target Support Files/Pods";
-			sourceTree = "<group>";
-		};
-		AB1586B018AB759AE4A057450A4B4D4A /* NSURLConnection */ = {
-			isa = PBXGroup;
-			children = (
-				66973689201C6853C4CF95959431264F /* AFHTTPRequestOperation.h */,
-				6378FD9E7EF8F80CD180A5AFF1AD4004 /* AFHTTPRequestOperation.m */,
-				7CD6FEFE0F966B495A40BC00CC8AEFF0 /* AFHTTPRequestOperationManager.h */,
-				6B673444A2F750397C59B5B47674B833 /* AFHTTPRequestOperationManager.m */,
-				737412A843F2A88F1D114FD3C131BB2B /* AFURLConnectionOperation.h */,
-				D4EBE810E31844E73BADDBB9DA5115AD /* AFURLConnectionOperation.m */,
-			);
-			name = NSURLConnection;
-			sourceTree = "<group>";
-		};
-		B1F36B9CE2B54EC748460318517BCFA3 /* UICountingLabel */ = {
-			isa = PBXGroup;
-			children = (
-				70627154351CFC96604FECC70DF678FC /* UICountingLabel.h */,
-				5DE7B136278A06118F17B3D756453528 /* UICountingLabel.m */,
-				6738612153B44B20E1AE09082EA5C3DD /* Support Files */,
-			);
-			path = UICountingLabel;
-			sourceTree = "<group>";
-		};
-		B83433EA3681E7D7DF0483FA72BDCE48 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				7A2F51BDC7F1617E7C7556C227F459AE /* AFNetworking */,
-				4F1DABF8CCC78E204D5D9687AFFDDDDC /* GRKBarGraphView */,
-				B1F36B9CE2B54EC748460318517BCFA3 /* UICountingLabel */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		BDE0FCECC3F3D7AD7FF2350C5548F213 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				000CD213BA11D4FE962D0B85C1D6F639 /* GRKBarGraphView.xcconfig */,
-				83B218E428076731AD2A9D7C760462FF /* GRKBarGraphView-Private.xcconfig */,
-				3F70C513F3FD2016ACE8813E822783AC /* GRKBarGraphView-dummy.m */,
-				01E1061EBF71BC471C3F87C85424CFC0 /* GRKBarGraphView-prefix.pch */,
+				D9A5349C5FA284C98AE96337A0557B6A /* GRKBarGraphView.xcconfig */,
+				C559375890F4C425A5FD7894CD407984 /* GRKBarGraphView-dummy.m */,
+				475E48BDBB5BC075284CCB727EA8FC9E /* GRKBarGraphView-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/GRKBarGraphView";
 			sourceTree = "<group>";
 		};
-		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
+		9BF1B9DCE9C442E3A115B8C17BE62172 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FF71AA460CE1EB333C34E2F2F1923EEF /* libAFNetworking.a */,
-				36D18B44C66F9990F2D144D871E916B6 /* libGRKBarGraphView.a */,
-				FA046E8CCBFCD19D6FE839B3D3B22998 /* libPods.a */,
-				C774832F3FFA1ACB3F3FA77662A98DCF /* libUICountingLabel.a */,
+				93E2BDB26961A49B41543C300C811C4B /* libAFNetworking.a */,
+				22ACE9E117AC45DE0D09B6434F0D324A /* libGRKBarGraphView.a */,
+				763F087EBF8BC5DE5CFF461924874979 /* libPods.a */,
+				E8C9FC44BDD915ABA619CED275E21645 /* libUICountingLabel.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D2411A5FE7F7A004607BED49990C37F4 /* Targets Support Files */ = {
+		B23C2F035A1E9DEE9094EB2B52B38E67 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
-				952EEBFAF8F7E620423C9F156F25A506 /* Pods */,
+				D90BE74C1BE9C82A2CDD41379E011173 /* AFNetworkReachabilityManager.h */,
+				B66C5CD5D93E89CAF8938761EC56D60E /* AFNetworkReachabilityManager.m */,
 			);
-			name = "Targets Support Files";
+			name = Reachability;
 			sourceTree = "<group>";
 		};
-		D39F297F7432FCFAB7049A1566A95C1A /* iOS */ = {
+		B3D1D13E0C6553800746CB8FD61CF946 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				580F06D0011EF506FB2828D20A2FE791 /* CoreGraphics.framework */,
-				8BF3EA1FE4AE0932122F8BB240E4A29E /* Foundation.framework */,
-				7E661C3450E11359A13CEE7FCA747B30 /* MobileCoreServices.framework */,
-				CEDE63EDC0A7281D2F21624C60778439 /* Security.framework */,
-				48382550801BAB5D89FAB30426C1DACD /* SystemConfiguration.framework */,
+				37DB56D75062CC75FCB0966E1C6E8A8E /* Pods-acknowledgements.markdown */,
+				10834806BD7B412BC24F347361FA2C8E /* Pods-acknowledgements.plist */,
+				272643F56613CA0D336AE3DBF19DC404 /* Pods-dummy.m */,
+				6911BECA35E7518D864239B7E898EEF3 /* Pods-frameworks.sh */,
+				A1A36D34413696BE466E2CA0AFF194DA /* Pods-resources.sh */,
+				4E762F23EC34ED4A6FF3312D84E33A40 /* Pods.debug.xcconfig */,
+				98C98CDFB3F20F2925F6CD1F141BB14F /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			path = "Target Support Files/Pods";
+			sourceTree = "<group>";
+		};
+		B83433EA3681E7D7DF0483FA72BDCE48 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C02A429896A1E92230D07C4F64A38ABA /* AFNetworking */,
+				63AF521C84F4C187D0E161146B8AA83B /* GRKBarGraphView */,
+				5A8A869DF19E0E4C553054DB3BC11B1E /* UICountingLabel */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C02A429896A1E92230D07C4F64A38ABA /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				DE754AF6990603711EDC8197418DC9AE /* AFNetworking.h */,
+				0CE798C644F76BB2ACD3B14EECCD8260 /* NSURLConnection */,
+				C4123760089649468ADDB1B0A12E7609 /* NSURLSession */,
+				B23C2F035A1E9DEE9094EB2B52B38E67 /* Reachability */,
+				5972C68DD4C2CFA140710CE67ACD49F9 /* Security */,
+				3B71EC5168AED8937FA07AB81986CDC3 /* Serialization */,
+				FBE9C52A33B3C6D4FCD2EA148FEEDE50 /* Support Files */,
+				1017C1126C95C342C1145A0BED735EDD /* UIKit */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		C4123760089649468ADDB1B0A12E7609 /* NSURLSession */ = {
+			isa = PBXGroup;
+			children = (
+				A948D604A6C0378FAFB576B103F3F32E /* AFHTTPSessionManager.h */,
+				90750EFD0EFD69AAAEC63B99F348FD66 /* AFHTTPSessionManager.m */,
+				9CA3780681A9BB463D3AA3630308446B /* AFURLSessionManager.h */,
+				EF49B2EC423FA92402E28A7E2EE5BE59 /* AFURLSessionManager.m */,
+			);
+			name = NSURLSession;
+			sourceTree = "<group>";
+		};
+		D364E5AECDC4A812995AC7F804B4FC8E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1AB44BF68DECD07EA4361F6ACA36B548 /* UICountingLabel.xcconfig */,
+				0876099CD67381BBD3290925BA661A43 /* UICountingLabel-dummy.m */,
+				B92B545CB817C571D917980E04A64614 /* UICountingLabel-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/UICountingLabel";
+			sourceTree = "<group>";
+		};
+		FBE9C52A33B3C6D4FCD2EA148FEEDE50 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5C59C4E7A7C5CC037102E6783146734A /* AFNetworking.xcconfig */,
+				9424075E7056651EE38F420226D7C0B4 /* AFNetworking-dummy.m */,
+				5299E184087B8C7FB34B6926E8B5B157 /* AFNetworking-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AFNetworking";
+			sourceTree = "<group>";
+		};
+		FFD977C5D23FB16656C5D57197BAA49C /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				57F2B5E013FD1D42752E768761E043FC /* CoreGraphics.framework */,
+				9C31A9B26388001B26382C7C355DA572 /* Foundation.framework */,
+				C2B240D99C3FC6A7DC6C66A2434CA799 /* MobileCoreServices.framework */,
+				A19DF616941A51576DD057A9FD8F4AD8 /* Security.framework */,
+				7C168D5DBDB78691493E24B13EF6B6A8 /* SystemConfiguration.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		FCDB76612659A8767A344AB28498A0C0 /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				577F000A9D744C7BEAA8F1553C04B2FD /* AFNetworkActivityIndicatorManager.h */,
-				0230C55C20349D68B34C9C81938EFA19 /* AFNetworkActivityIndicatorManager.m */,
-				18D9F3626B361B8631BF29DF7727EA29 /* UIActivityIndicatorView+AFNetworking.h */,
-				359213CAC3A62B94356505862E16EE05 /* UIActivityIndicatorView+AFNetworking.m */,
-				2851D2A8DAB57CC7DA9FA04D96C2BC3D /* UIAlertView+AFNetworking.h */,
-				E60BF2FA4F080847F796B87C9AF6CBAE /* UIAlertView+AFNetworking.m */,
-				1F0B3997C547199E6406A1EA341924F4 /* UIButton+AFNetworking.h */,
-				500BB5DD87FE00E2B2973C107F292838 /* UIButton+AFNetworking.m */,
-				5C470D17FD8F6542E49C82FC60AD1CDD /* UIImageView+AFNetworking.h */,
-				BF3DF99C36E5915B26BCFF14391688B7 /* UIImageView+AFNetworking.m */,
-				C62EE006DD585CF35D1DD0A338D1D55A /* UIKit+AFNetworking.h */,
-				CD201ECEEED52F34C93755FCB23E1AC4 /* UIProgressView+AFNetworking.h */,
-				608E524A0066AFB3041C7F7A216DB32A /* UIProgressView+AFNetworking.m */,
-				C51E6A254BE6088727571D24CB7FF650 /* UIRefreshControl+AFNetworking.h */,
-				4957CDACF50660DCFB06AA1B097BEFA4 /* UIRefreshControl+AFNetworking.m */,
-				7D8FE4ED7CA524D1528EE5888F5BDF91 /* UIWebView+AFNetworking.h */,
-				14B45C0FBBAC8658C9A955C39B8D9174 /* UIWebView+AFNetworking.m */,
-			);
-			name = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		402A884C2F5C3375E367CE7517BAFE4E /* Headers */ = {
+		26E101B486F95D438A3BA112B66FC59A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20BA1AA21B55F4F05EC81DBEDC7E9822 /* AFHTTPRequestOperation.h in Headers */,
-				5E3BF9736270F4EB4B8BCE133F90218A /* AFHTTPRequestOperationManager.h in Headers */,
-				B09F1A5B11A709CDC781089F6EA9CC05 /* AFHTTPSessionManager.h in Headers */,
-				496C3BB949163A901C9D3F8667B51A3E /* AFNetworkActivityIndicatorManager.h in Headers */,
-				F67D333A058C8F7290C6D512E093B810 /* AFNetworkReachabilityManager.h in Headers */,
-				B3C4F5DD7D54A8F925679767728BB815 /* AFNetworking.h in Headers */,
-				6726DC3BB3E921F4CDE64344F307AE97 /* AFSecurityPolicy.h in Headers */,
-				BBF044E57FF7AD547D9311E2C2F5C6CB /* AFURLConnectionOperation.h in Headers */,
-				EA073C5F66B294510EC1480E5CFDB72B /* AFURLRequestSerialization.h in Headers */,
-				0FAC06F18A66332B9E7A608A16F64139 /* AFURLResponseSerialization.h in Headers */,
-				1EB4E9C581A9057AA6287DFD19252F3E /* AFURLSessionManager.h in Headers */,
-				3B3B23DE3AC080CA26D825946C9E865E /* UIActivityIndicatorView+AFNetworking.h in Headers */,
-				09D42890AA2342A9A2DB799CAA4BB47F /* UIAlertView+AFNetworking.h in Headers */,
-				42C2EF576819A1FE446EB8D8FD4A1DC3 /* UIButton+AFNetworking.h in Headers */,
-				B6FA722A6DC3122E5E9DDA80D26E0840 /* UIImageView+AFNetworking.h in Headers */,
-				23C0FEA9FFD552E6AD23FD93E02BC616 /* UIKit+AFNetworking.h in Headers */,
-				D2F87DF371A26313363A95C0E5FCD2DC /* UIProgressView+AFNetworking.h in Headers */,
-				49427982060865845312B0DE1F09DAD0 /* UIRefreshControl+AFNetworking.h in Headers */,
-				0E12E71F8A5DF2FA60A095C9D02C7B58 /* UIWebView+AFNetworking.h in Headers */,
+				DF180E88C3E1BF35D93F31300FA4BC65 /* AFHTTPRequestOperation.h in Headers */,
+				3A60E1AA43C09B68A26EF2579E98D725 /* AFHTTPRequestOperationManager.h in Headers */,
+				5DFB5A46A57DE37A4FEAD5E01C998A05 /* AFHTTPSessionManager.h in Headers */,
+				DEA1065191A84F4399632F5DC5E5358B /* AFNetworkActivityIndicatorManager.h in Headers */,
+				96C7E8AA9881FF1B1EC3EED102DF287D /* AFNetworking.h in Headers */,
+				86A345B686DF337CC22C577DFD08F6D6 /* AFNetworkReachabilityManager.h in Headers */,
+				E6E2E57ADE1578E3ED86B1387009F3F8 /* AFSecurityPolicy.h in Headers */,
+				F3B32DA5C47A34B5B2609E632FFA8557 /* AFURLConnectionOperation.h in Headers */,
+				0E4FD75ECCFD6A179057653D9BA711CD /* AFURLRequestSerialization.h in Headers */,
+				136FB41CEB8D026BA1B0E0C514CD90F7 /* AFURLResponseSerialization.h in Headers */,
+				5675E7169016543A92985F6EBC0C1411 /* AFURLSessionManager.h in Headers */,
+				C2D9B8F82D04BDD22AE84A18C08A19C9 /* UIActivityIndicatorView+AFNetworking.h in Headers */,
+				9C5A2CD706CA4688C9F4BC6D63BAB935 /* UIAlertView+AFNetworking.h in Headers */,
+				04A416BF54F937DAE3D19FE50DA72202 /* UIButton+AFNetworking.h in Headers */,
+				58B3A1ECCB7C9B804E6E041C7D5FBFAC /* UIImageView+AFNetworking.h in Headers */,
+				263D08D54C23AAE447AC8A0E6BD02B39 /* UIKit+AFNetworking.h in Headers */,
+				E38C00106AD769DAA4E938F8878B7A7D /* UIProgressView+AFNetworking.h in Headers */,
+				9ECCBA3A8092E326BE8CAD2075001BB2 /* UIRefreshControl+AFNetworking.h in Headers */,
+				C4D34910F4D6673E3B9E99D7A781DC6C /* UIWebView+AFNetworking.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9F30A437FAE36B7A6CFDABC843D83D2C /* Headers */ = {
+		4F551A491BA1B9F8B6AF8C00981A98E4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86E1394D4D919C5190036C48D9F32045 /* UICountingLabel.h in Headers */,
+				CB57C323C1FBAA7AA1530AEA6F7D40BA /* UICountingLabel.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C6AACC1820F19D12376087D268D042BA /* Headers */ = {
+		79CF92D5D8B34FA974822C5BDFC2B209 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BB212FDE02F7BDF64A811E4959B964B /* GRKBarGraphBackingLayer.h in Headers */,
-				2DCACAF984979ADDEA3028B29ADEB902 /* GRKBarGraphLayer.h in Headers */,
-				C350E5805DDDE8B69E2CB317857FC6A8 /* GRKBarGraphView.h in Headers */,
+				71B329BED4556FEA3535C2178FDE97C8 /* GRKBarGraphBackingLayer.h in Headers */,
+				0BC78A0BD69453042722F2A4A796A781 /* GRKBarGraphLayer.h in Headers */,
+				CF51D5F481F2C61913BDB6E6A1745D8E /* GRKBarGraphView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3ACF5B006F01BA309F9948CF8B190137 /* Pods */ = {
+		2602F3D0DAC534568B6AD7EEA0DD1959 /* AFNetworking */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7AD1E5C025D89E070ABFC7E1D8E95E55 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildConfigurationList = A903F971702871B72BEA8510BB8CC55A /* Build configuration list for PBXNativeTarget "AFNetworking" */;
 			buildPhases = (
-				8393C5DC53BA4555085107163186C16B /* Sources */,
-				763C11758CD310BBF1D65CFF26663037 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4C91C414B3AD15CA6E85639397143623 /* PBXTargetDependency */,
-				8AF5EBD3837B50AB0EB1CAFDC21B1BD4 /* PBXTargetDependency */,
-				A2C01BA90EBBB509A7622C125F3B2B05 /* PBXTargetDependency */,
-			);
-			name = Pods;
-			productName = Pods;
-			productReference = FA046E8CCBFCD19D6FE839B3D3B22998 /* libPods.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		58A47B6C58D3C3298022D594F74C1408 /* GRKBarGraphView */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4D4C7D80B340F503FD24E48D7CB3FAB1 /* Build configuration list for PBXNativeTarget "GRKBarGraphView" */;
-			buildPhases = (
-				C0C47961C5F3A7EB02F41476CAF7B19E /* Sources */,
-				E475907CFC75286954072AAFDB40DFE0 /* Frameworks */,
-				C6AACC1820F19D12376087D268D042BA /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = GRKBarGraphView;
-			productName = GRKBarGraphView;
-			productReference = 36D18B44C66F9990F2D144D871E916B6 /* libGRKBarGraphView.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		B084D4D840B849CC9EA68E024D739F5E /* AFNetworking */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D1A28132F536D4D1920F3E23563591D0 /* Build configuration list for PBXNativeTarget "AFNetworking" */;
-			buildPhases = (
-				B638A9874D129747C398D6BA19A582BF /* Sources */,
-				3D72222698500B2F54DA5CF159D9A3FD /* Frameworks */,
-				402A884C2F5C3375E367CE7517BAFE4E /* Headers */,
+				F06802316DD235FBB40BC284273405D6 /* Sources */,
+				04F6492DF0B7A5669B29FD4F7C390666 /* Frameworks */,
+				26E101B486F95D438A3BA112B66FC59A /* Headers */,
 			);
 			buildRules = (
 			);
@@ -530,16 +490,52 @@
 			);
 			name = AFNetworking;
 			productName = AFNetworking;
-			productReference = FF71AA460CE1EB333C34E2F2F1923EEF /* libAFNetworking.a */;
+			productReference = 93E2BDB26961A49B41543C300C811C4B /* libAFNetworking.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		DF6B62D79728EF0641BA03AAAE9C576B /* UICountingLabel */ = {
+		7D9F5E7E68B4D2A2203F88B4EEEDD08D /* Pods */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F9CC693B54635B7676583B6DC5A868D1 /* Build configuration list for PBXNativeTarget "UICountingLabel" */;
+			buildConfigurationList = 0037CF05D559106DE283BC16CD3B48FC /* Build configuration list for PBXNativeTarget "Pods" */;
 			buildPhases = (
-				0BC2968BA1D48FA8FB730E596D23342F /* Sources */,
-				0F28D8BBE5F656C0D678A1ACA8231394 /* Frameworks */,
-				9F30A437FAE36B7A6CFDABC843D83D2C /* Headers */,
+				A520EEB5B5BA8DAA31BCCF7B7AEEDB14 /* Sources */,
+				629754D06C5056D1C93DED9A62B35EB4 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9BB0D4C12C58EE9C8427CB587711D138 /* PBXTargetDependency */,
+				E3209BE0110034705FB97C8C43A69BB0 /* PBXTargetDependency */,
+				D4CC84EA32423E2D4657E2879307FC7F /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = 763F087EBF8BC5DE5CFF461924874979 /* libPods.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		7F4F5B2CB36A5C395B00283EA977E973 /* GRKBarGraphView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42E1285497D94BD707C3CCB68C2694AD /* Build configuration list for PBXNativeTarget "GRKBarGraphView" */;
+			buildPhases = (
+				A42E1F47968CE3781AC8623FAD44AFE7 /* Sources */,
+				F7F45DE3A8979FDB2AEF702A6F2CC9B2 /* Frameworks */,
+				79CF92D5D8B34FA974822C5BDFC2B209 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GRKBarGraphView;
+			productName = GRKBarGraphView;
+			productReference = 22ACE9E117AC45DE0D09B6434F0D324A /* libGRKBarGraphView.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		980FEB7FD82FD1F256B14FFAB6E8352B /* UICountingLabel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 652DFFE2CD2EFC8BD34B598A0F9AAB3E /* Build configuration list for PBXNativeTarget "UICountingLabel" */;
+			buildPhases = (
+				79F3CB3481F4486C8B4FB4974F33937A /* Sources */,
+				13DA127309A71D346F001F01EFF315F2 /* Frameworks */,
+				4F551A491BA1B9F8B6AF8C00981A98E4 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -547,7 +543,7 @@
 			);
 			name = UICountingLabel;
 			productName = UICountingLabel;
-			productReference = C774832F3FFA1ACB3F3FA77662A98DCF /* libUICountingLabel.a */;
+			productReference = E8C9FC44BDD915ABA619CED275E21645 /* libUICountingLabel.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -567,127 +563,131 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
+			productRefGroup = 9BF1B9DCE9C442E3A115B8C17BE62172 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B084D4D840B849CC9EA68E024D739F5E /* AFNetworking */,
-				58A47B6C58D3C3298022D594F74C1408 /* GRKBarGraphView */,
-				3ACF5B006F01BA309F9948CF8B190137 /* Pods */,
-				DF6B62D79728EF0641BA03AAAE9C576B /* UICountingLabel */,
+				2602F3D0DAC534568B6AD7EEA0DD1959 /* AFNetworking */,
+				7F4F5B2CB36A5C395B00283EA977E973 /* GRKBarGraphView */,
+				7D9F5E7E68B4D2A2203F88B4EEEDD08D /* Pods */,
+				980FEB7FD82FD1F256B14FFAB6E8352B /* UICountingLabel */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0BC2968BA1D48FA8FB730E596D23342F /* Sources */ = {
+		79F3CB3481F4486C8B4FB4974F33937A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDA7921514C8A0E8466A7F1A1BB822AB /* UICountingLabel-dummy.m in Sources */,
-				35DC96D7C128235BE147D114F2865656 /* UICountingLabel.m in Sources */,
+				061340DEF07BC22CA664B03043C8B947 /* UICountingLabel-dummy.m in Sources */,
+				09A108638EC1B5D18292996C8D6CC527 /* UICountingLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8393C5DC53BA4555085107163186C16B /* Sources */ = {
+		A42E1F47968CE3781AC8623FAD44AFE7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD9470F5C7B0DB1E34E3319985942EA6 /* Pods-dummy.m in Sources */,
+				CE7E0CA5DEA7C2179D0D5D0D46E17906 /* GRKBarGraphBackingLayer.m in Sources */,
+				D962DD71043B18FC810A006F7A05CA81 /* GRKBarGraphLayer.m in Sources */,
+				64E2F6C4451B570E7D7E8AF9225ACEC8 /* GRKBarGraphView-dummy.m in Sources */,
+				002486FAC0BAA839FA0AEC30608C449E /* GRKBarGraphView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B638A9874D129747C398D6BA19A582BF /* Sources */ = {
+		A520EEB5B5BA8DAA31BCCF7B7AEEDB14 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B86F79197E290C612BEBDC44D709C260 /* AFHTTPRequestOperation.m in Sources */,
-				DDB3C2E90CB41E9730559B2C5F0420C0 /* AFHTTPRequestOperationManager.m in Sources */,
-				CA4758F085C2D11694166B2424767DF9 /* AFHTTPSessionManager.m in Sources */,
-				0636DF68B55743145538D3B390890A83 /* AFNetworkActivityIndicatorManager.m in Sources */,
-				0006BBD11DA1ED37F8A2689D6509ED70 /* AFNetworkReachabilityManager.m in Sources */,
-				57E3BEC87E92B9B653DBC6805464BF30 /* AFNetworking-dummy.m in Sources */,
-				13AA52FF254BD2FBB1B8876D38D09852 /* AFSecurityPolicy.m in Sources */,
-				D7D1CD92D5B5597012E9E1F5472CD434 /* AFURLConnectionOperation.m in Sources */,
-				1B915AAF902BCDF1FB09EC069E495E56 /* AFURLRequestSerialization.m in Sources */,
-				A53C86F2E84866BB7AECB9B242C3F031 /* AFURLResponseSerialization.m in Sources */,
-				FE215674C0D6D58D4F3E71FF92212029 /* AFURLSessionManager.m in Sources */,
-				931AE0ED726F0499E9C97E80E8772EF2 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
-				8DA2198615962C32CABFA0E697177CE5 /* UIAlertView+AFNetworking.m in Sources */,
-				6A0C4A23130E27F7C2A9F5598CCBA940 /* UIButton+AFNetworking.m in Sources */,
-				B3CB214E02719D11F83D0C3F430894FC /* UIImageView+AFNetworking.m in Sources */,
-				BFFA59C85614BA74B219D7E43EF53CE5 /* UIProgressView+AFNetworking.m in Sources */,
-				62A65CDFD727332AEA9CA0838DDFF854 /* UIRefreshControl+AFNetworking.m in Sources */,
-				C31DD436FE2A980AE828D4A0CE2AC37F /* UIWebView+AFNetworking.m in Sources */,
+				8ECDC8579C378C32DF77180991C08E38 /* Pods-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C0C47961C5F3A7EB02F41476CAF7B19E /* Sources */ = {
+		F06802316DD235FBB40BC284273405D6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2C765C37985DBA1FF9D314961E5736A /* GRKBarGraphBackingLayer.m in Sources */,
-				1DF8E4B77E0ABE9F2B4E6EB86C0A2308 /* GRKBarGraphLayer.m in Sources */,
-				7517D48061C9685448E53D5843915067 /* GRKBarGraphView-dummy.m in Sources */,
-				6444B62FA79AA73B2C6DC7224A158A6F /* GRKBarGraphView.m in Sources */,
+				43E2B22CDD34DC9E3AC42491D4E0C7B6 /* AFHTTPRequestOperation.m in Sources */,
+				C59584009765D8E13DBD8C23AFC54E2B /* AFHTTPRequestOperationManager.m in Sources */,
+				FB13976159230EA492199199181C64AC /* AFHTTPSessionManager.m in Sources */,
+				D227CEAB5B8A915D6E65EA6DD91F51D6 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				205F51216177E22CD1AE443745B8A119 /* AFNetworking-dummy.m in Sources */,
+				EAC33FF21DBF26381F425381F18B9965 /* AFNetworkReachabilityManager.m in Sources */,
+				98D00CD3E197EAA6C7450281537CD79C /* AFSecurityPolicy.m in Sources */,
+				23F5B559815FF24B03A7D5D76F19E740 /* AFURLConnectionOperation.m in Sources */,
+				3CE08E61AA9A53953E30A442440E4D8F /* AFURLRequestSerialization.m in Sources */,
+				270D0D7DCF78170B1F481DDF511C07D6 /* AFURLResponseSerialization.m in Sources */,
+				E4213D476018C8B58166DF22722C0463 /* AFURLSessionManager.m in Sources */,
+				AAF2E61730FAA37AF5A03D4571D30E8B /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				D6D9125049BC87CDA2D57020C0153E75 /* UIAlertView+AFNetworking.m in Sources */,
+				D53D346EDA02176B05B3EB0BC617354B /* UIButton+AFNetworking.m in Sources */,
+				9F56B2A232106CEC99383ADACDC85C4A /* UIImageView+AFNetworking.m in Sources */,
+				27AFE404AA450432596D55D44B871E62 /* UIProgressView+AFNetworking.m in Sources */,
+				0659C55D67614156ACE73EF681E30DC7 /* UIRefreshControl+AFNetworking.m in Sources */,
+				3940747A9B6BDD5DC55DFD9ECD8DC300 /* UIWebView+AFNetworking.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4C91C414B3AD15CA6E85639397143623 /* PBXTargetDependency */ = {
+		9BB0D4C12C58EE9C8427CB587711D138 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = AFNetworking;
-			target = B084D4D840B849CC9EA68E024D739F5E /* AFNetworking */;
-			targetProxy = F886B739C0556E54D877CB892C6535FB /* PBXContainerItemProxy */;
+			target = 2602F3D0DAC534568B6AD7EEA0DD1959 /* AFNetworking */;
+			targetProxy = 6731CD8974B4EFB533F321DAD784E234 /* PBXContainerItemProxy */;
 		};
-		8AF5EBD3837B50AB0EB1CAFDC21B1BD4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = GRKBarGraphView;
-			target = 58A47B6C58D3C3298022D594F74C1408 /* GRKBarGraphView */;
-			targetProxy = 532E14FC8005E3E0308336D9B9B01852 /* PBXContainerItemProxy */;
-		};
-		A2C01BA90EBBB509A7622C125F3B2B05 /* PBXTargetDependency */ = {
+		D4CC84EA32423E2D4657E2879307FC7F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = UICountingLabel;
-			target = DF6B62D79728EF0641BA03AAAE9C576B /* UICountingLabel */;
-			targetProxy = B43A1661EAAB7AF71BFDFC946A361B2F /* PBXContainerItemProxy */;
+			target = 980FEB7FD82FD1F256B14FFAB6E8352B /* UICountingLabel */;
+			targetProxy = A02A36FD5E14AB13190FC24ACCEB5A05 /* PBXContainerItemProxy */;
+		};
+		E3209BE0110034705FB97C8C43A69BB0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GRKBarGraphView;
+			target = 7F4F5B2CB36A5C395B00283EA977E973 /* GRKBarGraphView */;
+			targetProxy = 7A90B8B9B797D42CCDC7A0891FE3957E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2D33DEB3C10C8C5AF27DFE358F265689 /* Release */ = {
+		4B5E6C07AE23766530F2C004E4FB3D7A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 839A96F1877D92CA92C2B6002182C8C6 /* UICountingLabel-Private.xcconfig */;
+			baseConfigurationReference = 5C59C4E7A7C5CC037102E6783146734A /* AFNetworking.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/UICountingLabel/UICountingLabel-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
-		308BF6CED9B4A6A6E1784CB1796C26A0 /* Release */ = {
+		4D0EAF7CBEBA206EF24D76072AFBD1F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3FDF8B43BC7D9085FF5942F5F3564DEB /* Pods.release.xcconfig */;
+			baseConfigurationReference = 5C59C4E7A7C5CC037102E6783146734A /* AFNetworking.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
 		511103F7F15A7E8F83B268EA03462CAB /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -723,9 +723,9 @@
 			};
 			name = Release;
 		};
-		5CB9B2307316D6610BF7682A9E7D682C /* Debug */ = {
+		5B5B7740FEF8A3502EB66E28CFC0B66F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 839A96F1877D92CA92C2B6002182C8C6 /* UICountingLabel-Private.xcconfig */;
+			baseConfigurationReference = 1AB44BF68DECD07EA4361F6ACA36B548 /* UICountingLabel.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/UICountingLabel/UICountingLabel-prefix.pch";
@@ -733,34 +733,39 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
-		65C79636E50ABD03A966A1FD05C303F3 /* Debug */ = {
+		60427C60AD774BF279D75F35C584625D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FDE5CEDFBAD6AA24BD54077765903E0E /* AFNetworking-Private.xcconfig */;
+			baseConfigurationReference = 1AB44BF68DECD07EA4361F6ACA36B548 /* UICountingLabel.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/UICountingLabel/UICountingLabel-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Debug;
+			name = Release;
 		};
-		88EDD2FC79120C66BD5D473686370587 /* Debug */ = {
+		73BA24D8C2E788EA4D09554D6CA9A826 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9CA339EEB46D1F164BB1272D1B84BCED /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 4E762F23EC34ED4A6FF3312D84E33A40 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MACH_O_TYPE = staticlib;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -770,6 +775,42 @@
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
+		};
+		80338D91DE0F562762AD5180E7F12725 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9A5349C5FA284C98AE96337A0557B6A /* GRKBarGraphView.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/GRKBarGraphView/GRKBarGraphView-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		997ECCF230E128BD0A794B35810EA265 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9A5349C5FA284C98AE96337A0557B6A /* GRKBarGraphView.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/GRKBarGraphView/GRKBarGraphView-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
 		};
 		AA05AF9C3A14EE0E32F42C6E6D42D34F /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -810,48 +851,17 @@
 			};
 			name = Debug;
 		};
-		AD5A7673AE3A74C61BA2A8D843AD975A /* Debug */ = {
+		DADC8C7783A1EDB40C751ED535114350 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 83B218E428076731AD2A9D7C760462FF /* GRKBarGraphView-Private.xcconfig */;
+			baseConfigurationReference = 98C98CDFB3F20F2925F6CD1F141BB14F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/GRKBarGraphView/GRKBarGraphView-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		B6E2393A8CAD89D0A70894230A3F78D8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FDE5CEDFBAD6AA24BD54077765903E0E /* AFNetworking-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MACH_O_TYPE = staticlib;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		E95CFCD9FDE187F1EB72E9A7229C3C1B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 83B218E428076731AD2A9D7C760462FF /* GRKBarGraphView-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/GRKBarGraphView/GRKBarGraphView-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -861,6 +871,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0037CF05D559106DE283BC16CD3B48FC /* Build configuration list for PBXNativeTarget "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73BA24D8C2E788EA4D09554D6CA9A826 /* Debug */,
+				DADC8C7783A1EDB40C751ED535114350 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -870,38 +889,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4D4C7D80B340F503FD24E48D7CB3FAB1 /* Build configuration list for PBXNativeTarget "GRKBarGraphView" */ = {
+		42E1285497D94BD707C3CCB68C2694AD /* Build configuration list for PBXNativeTarget "GRKBarGraphView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AD5A7673AE3A74C61BA2A8D843AD975A /* Debug */,
-				E95CFCD9FDE187F1EB72E9A7229C3C1B /* Release */,
+				80338D91DE0F562762AD5180E7F12725 /* Debug */,
+				997ECCF230E128BD0A794B35810EA265 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7AD1E5C025D89E070ABFC7E1D8E95E55 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+		652DFFE2CD2EFC8BD34B598A0F9AAB3E /* Build configuration list for PBXNativeTarget "UICountingLabel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				88EDD2FC79120C66BD5D473686370587 /* Debug */,
-				308BF6CED9B4A6A6E1784CB1796C26A0 /* Release */,
+				5B5B7740FEF8A3502EB66E28CFC0B66F /* Debug */,
+				60427C60AD774BF279D75F35C584625D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D1A28132F536D4D1920F3E23563591D0 /* Build configuration list for PBXNativeTarget "AFNetworking" */ = {
+		A903F971702871B72BEA8510BB8CC55A /* Build configuration list for PBXNativeTarget "AFNetworking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				65C79636E50ABD03A966A1FD05C303F3 /* Debug */,
-				B6E2393A8CAD89D0A70894230A3F78D8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F9CC693B54635B7676583B6DC5A868D1 /* Build configuration list for PBXNativeTarget "UICountingLabel" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5CB9B2307316D6610BF7682A9E7D682C /* Debug */,
-				2D33DEB3C10C8C5AF27DFE358F265689 /* Release */,
+				4D0EAF7CBEBA206EF24D76072AFBD1F4 /* Debug */,
+				4B5E6C07AE23766530F2C004E4FB3D7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

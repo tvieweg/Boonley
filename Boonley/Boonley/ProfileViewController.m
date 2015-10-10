@@ -109,14 +109,14 @@
 #pragma mark - button methods
 
 - (void) didPressDone {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void) didPressLogout {
     
     [PFUser logOut];
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 #pragma mark - helper methods
@@ -136,6 +136,7 @@
 - (IBAction)changeProfilePicture:(id)sender {
 
         // Preset an action sheet which enables the user to take a new picture or select and existing one.
+    
         UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel"  destructiveButtonTitle:nil otherButtonTitles:@"Take Photo", @"Choose Existing", nil];
         
         // Show the action sheet
