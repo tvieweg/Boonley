@@ -128,6 +128,9 @@
         
         [Datasource sharedInstance].bankForFunding.selectedAccount = [Datasource sharedInstance].bankForFunding.accounts[indexPath.row];
         
+        [self performSegueWithIdentifier:@"goToThresholdSelectionFromAccounts" sender:self];
+
+        
     }
 }
 
