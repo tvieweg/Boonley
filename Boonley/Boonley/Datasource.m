@@ -51,12 +51,10 @@
     
     if (self) {
         //Placeholder data until we build this out.
-        self.availableDonees = @[@"United Way", @"Salvation Army", @"Feeding America", @"American National Red Cross", @"Heifer International", @"Mayo Clinic"];
+        self.availableDonees = @[@"United Way", @"American National Red Cross", @"Feeding America", @"Salvation Army", @"Heifer International", @"Mayo Clinic"];
+        self.availableDoneeRatings = @[@"93.1", @"80.9", @"73.4", @"92.1", @"65.5", @"85.4"];
         self.accessTokens = [[NSMutableDictionary alloc] initWithObjects:@[@"", @""] forKeys:@[@"trackingToken", @"fundingToken"]];
-        //Get available institution types from Plaid.
-        [Plaid allInstitutionsWithCompletionHandler:^(NSArray *output) {
-            self.availableInstitutions = output;
-        }];
+        
         self.monthlySummaries = [[NSMutableArray alloc] init];
         
     }
@@ -273,6 +271,7 @@
             NSDictionary *recentTransactions = output[@"transactions"];
             //Remove objects from account transactions to make way for new ones.
             [self.currentMonthlySummary.transactions removeAllObjects];
+            [self.currentMonthlySummary.transactionRoundups removeAllObjects]; 
             self.currentMonthlySummary.donation = 0;
             
             for (NSDictionary *transaction in recentTransactions) {
@@ -281,6 +280,22 @@
                     [self roundUpTransaction:transaction];
                 }
             }
+            
+            NSMutableArray *tmpRoundups = [[NSMutableArray alloc] init];
+            NSMutableArray *tmpTransactions = [[NSMutableArray alloc] init];
+            
+            for (NSNumber *roundUp in self.currentMonthlySummary.transactionRoundups) {
+                if (roundUp.doubleValue > 0.01) {
+                    
+                    NSInteger index = [self.currentMonthlySummary.transactionRoundups indexOfObject:roundUp];
+                    [tmpRoundups addObject:roundUp];
+                    [tmpTransactions addObject:self.currentMonthlySummary.transactions[index]];
+                    
+                }
+            }
+            
+            self.currentMonthlySummary.transactionRoundups = tmpRoundups;
+            self.currentMonthlySummary.transactions = tmpTransactions;
             
             [self fakeMonthlySummaries]; 
 
@@ -296,6 +311,8 @@
     double transactionAmount = [transaction[@"amount"] doubleValue]; 
     double roundedUpTransactionAmount = ceil(transactionAmount);
     double roundUpAmount = roundedUpTransactionAmount - transactionAmount;
+    [self.currentMonthlySummary.transactionRoundups addObject:[NSNumber numberWithDouble:roundUpAmount]];
+    
     self.currentMonthlySummary.donation += roundUpAmount;
 
 }

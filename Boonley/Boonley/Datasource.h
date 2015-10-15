@@ -22,7 +22,7 @@ typedef void (^CompletionHandler)();
 @property (nonatomic, strong) UIImage *userProfilePicture;
 
 @property (strong, nonatomic) NSArray *availableDonees;
-@property (strong, nonatomic) NSArray *availableInstitutions;
+@property (strong, nonatomic) NSArray *availableDoneeRatings; 
 
 @property (strong, nonatomic) NSArray *donations; 
 
@@ -51,7 +51,7 @@ typedef void (^CompletionHandler)();
 @property (nonatomic) NSTimeInterval daysTillPayment;
 
 - (void) getUserDataForReturningUser;
-- (void) retrieveBankInfoForReturningUserWithCompletionHandler:(CompletionHandler)handler; 
+- (void) retrieveBankInfoForReturningUserWithCompletionHandler:(CompletionHandler)handler;
 - (void) calculateUserMetrics;
 
 + (instancetype) sharedInstance;

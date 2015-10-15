@@ -9,6 +9,7 @@
 #import "ProfileViewController.h"
 #import "DataSource.h"
 #import <Parse/Parse.h>
+#import "BackgroundLayer.h"
 
 @interface ProfileViewController () <UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
@@ -18,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *displayName;
 
 @property (nonatomic, strong) NSArray *settingsTitles;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 - (IBAction)changeProfilePicture:(id)sender;
 
@@ -41,6 +43,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    CAGradientLayer *bgLayer = [BackgroundLayer greenGradient];
+    bgLayer.frame = self.view.bounds;
+    [self.view.layer insertSublayer:bgLayer atIndex:0];
+
     self.settingsTitles = @[@"Accounts", @"Password", @"Options", @"About"];
     self.navigationItem.title = @"Profile";
     self.navBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width,64)];
@@ -53,6 +60,8 @@
     
     UIColor *navigationBarColor = [UIColor whiteColor];
     UIColor *textColor = [UIColor blackColor];
+    
+    self.tableView.layer.cornerRadius = 10;
     
     self.navBar.barTintColor = navigationBarColor;
     self.navBar.tintColor = textColor;

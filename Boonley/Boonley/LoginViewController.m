@@ -9,9 +9,11 @@
 #import <Parse/Parse.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 #import <ParseTwitterUtils/ParseTwitterUtils.h>
+#import <FBSDKCoreKit/FBSDKGraphRequest.h>
 #import "LoginViewController.h"
 #import "Datasource.h"
 #import "Plaid.h"
+#import "BackgroundLayer.h"
 
 @interface LoginViewController () <UIAlertViewDelegate>
 
@@ -25,6 +27,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *password;
+
+@property (strong, nonatomic) UITapGestureRecognizer *hideKeyboardTapGestureRecognizer;
 
 - (IBAction)facebookButtonPressed:(id)sender;
 - (IBAction)twitterLoginPressed:(id)sender;
@@ -56,7 +60,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [[UINavigationBar appearance] setTintColor:[UIColor darkGrayColor]];
     
+    CAGradientLayer *bgLayer = [BackgroundLayer greenGradient];
+    bgLayer.frame = self.view.bounds;
+    [self.view.layer insertSublayer:bgLayer atIndex:0];
+
     _signupButton.layer.borderColor = [[UIColor whiteColor] CGColor];
     _signupButton.layer.borderWidth = 1.0;
     _signupButton.layer.cornerRadius = 5.0;
@@ -69,6 +78,13 @@
     _activityIndicator.center = self.view.center;
     _activityIndicator.hidesWhenStopped = YES;
     _activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    
+    //Gesture Recognizer
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init];
+    _hideKeyboardTapGestureRecognizer = tap;
+    [_hideKeyboardTapGestureRecognizer addTarget:self action:@selector(tapGestureDidFire:)];
+    [self.view addGestureRecognizer:tap];
+
     
     [self.view addSubview:_activityIndicator];
     
@@ -211,12 +227,50 @@
             NSLog(@"Uh oh. The user cancelled the Facebook login.");
         } else if (user.isNew) {
             NSLog(@"User signed up and logged in through Facebook!");
-            [self proceedToAccountOverviewOrSignup];
+            // After logging in with Facebook
+            
+            //Set username to actual facebook name
+            FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
+                                          initWithGraphPath:@"/me"
+                                          parameters:nil
+                                          HTTPMethod:@"GET"];
+            [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
+                                                  id result,
+                                                  NSError *error) {
+                // Handle the result
+                if (!error) {
+                    NSString *facebookUsername = [result objectForKey:@"name"];
+                    [PFUser currentUser].username = facebookUsername;
+                    [[PFUser currentUser] saveInBackground];
+                    [self proceedToAccountOverviewOrSignup];
+                } else {
+                    [self displayErrorAlertWithTitle:@"Whoops!" andError: error.localizedDescription];
+                }
 
+            }];
+            
         } else {
             NSLog(@"User logged in through Facebook!");
-            [self proceedToAccountOverviewOrSignup];
-
+            
+            //Set username to actual facebook name
+            FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
+                                          initWithGraphPath:@"/me"
+                                          parameters:nil
+                                          HTTPMethod:@"GET"];
+            [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
+                                                  id result,
+                                                  NSError *error) {
+                // Handle the result
+                if (!error) {
+                    NSString *facebookUsername = [result objectForKey:@"name"];
+                    [PFUser currentUser].username = facebookUsername;
+                    [[PFUser currentUser] saveInBackground];
+                    [self proceedToAccountOverviewOrSignup];
+                } else {
+                    [self displayErrorAlertWithTitle:@"Whoops!" andError: error.localizedDescription];
+                }
+                
+            }];
 
         }
     }];
@@ -229,11 +283,17 @@
             return;
         } else if (user.isNew) {
             NSLog(@"User signed up and logged in with Twitter!");
+            NSString *twitterScreenName = [PFTwitterUtils twitter].screenName;
+            [PFUser currentUser].username = twitterScreenName;
+            [[PFUser currentUser] saveInBackground];
             [self proceedToAccountOverviewOrSignup];
 
 
         } else {
             NSLog(@"User logged in with Twitter!");
+            NSString *twitterScreenName = [PFTwitterUtils twitter].screenName;
+            [PFUser currentUser].username = twitterScreenName;
+            [[PFUser currentUser] saveInBackground];
             [self proceedToAccountOverviewOrSignup];
 
         }
@@ -246,9 +306,16 @@
         //user completed signup (data was saved to Parse), continue to account overview.
         [[Datasource sharedInstance] getUserDataForReturningUser];
         [self performSegueWithIdentifier:@"goToAccountOverviewFromLogin" sender:self];
+        
     } else {
         //user did not complete signup. Go back to first signup page. 
         [self performSegueWithIdentifier:@"goFromLoginToDoneeSelection" sender:self];
     }
 }
+
+- (void)tapGestureDidFire:(UITapGestureRecognizer *)sender {
+    [self.view endEditing:YES];
+    
+}
+
 @end

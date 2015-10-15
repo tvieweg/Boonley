@@ -8,13 +8,21 @@
 
 #import "LimitsViewController.h"
 #import "Datasource.h"
+#import <EFCircularSlider/EFCircularSlider.h>
 #import <Parse/Parse.h>
+#import "BackgroundLayer.h"
 
 @interface LimitsViewController () <UITextFieldDelegate>
 
 @property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
-@property (weak, nonatomic) IBOutlet UITextField *minimumDonation;
-@property (weak, nonatomic) IBOutlet UITextField *maximumDonation;
+@property (weak, nonatomic) IBOutlet UILabel *minimumDonation;
+@property (weak, nonatomic) IBOutlet UILabel *maximumDonation;
+@property (weak, nonatomic) IBOutlet UIView *minValueSliderFrame;
+@property (weak, nonatomic) IBOutlet UIView *maxValueSliderFrame;
+@property (strong, nonatomic) EFCircularSlider *minValueCircularSlider;
+@property (strong, nonatomic) EFCircularSlider *maxValueCircularSlider;
+@property (assign, nonatomic) NSInteger minDonationValue;
+@property (assign, nonatomic) NSInteger maxDonationValue;
 
 @end
 
@@ -35,18 +43,65 @@
     // Do any additional setup after loading the view.
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:self action:@selector(didPressNext)];
     
+    CAGradientLayer *bgLayer = [BackgroundLayer greenGradient];
+    bgLayer.frame = self.view.bounds;
+    [self.view.layer insertSublayer:bgLayer atIndex:0];
+    
     _activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
     _activityIndicator.center = self.view.center;
     _activityIndicator.hidesWhenStopped = YES;
     _activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     
     [self.view addSubview:_activityIndicator];
+    
+    _minValueCircularSlider = [[EFCircularSlider alloc] initWithFrame:_minValueSliderFrame.frame];
+    [_minValueCircularSlider addTarget:self action:@selector(minValueChanged:) forControlEvents:UIControlEventValueChanged];
+    _minValueCircularSlider.unfilledColor = [UIColor lightGrayColor];
+    _minValueCircularSlider.filledColor = [UIColor whiteColor];
+    _minValueCircularSlider.lineWidth = 15;
+    _minValueCircularSlider.handleType = EFSemiTransparentWhiteCircle;
+    _minValueCircularSlider.handleColor = _minValueCircularSlider.filledColor;
+    [_minValueCircularSlider setMinimumValue:1];
+    [_minValueCircularSlider setMaximumValue:1000];
+    [_minValueCircularSlider setCurrentValue:5];
+    _minDonationValue = _minValueCircularSlider.currentValue;
+    [self.view addSubview:_minValueCircularSlider];
+    
+    _maxValueCircularSlider = [[EFCircularSlider alloc] initWithFrame:_maxValueSliderFrame.frame];
+    [_maxValueCircularSlider addTarget:self action:@selector(maxValueChanged:) forControlEvents:UIControlEventValueChanged];
+    _maxValueCircularSlider.unfilledColor = [UIColor lightGrayColor];
+    _maxValueCircularSlider.filledColor = [UIColor whiteColor];
+    _maxValueCircularSlider.lineWidth = 15;
+    _maxValueCircularSlider.handleType = EFSemiTransparentWhiteCircle;
+    _maxValueCircularSlider.handleColor = _maxValueCircularSlider.filledColor;
+    [_maxValueCircularSlider setMinimumValue:5];
+    [_maxValueCircularSlider setMaximumValue:1000];
+    [_maxValueCircularSlider setCurrentValue:20];
+    _maxDonationValue = _maxValueCircularSlider.currentValue;
+    [self.view addSubview:_maxValueCircularSlider];
 
     
 }
 
+-(void)viewDidLayoutSubviews {
+    _minValueCircularSlider.frame = _minValueSliderFrame.frame;
+    _maxValueCircularSlider.frame = _maxValueSliderFrame.frame;
+}
+
+-(void)minValueChanged:(EFCircularSlider*)slider {
+    //rounds float value to minimum integer value increment of five.
+    _minDonationValue = (NSInteger)(5 * floor((slider.currentValue/5)+0.5));
+    _minimumDonation.text = [NSString stringWithFormat:@"$%ld", (long)_minDonationValue];
+}
+
+-(void)maxValueChanged:(EFCircularSlider*)slider {
+    //rounds float value to minimum integer value increment of five.
+    _maxDonationValue = (NSInteger)(5 * floor((slider.currentValue/5)+0.5));
+    _maximumDonation.text = [NSString stringWithFormat:@"$%ld", (long)_maxDonationValue];
+}
+
 - (void) didPressNext {
-    if ([self.minimumDonation.text integerValue] >= 5 && [self.maximumDonation.text integerValue] > [self.minimumDonation.text integerValue]) {
+    if (_minDonationValue >= 5 && _maxDonationValue > _minDonationValue) {
         
         //Signup has been COMPLETED!! Save all data to parse.
         [_activityIndicator startAnimating];
@@ -55,10 +110,8 @@
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
             PFUser *currentuser = [PFUser currentUser];
             
-            NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-            numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
-            currentuser[@"minDonation"] = [numberFormatter numberFromString:self.minimumDonation.text];
-            currentuser[@"maxDonation"] = [numberFormatter numberFromString:self.maximumDonation.text];
+            currentuser[@"minDonation"] = [NSNumber numberWithInteger:_minDonationValue];
+            currentuser[@"maxDonation"] = [NSNumber numberWithInteger:_maxDonationValue];
             
             [currentuser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 
@@ -70,7 +123,9 @@
                     [Datasource sharedInstance].minDonation = currentuser[@"minDonation"];
                     [Datasource sharedInstance].maxDonation = currentuser[@"maxDonation"];
                     
+                    [[Datasource sharedInstance] getUserDataForReturningUser];
                     [self performSegueWithIdentifier:@"goToAccountOverviewFromSignup" sender:self];
+                    
                 } else {
                     //show user error
                     NSString *errorString = [error userInfo][@"error"];   // Show the errorString somewhere and let the user try again.

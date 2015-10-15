@@ -10,6 +10,10 @@
 		5D16FF89110A85F5647C0087 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B64AB42E6A67CE43465CF485 /* libPods.a */; };
 		690FC7071B879276003C8D02 /* AccountTransactionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 690FC7061B879276003C8D02 /* AccountTransactionsTableViewController.m */; };
 		69220E741B82823E00AAF426 /* LimitsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69220E731B82823E00AAF426 /* LimitsViewController.m */; };
+		7B00CBAF1BC9CDDB003908DD /* BankAccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B00CBAE1BC9CDDB003908DD /* BankAccountTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		7B4F36491BCB2766008AF4A9 /* ChangeBankAccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4F36481BCB2766008AF4A9 /* ChangeBankAccountTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		7B4F364C1BCCB0D2008AF4A9 /* BackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4F364B1BCCB0D2008AF4A9 /* BackgroundLayer.m */; settings = {ASSET_TAGS = (); }; };
+		7B5B1B511BCAE4F400EBD84E /* RoundupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5B1B501BCAE4F400EBD84E /* RoundupTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		7BE930901BA8C6BC00EEEB14 /* ChangeAccountTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE9308F1BA8C6BC00EEEB14 /* ChangeAccountTableViewController.m */; };
 		7BE930931BA8C74C00EEEB14 /* ChangeBankLinkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE930921BA8C74C00EEEB14 /* ChangeBankLinkViewController.m */; };
 		7BE930961BA8D36B00EEEB14 /* ChangeLimitsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE930951BA8D36B00EEEB14 /* ChangeLimitsViewController.m */; };
@@ -72,6 +76,14 @@
 		69220E731B82823E00AAF426 /* LimitsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LimitsViewController.m; sourceTree = "<group>"; };
 		6D0325B1533F6AE5CDF94CF4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		715C5048D9C9D5650340C748 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		7B00CBAD1BC9CDDB003908DD /* BankAccountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankAccountTableViewCell.h; sourceTree = "<group>"; };
+		7B00CBAE1BC9CDDB003908DD /* BankAccountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankAccountTableViewCell.m; sourceTree = "<group>"; };
+		7B4F36471BCB2766008AF4A9 /* ChangeBankAccountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeBankAccountTableViewCell.h; sourceTree = "<group>"; };
+		7B4F36481BCB2766008AF4A9 /* ChangeBankAccountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeBankAccountTableViewCell.m; sourceTree = "<group>"; };
+		7B4F364A1BCCB0D2008AF4A9 /* BackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundLayer.h; sourceTree = "<group>"; };
+		7B4F364B1BCCB0D2008AF4A9 /* BackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundLayer.m; sourceTree = "<group>"; };
+		7B5B1B4F1BCAE4F400EBD84E /* RoundupTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundupTableViewCell.h; sourceTree = "<group>"; };
+		7B5B1B501BCAE4F400EBD84E /* RoundupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundupTableViewCell.m; sourceTree = "<group>"; };
 		7BE9308E1BA8C6BC00EEEB14 /* ChangeAccountTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeAccountTableViewController.h; sourceTree = "<group>"; };
 		7BE9308F1BA8C6BC00EEEB14 /* ChangeAccountTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeAccountTableViewController.m; sourceTree = "<group>"; };
 		7BE930911BA8C74C00EEEB14 /* ChangeBankLinkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeBankLinkViewController.h; sourceTree = "<group>"; };
@@ -270,6 +282,8 @@
 			children = (
 				B1F57ACF1B819AA700A03B45 /* BankAccountTableViewController.h */,
 				B1F57AD01B819AA700A03B45 /* BankAccountTableViewController.m */,
+				7B00CBAD1BC9CDDB003908DD /* BankAccountTableViewCell.h */,
+				7B00CBAE1BC9CDDB003908DD /* BankAccountTableViewCell.m */,
 				B1DFB5481B7E881B00901DC5 /* DoneeSelectionTableViewController.h */,
 				B1DFB5491B7E881B00901DC5 /* DoneeSelectionTableViewController.m */,
 				B13518E51B7D9EC5000C6D19 /* LoginViewController.h */,
@@ -292,6 +306,8 @@
 				B103F6121B8501D500696FAC /* AccountSummaryViewController.m */,
 				690FC7051B879276003C8D02 /* AccountTransactionsTableViewController.h */,
 				690FC7061B879276003C8D02 /* AccountTransactionsTableViewController.m */,
+				7B5B1B4F1BCAE4F400EBD84E /* RoundupTableViewCell.h */,
+				7B5B1B501BCAE4F400EBD84E /* RoundupTableViewCell.m */,
 				B10D3DE81B8E53D4007D2DD7 /* AccountTotalsOverviewViewController.h */,
 				B10D3DE91B8E53D4007D2DD7 /* AccountTotalsOverviewViewController.m */,
 				B162932A1B8F598A009C353A /* ProfileViewController.h */,
@@ -300,6 +316,8 @@
 				B1D28F731BA7BA900051E38D /* BankAccountSettingsViewController.m */,
 				7BE9308E1BA8C6BC00EEEB14 /* ChangeAccountTableViewController.h */,
 				7BE9308F1BA8C6BC00EEEB14 /* ChangeAccountTableViewController.m */,
+				7B4F36471BCB2766008AF4A9 /* ChangeBankAccountTableViewCell.h */,
+				7B4F36481BCB2766008AF4A9 /* ChangeBankAccountTableViewCell.m */,
 				7BE930911BA8C74C00EEEB14 /* ChangeBankLinkViewController.h */,
 				7BE930921BA8C74C00EEEB14 /* ChangeBankLinkViewController.m */,
 				7BE930941BA8D36B00EEEB14 /* ChangeLimitsViewController.h */,
@@ -340,6 +358,8 @@
 			isa = PBXGroup;
 			children = (
 				B1258A861B7AFADB0097D322 /* Main.storyboard */,
+				7B4F364A1BCCB0D2008AF4A9 /* BackgroundLayer.h */,
+				7B4F364B1BCCB0D2008AF4A9 /* BackgroundLayer.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -519,6 +539,7 @@
 				B103F6131B8501D500696FAC /* AccountSummaryViewController.m in Sources */,
 				B162932C1B8F598A009C353A /* ProfileViewController.m in Sources */,
 				B10D3DEA1B8E53D4007D2DD7 /* AccountTotalsOverviewViewController.m in Sources */,
+				7B00CBAF1BC9CDDB003908DD /* BankAccountTableViewCell.m in Sources */,
 				B1DFB54A1B7E881B00901DC5 /* DoneeSelectionTableViewController.m in Sources */,
 				B1D28F741BA7BA900051E38D /* BankAccountSettingsViewController.m in Sources */,
 				690FC7071B879276003C8D02 /* AccountTransactionsTableViewController.m in Sources */,
@@ -527,9 +548,12 @@
 				7BE930961BA8D36B00EEEB14 /* ChangeLimitsViewController.m in Sources */,
 				B1258A821B7AFADB0097D322 /* AppDelegate.m in Sources */,
 				B1F57AD11B819AA700A03B45 /* BankAccountTableViewController.m in Sources */,
+				7B5B1B511BCAE4F400EBD84E /* RoundupTableViewCell.m in Sources */,
 				B1F57AD41B81A4A600A03B45 /* Bank.m in Sources */,
 				B15B9F4A1B7BCA11002D7A72 /* Datasource.m in Sources */,
 				B1258A7F1B7AFADB0097D322 /* main.m in Sources */,
+				7B4F364C1BCCB0D2008AF4A9 /* BackgroundLayer.m in Sources */,
+				7B4F36491BCB2766008AF4A9 /* ChangeBankAccountTableViewCell.m in Sources */,
 				7BE930991BA8DBFC00EEEB14 /* ChangePasswordViewController.m in Sources */,
 				7BE930901BA8C6BC00EEEB14 /* ChangeAccountTableViewController.m in Sources */,
 				B13518E71B7D9EC5000C6D19 /* LoginViewController.m in Sources */,
@@ -663,6 +687,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -672,6 +698,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.trevorvieweg.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -681,6 +708,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -690,6 +719,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.trevorvieweg.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

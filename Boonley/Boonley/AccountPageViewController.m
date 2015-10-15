@@ -9,6 +9,7 @@
 #import "AccountPageViewController.h"
 #import "Datasource.h"
 #import <Parse/Parse.h>
+#import "BackgroundLayer.h"
 
 @interface AccountPageViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
@@ -48,6 +49,10 @@
     _activityIndicator.center = self.view.center;
     _activityIndicator.hidesWhenStopped = YES;
     _activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    
+    CAGradientLayer *bgLayer = [BackgroundLayer greenGradient];
+    bgLayer.frame = self.view.bounds;
+    [self.view.layer insertSublayer:bgLayer atIndex:0];
     
     [self.view addSubview:_activityIndicator];
     

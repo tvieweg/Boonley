@@ -8,6 +8,7 @@
 
 #import "BankAccountSettingsViewController.h"
 #import "Datasource.h"
+#import "BackgroundLayer.h"
 
 @interface BankAccountSettingsViewController ()
 
@@ -27,6 +28,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    CAGradientLayer *bgLayer = [BackgroundLayer greenGradient];
+    bgLayer.frame = self.view.bounds;
+    [self.view.layer insertSublayer:bgLayer atIndex:0];
     
     self.navigationItem.title = @"Account Settings";
     self.navBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width,64)];

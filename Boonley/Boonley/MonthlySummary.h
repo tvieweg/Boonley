@@ -11,6 +11,7 @@
 @interface MonthlySummary : NSObject
 
 @property (nonatomic, strong) NSMutableArray *transactions;
+@property (nonatomic, strong) NSMutableArray *transactionRoundups; 
 @property (nonatomic) double donation;
 @property (nonatomic, strong) NSDate *monthCreated;
 

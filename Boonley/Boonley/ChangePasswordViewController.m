@@ -9,6 +9,8 @@
 #import "ChangePasswordViewController.h"
 #import "Datasource.h"
 #import <Parse/Parse.h>
+#import <ZFCheckbox/ZFCheckbox.h>
+#import "BackgroundLayer.h"
 
 @interface ChangePasswordViewController ()
 
@@ -33,6 +35,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(didPressDone)];
+    
+    CAGradientLayer *bgLayer = [BackgroundLayer greenGradient];
+    bgLayer.frame = self.view.bounds;
+    [self.view.layer insertSublayer:bgLayer atIndex:0];
     
     _activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
     _activityIndicator.center = self.view.center;
@@ -60,7 +66,25 @@
                 [[UIApplication sharedApplication] endIgnoringInteractionEvents];
                 
                 if (succeeded) {
-                    [self.navigationController popViewControllerAnimated:YES];
+                    
+                    ZFCheckbox *checkbox = [[ZFCheckbox alloc] initWithFrame:CGRectMake(0, 0, 85, 85)];
+                    checkbox.center = self.view.center;
+                    checkbox.backgroundColor = [UIColor clearColor];
+                    [self.view addSubview:checkbox];
+                    [checkbox setSelected:NO animated:NO];
+                    checkbox.animateDuration = 0.5;
+                    
+                    double delayInSeconds = 0.05;
+                    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+                    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                        [checkbox setSelected:YES animated:YES];
+                    });
+                    
+                    delayInSeconds = 1.0;
+                    popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+                    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                        [self.navigationController popViewControllerAnimated:YES];
+                    });
                     
                 } else {
                     //show user error

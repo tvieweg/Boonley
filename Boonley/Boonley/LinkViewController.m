@@ -10,6 +10,7 @@
 #import "Datasource.h"
 #import "Plaid.h"
 #import <Parse/Parse.h>
+#import "BackgroundLayer.h"
 
 @interface LinkViewController()
 
@@ -29,6 +30,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    CAGradientLayer *bgLayer = [BackgroundLayer greenGradient];
+    bgLayer.frame = self.view.bounds;
+    [self.view.layer insertSublayer:bgLayer atIndex:0];
+    
+    _webview.opaque = NO;
+    _webview.backgroundColor = [UIColor clearColor];
     
     //Load webview
     [_webview setDelegate: self];

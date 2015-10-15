@@ -10,6 +10,7 @@
 #import "BankAccountSettingsViewController.h"
 #import "Datasource.h"
 #import <Parse/Parse.h>
+#import <ZFCheckbox/ZFCheckbox.h>
 
 @interface ChangeAccountTableViewController ()
 
@@ -33,6 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -75,7 +77,25 @@
             
             if (succeeded) {
                 
-                [self popToAccountSettingsViewController];
+                ZFCheckbox *checkbox = [[ZFCheckbox alloc] initWithFrame:CGRectMake(0, 0, 85, 85)];
+                checkbox.center = self.view.center;
+                checkbox.backgroundColor = [UIColor clearColor];
+                checkbox.lineColor = [UIColor grayColor]; 
+                [self.view addSubview:checkbox];
+                [checkbox setSelected:NO animated:NO];
+                checkbox.animateDuration = 0.5;
+                
+                double delayInSeconds = 0.05;
+                dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+                dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                    [checkbox setSelected:YES animated:YES];
+                });
+                
+                delayInSeconds = 1.0;
+                popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+                dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                    [self popToAccountSettingsViewController];
+                });
             } else {
                 //show user error
                 NSString *errorString = [error userInfo][@"error"];   // Show the errorString somewhere and let the user try again.

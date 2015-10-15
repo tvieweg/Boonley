@@ -10,6 +10,7 @@
 #import "Datasource.h"
 #import "Plaid.h"
 #import <Parse/Parse.h>
+#import "BackgroundLayer.h"
 
 @interface ChangeBankLinkViewController ()
 
@@ -19,7 +20,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    CAGradientLayer *bgLayer = [BackgroundLayer greenGradient];
+    bgLayer.frame = self.view.bounds;
+    [self.view.layer insertSublayer:bgLayer atIndex:0];
+
 }
 
 - (void)saveAccessTokensToParse {

@@ -9,6 +9,7 @@
 #import "BankAccountTableViewController.h"
 #import "Datasource.h"
 #import <Parse/Parse.h>
+#import "BankAccountTableViewCell.h"
 
 @interface BankAccountTableViewController () <UIAlertViewDelegate>
 
@@ -35,7 +36,7 @@
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 120.0;
+    return 80.0;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -43,15 +44,15 @@
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 80)];
     /* Create custom view to display section header... */
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, tableView.frame.size.width, 40)];
-    label.font = [UIFont boldSystemFontOfSize:20];
+    label.font = [UIFont systemFontOfSize:20 weight:UIFontWeightLight];
     label.textColor = [UIColor whiteColor];
     
     /* Section header is in 0th index... */
     if ([Datasource sharedInstance].showTrackingAccountController) {
-        label.text = @"Select an account to track expenses";
+        label.text = @"Select an account for tracking";
 
     } else {
-        label.text = @"Select an account to fund donations";
+        label.text = @"Select an account for funding";
     }
     
     [headerView addSubview:label];
@@ -62,7 +63,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"bankAccountCell" forIndexPath:indexPath];
+    BankAccountTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"bankAccountCell" forIndexPath:indexPath];
     
     NSDictionary *accountInfo;
     
@@ -72,8 +73,8 @@
         accountInfo = [Datasource sharedInstance].bankForFunding.accounts[indexPath.row];
     }
     
-    cell.textLabel.text = accountInfo[@"meta"][@"name"];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Available: $%@", accountInfo[@"balance"][@"available"]];
+    cell.accountName.text = [[NSString stringWithFormat:@"%@ (...%@)", accountInfo[@"meta"][@"name"], accountInfo[@"meta"][@"number"]] uppercaseString];
+    cell.balance.text = [NSString stringWithFormat:@"$%@", accountInfo[@"balance"][@"available"]];
     
     return cell;
 }

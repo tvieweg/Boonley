@@ -15,6 +15,7 @@
     
     if (self) {
         _transactions = [[NSMutableArray alloc] init];
+        _transactionRoundups = [[NSMutableArray alloc] init]; 
         _monthCreated = [NSDate date];
     }
     
