@@ -8,6 +8,7 @@
 
 #import "AccountTotalsOverviewViewController.h"
 #import "Datasource.h"
+#import "BackgroundLayer.h"
 
 @interface AccountTotalsOverviewViewController ()
 
@@ -18,6 +19,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    CAGradientLayer *bgLayer = [BackgroundLayer greenGradient];
+    bgLayer.frame = self.view.bounds;
+    [self.view.layer insertSublayer:bgLayer atIndex:0];
+
     [[Datasource sharedInstance] calculateUserMetrics];
     NSArray *countingLabels = @[_averageDonationCountingLabel, _yearlyTotalDonationsCountingLabel, _allTimeTotalDonationsCountingLabel];
     
@@ -25,7 +31,7 @@
         countingLabel.format = @"$%d";
         countingLabel.method = UILabelCountingMethodLinear;
         countingLabel.textColor = [UIColor whiteColor];
-        countingLabel.font = [UIFont systemFontOfSize:36];
+        countingLabel.font = [UIFont systemFontOfSize:36 weight:UIFontWeightLight];
         countingLabel.textAlignment = NSTextAlignmentCenter;
         countingLabel.animationDuration = 2.0; 
     }

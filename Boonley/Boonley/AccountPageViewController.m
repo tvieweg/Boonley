@@ -9,6 +9,7 @@
 #import "AccountPageViewController.h"
 #import "Datasource.h"
 #import <Parse/Parse.h>
+#import "BackgroundLayer.h"
 
 @interface AccountPageViewController () <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
 
@@ -21,21 +22,44 @@
 
 - (void) displayErrorAlertWithTitle:(NSString *)title andError:(NSString *)errorString {
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-                                                    message:errorString
-                                                   delegate:self
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles: nil];
-    [alert show];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:errorString preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    
+    [alert addAction:cancelAction];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
+
 -(void)viewWillAppear:(BOOL)animated {
-    
     //Check if user is logged in and if not, return to login screen.
     if (![PFUser currentUser]) {
         [self.navigationController popToRootViewControllerAnimated:YES];
     } else {
+        [_activityIndicator startAnimating];
+        [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
         
+        [[Datasource sharedInstance] retrieveBankInfoForReturningUserWithCompletionHandler:^{
+            
+            [_activityIndicator stopAnimating];
+            [[UIApplication sharedApplication] endIgnoringInteractionEvents];
+            
+            //set delegate and datasource, and instantiate view controllers.
+            self.delegate = self;
+            self.dataSource = self;
+            
+            UIViewController *p1 = [self.storyboard instantiateViewControllerWithIdentifier:@"accountView1"];
+            UIViewController *p2 = [self.storyboard instantiateViewControllerWithIdentifier:@"accountView2"];
+            UIViewController *p3 = [self.storyboard instantiateViewControllerWithIdentifier:@"accountView3"];
+            
+            self.accountViewControllers = @[p1,p2, p3];
+            
+            [self setViewControllers:@[p1]
+                           direction:UIPageViewControllerNavigationDirectionForward
+                            animated:NO
+                          completion:nil];
+        }];
     }
 
 }
@@ -49,6 +73,10 @@
     _activityIndicator.hidesWhenStopped = YES;
     _activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     
+    CAGradientLayer *bgLayer = [BackgroundLayer greenGradient];
+    bgLayer.frame = self.view.bounds;
+    [self.view.layer insertSublayer:bgLayer atIndex:0];
+    
     [self.view addSubview:_activityIndicator];
     
     //set page controller background
@@ -59,29 +87,6 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"settings"] style:UIBarButtonItemStylePlain target:self action:@selector(didPressSettingButton)];
     self.navigationItem.hidesBackButton = YES;
     
-    [_activityIndicator startAnimating];
-    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
-    
-    [[Datasource sharedInstance] retrieveBankInfoForReturningUserWithCompletionHandler:^{
-        
-        [_activityIndicator stopAnimating];
-        [[UIApplication sharedApplication] endIgnoringInteractionEvents];
-        
-        //set delegate and datasource, and instantiate view controllers.
-        self.delegate = self;
-        self.dataSource = self;
-        
-        UIViewController *p1 = [self.storyboard instantiateViewControllerWithIdentifier:@"accountView1"];
-        UIViewController *p2 = [self.storyboard instantiateViewControllerWithIdentifier:@"accountView2"];
-        UIViewController *p3 = [self.storyboard instantiateViewControllerWithIdentifier:@"accountView3"];
-        
-        self.accountViewControllers = @[p1,p2, p3];
-        
-        [self setViewControllers:@[p1]
-                       direction:UIPageViewControllerNavigationDirectionForward
-                        animated:NO
-                      completion:nil];
-    }];
 }
 
 -(UIViewController *)viewControllerAtIndex:(NSUInteger)index

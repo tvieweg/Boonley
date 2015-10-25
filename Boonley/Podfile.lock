@@ -20,17 +20,23 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - EFCircularSlider (0.2.0)
   - GRKBarGraphView (1.1.2)
   - UICountingLabel (1.2.0)
+  - ZFCheckbox (0.1)
 
 DEPENDENCIES:
   - AFNetworking
+  - EFCircularSlider
   - GRKBarGraphView
   - UICountingLabel
+  - ZFCheckbox
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  EFCircularSlider: 3af1dd6f86eb3eeeeaab0345ef3d6d1c2fc93d17
   GRKBarGraphView: 7ead7c4cebcc34e3e1e249845d101cc4c4adb468
   UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
+  ZFCheckbox: c3429f83d64f3ba566d9aa8fd45245baf9733e54
 
 COCOAPODS: 0.39.0

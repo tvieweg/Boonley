@@ -9,6 +9,9 @@
 #import "ProfileViewController.h"
 #import "DataSource.h"
 #import <Parse/Parse.h>
+#import "BackgroundLayer.h"
+
+const float MAX_IMAGE_SIZE = 10485760;
 
 @interface ProfileViewController () <UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
@@ -18,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *displayName;
 
 @property (nonatomic, strong) NSArray *settingsTitles;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 - (IBAction)changeProfilePicture:(id)sender;
 
@@ -41,7 +45,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.settingsTitles = @[@"Accounts", @"Password", @"Options", @"About"];
+    
+    CAGradientLayer *bgLayer = [BackgroundLayer greenGradient];
+    bgLayer.frame = self.view.bounds;
+    [self.view.layer insertSublayer:bgLayer atIndex:0];
+
+    self.settingsTitles = @[@"Accounts", @"Password", @"Limits", @"Charity", @"About"];
     self.navigationItem.title = @"Profile";
     self.navBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width,64)];
     [self.view addSubview:self.navBar];
@@ -53,6 +62,8 @@
     
     UIColor *navigationBarColor = [UIColor whiteColor];
     UIColor *textColor = [UIColor blackColor];
+    
+    self.tableView.layer.cornerRadius = 10;
     
     self.navBar.barTintColor = navigationBarColor;
     self.navBar.tintColor = textColor;
@@ -93,9 +104,13 @@
             [self performSegueWithIdentifier:@"goToProfileAccountSettings" sender:self];
             break;
             
-        case PVSettingRowOptions:
+        case PVSettingRowLimits:
             [self performSegueWithIdentifier:@"goToProfileOptions" sender:self];
             break;
+            
+        case PVSettingRowCharity:
+            [self performSegueWithIdentifier:@"goToCharitySettings" sender:self];
+            break; 
             
         case PVSettingRowPassword:
             [self performSegueWithIdentifier:@"goToPasswordPage" sender:self];
@@ -123,25 +138,66 @@
 
 - (void) displayErrorAlertWithTitle:(NSString *)title andError:(NSString *)errorString {
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-                                                    message:errorString
-                                                   delegate:self
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles: nil];
-    [alert show];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:errorString preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    
+    [alert addAction:cancelAction];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
+
+- (UIImage *)imageWithImage:(UIImage *)image convertToSize:(CGSize)size {
+    UIGraphicsBeginImageContext(size);
+    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    UIImage *destImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return destImage;
+}
+
 
 #pragma mark - profile picture changes
 
 - (IBAction)changeProfilePicture:(id)sender {
 
         // Preset an action sheet which enables the user to take a new picture or select and existing one.
+    UIAlertController *sheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
-        UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel"  destructiveButtonTitle:nil otherButtonTitles:@"Take Photo", @"Choose Existing", nil];
-        
-        // Show the action sheet
-        [sheet showFromToolbar:self.navigationController.toolbar];
-    }
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *takePhoto = [UIAlertAction actionWithTitle:@"Take Photo" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+        if (imagePicker) {
+            // set the delegate and source type, and present the image picker
+            imagePicker.delegate = self;
+            imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            [self presentViewController:imagePicker animated:YES completion:nil];
+        }
+        else {
+            // Problem with camera, alert user
+            [self displayErrorAlertWithTitle:@"No Camera" andError:@"Please use a camera enabled device"];
+        }
+    }];
+    
+    UIAlertAction *chooseExisting = [UIAlertAction actionWithTitle:@"Choose Existing" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+        if (imagePicker) {
+            // set the delegate and source type, and present the image picker
+            imagePicker.delegate = self;
+            imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            [self presentViewController:imagePicker animated:YES completion:nil];              }
+        else {
+            // Problem with camera, alert user
+            [self displayErrorAlertWithTitle:@"No Camera" andError:@"Please use a camera enabled device"];
+        }
+    }];
+    
+    [sheet addAction:cancel];
+    [sheet addAction:takePhoto];
+    [sheet addAction:chooseExisting];
+    
+    [self presentViewController:sheet animated:YES completion:nil];
+
+}
     
 #pragma mark - UIActionSheetDelegate methods
 
@@ -185,12 +241,22 @@
     [_activityIndicator startAnimating];
     [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
 
+    UIImage *newProfilePicture = (UIImage *)[info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    NSData *imageData = UIImagePNGRepresentation(newProfilePicture);
+    
+    //reduce the size of the image until it's small enough to use with Parse
+    while (imageData.length > MAX_IMAGE_SIZE) {
+        //Add resizing options
+        UIImage *resizedImage = [self imageWithImage:newProfilePicture convertToSize:CGSizeMake(newProfilePicture.size.width/2, newProfilePicture.size.height/2)];
+        imageData = UIImagePNGRepresentation(resizedImage);
+        
+    }
+
     // Don't block the UI when writing the image to documents
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         // We only handle a still image
-        UIImage *newProfilePicture = (UIImage *)[info objectForKey:UIImagePickerControllerOriginalImage];
         
-        NSData *imageData = UIImagePNGRepresentation(newProfilePicture);
         PFFile *imageFile = [PFFile fileWithName:@"profile.png" data:imageData];
         
         PFUser *currentUser = [PFUser currentUser];
@@ -212,5 +278,7 @@
         }];
     });
 }
+
+
 
 @end

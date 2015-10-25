@@ -8,6 +8,7 @@
 
 #import "AccountSummaryViewController.h"
 #import "Datasource.h"
+#import "BackgroundLayer.h"
 
 @interface AccountSummaryViewController ()
 
@@ -19,6 +20,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    CAGradientLayer *bgLayer = [BackgroundLayer greenGradient];
+    bgLayer.frame = self.view.bounds;
+    [self.view.layer insertSublayer:bgLayer atIndex:0];
     
     _activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
     _activityIndicator.center = self.view.center;
@@ -38,13 +43,13 @@
     self.monthlyTransactionCountingLabel.format = @"%d";
     self.monthlyTransactionCountingLabel.method = UILabelCountingMethodLinear;
     self.monthlyTransactionCountingLabel.textColor = [UIColor whiteColor];
-    self.monthlyTransactionCountingLabel.font = [UIFont systemFontOfSize:36];
+    self.monthlyTransactionCountingLabel.font = [UIFont systemFontOfSize:36 weight:UIFontWeightLight];
     self.monthlyTransactionCountingLabel.textAlignment = NSTextAlignmentCenter;
     
     self.monthlyDonationCountingLabel.format = @"$%d";
     self.monthlyDonationCountingLabel.method = UILabelCountingMethodLinear;
     self.monthlyDonationCountingLabel.textColor = [UIColor whiteColor];
-    self.monthlyDonationCountingLabel.font = [UIFont systemFontOfSize:36];
+    self.monthlyDonationCountingLabel.font = [UIFont systemFontOfSize:36 weight:UIFontWeightLight];
     self.monthlyDonationCountingLabel.textAlignment = NSTextAlignmentCenter;
     
     self.nextDonationDue.text = [NSString stringWithFormat: @"Next donation in %d days!", (int)[Datasource sharedInstance].daysTillPayment];
@@ -54,7 +59,6 @@
 }
 
 - (void) viewWillAppear:(BOOL)animated {
-    
         NSInteger numberOfMonthlyTransactions = [Datasource sharedInstance].currentMonthlySummary.transactions.count;
         
         [self.monthlyDonationCountingLabel countFrom:0 to:[Datasource sharedInstance].currentMonthlySummary.donation];
