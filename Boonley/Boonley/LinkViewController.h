@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LinkViewController : UIViewController<UIWebViewDelegate>
+@interface LinkViewController : UIViewController <UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webview;
 

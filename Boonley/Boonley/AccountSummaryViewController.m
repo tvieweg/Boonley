@@ -59,7 +59,6 @@
 }
 
 - (void) viewWillAppear:(BOOL)animated {
-    
         NSInteger numberOfMonthlyTransactions = [Datasource sharedInstance].currentMonthlySummary.transactions.count;
         
         [self.monthlyDonationCountingLabel countFrom:0 to:[Datasource sharedInstance].currentMonthlySummary.donation];

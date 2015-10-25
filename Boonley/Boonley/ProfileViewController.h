@@ -11,7 +11,8 @@
 typedef NS_ENUM(NSUInteger, PVSettingRow) {
     PVSettingRowAccounts = 0,
     PVSettingRowPassword,
-    PVSettingRowOptions,
+    PVSettingRowLimits,
+    PVSettingRowCharity,
     PVSettingRowAbout
 };
 

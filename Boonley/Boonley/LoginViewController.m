@@ -27,6 +27,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *password;
+@property (weak, nonatomic) IBOutlet UITextField *email;
 
 @property (strong, nonatomic) UITapGestureRecognizer *hideKeyboardTapGestureRecognizer;
 
@@ -39,6 +40,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginToggleButton;
 - (IBAction)toggleLoginOrSignup:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *resetPasswordButton;
+- (IBAction)resetPassword:(id)sender;
 @end
 
 @implementation LoginViewController
@@ -46,6 +49,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
     _password.text = @"";
+    _email.text = @""; 
 
 }
 - (void)viewDidAppear:(BOOL)animated {
@@ -72,7 +76,12 @@
     
     _loginToggleButton.layer.borderColor = [[UIColor whiteColor] CGColor];
     _loginToggleButton.layer.borderWidth = 1.0;
-    _loginToggleButton.layer.cornerRadius = 5.0; 
+    _loginToggleButton.layer.cornerRadius = 5.0;
+    
+    _resetPasswordButton.layer.borderColor = [[UIColor whiteColor] CGColor];
+    _resetPasswordButton.layer.borderWidth = 1.0;
+    _resetPasswordButton.layer.cornerRadius = 5.0;
+
 
     _activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
     _activityIndicator.center = self.view.center;
@@ -102,12 +111,13 @@
 
 - (void) displayErrorAlertWithTitle:(NSString *)title andError:(NSString *)errorString {
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-                                             message:errorString
-                                             delegate:self
-                                             cancelButtonTitle:@"OK"
-                                             otherButtonTitles: nil];
-    [alert show];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:errorString preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    
+    [alert addAction:cancelAction];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - IBAction methods 
@@ -117,12 +127,14 @@
     
     if (_signupActive) {
         _signupActive = NO;
+        _email.hidden = YES;
         _instructions.text = @"Log In:";
         [_signupButton setTitle:@"Log in" forState:UIControlStateNormal];
         _loginToggleLabel.text = @"First time here?";
         [_loginToggleButton setTitle:@"Sign up" forState:UIControlStateNormal];
     } else {
         _signupActive = YES;
+        _email.hidden = NO;
         _instructions.text = @"Sign up:";
         [_signupButton setTitle:@"Sign up!" forState:UIControlStateNormal];
         _loginToggleLabel.text = @"Already registered?";
@@ -133,6 +145,12 @@
 
 #pragma mark - signup and login
 
+- (BOOL) validateEmail: (NSString *) candidate {
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:candidate];
+}
+
 - (IBAction)signUp:(id)sender {
     
     NSString *error = @"";
@@ -141,7 +159,7 @@
     
     if ([_username.text isEqualToString:@""] || [_password.text isEqualToString:@""]) {
         
-        error = @"Please enter a username and password";
+        error = @"Please enter a username, password, and email";
     
     }
     
@@ -150,6 +168,8 @@
             error = @"Username must be at least 4 characters long";
         } else if ([_password.text length] < 8) {
             error = @"Password must be at least 8 characters long";
+        } else if ([self validateEmail:_email.text] != 1) {
+            error = @"Invalid or missing email. Please check your email format.";
         }
     }
     
@@ -169,6 +189,7 @@
             PFUser *user = [[PFUser alloc] init];
             user.username = _username.text;
             user.password = _password.text;
+            user.email = _email.text;
             
             //begin signup
             [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -182,15 +203,19 @@
                     NSLog(@"Signed up!");
                     
                     [self performSegueWithIdentifier:@"goFromLoginToDoneeSelection" sender:self];
-
-                    //[self performSegueWithIdentifier:@"goToConversationView" sender:self];
-                    //TODO Go to next bank signup sheet.
                     
                 } else {
                     //show user error
-                    NSString *errorString = [error userInfo][@"error"];   // Show the errorString somewhere and let the user try again.
+                    NSInteger errorCode = [error code];
                     
-                    [self displayErrorAlertWithTitle:@"Something's wrong" andError:errorString];
+                    if (errorCode == 101) {
+                        [self displayErrorAlertWithTitle:@"Invalid Credentials" andError:@"We could not log you in. Please check your login credentials."];
+                    } else {
+                        NSString *errorString = [error userInfo][@"error"];
+                        [self displayErrorAlertWithTitle:@"Something's wrong" andError:errorString];
+
+                    }
+                    
                 }
             }];
             
@@ -211,9 +236,15 @@
                     
                     
                 } else {
-                    if ([error userInfo][@"error"]) {
-                        NSString *errorString = [error userInfo][@"error"];
-                        [self displayErrorAlertWithTitle:@"Login failed" andError:errorString];
+                    if ([error code]) {
+                        //show user error
+                        NSInteger errorCode = [error code];
+                        
+                        if (errorCode == 101) {
+                            [self displayErrorAlertWithTitle:@"Invalid Credentials" andError:@"We could not log you in. Please check your login credentials."];
+                        } else {
+                            [self displayErrorAlertWithTitle:@"Something's wrong" andError:@"Hmm, something is wrong. Please try back again later."];
+                        }
                     }
                 }
             }];
@@ -222,25 +253,33 @@
 }
 
 - (IBAction)facebookButtonPressed:(id)sender {
-    [PFFacebookUtils logInInBackgroundWithReadPermissions:nil block:^(PFUser *user, NSError *error) {
+    [PFFacebookUtils logInInBackgroundWithReadPermissions:@[@"public_profile", @"email"] block:^(PFUser *user, NSError *error) {
+        
+        NSMutableDictionary* parameters = [NSMutableDictionary dictionary];
+        [parameters setValue:@"id,name,email" forKey:@"fields"];
         if (!user) {
             NSLog(@"Uh oh. The user cancelled the Facebook login.");
         } else if (user.isNew) {
             NSLog(@"User signed up and logged in through Facebook!");
             // After logging in with Facebook
             
+
+
             //Set username to actual facebook name
             FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
                                           initWithGraphPath:@"/me"
-                                          parameters:nil
+                                          parameters:parameters
                                           HTTPMethod:@"GET"];
             [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
                                                   id result,
                                                   NSError *error) {
                 // Handle the result
                 if (!error) {
+                    NSLog(@"%@",result);
                     NSString *facebookUsername = [result objectForKey:@"name"];
+                    NSString *facebookEmail = [result objectForKey:@"email"];
                     [PFUser currentUser].username = facebookUsername;
+                    [PFUser currentUser].email = facebookEmail;
                     [[PFUser currentUser] saveInBackground];
                     [self proceedToAccountOverviewOrSignup];
                 } else {
@@ -251,19 +290,23 @@
             
         } else {
             NSLog(@"User logged in through Facebook!");
-            
             //Set username to actual facebook name
             FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
-                                          initWithGraphPath:@"/me"
-                                          parameters:nil
+                                          initWithGraphPath:@"me"
+                                          parameters:parameters
                                           HTTPMethod:@"GET"];
             [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
                                                   id result,
                                                   NSError *error) {
                 // Handle the result
                 if (!error) {
+                    NSLog(@"%@",result);
                     NSString *facebookUsername = [result objectForKey:@"name"];
+                    NSString *facebookEmail = [result objectForKey:@"email"];
+
                     [PFUser currentUser].username = facebookUsername;
+                    [PFUser currentUser].email = facebookEmail;
+
                     [[PFUser currentUser] saveInBackground];
                     [self proceedToAccountOverviewOrSignup];
                 } else {
@@ -277,25 +320,40 @@
 }
 
 - (IBAction)twitterLoginPressed:(id)sender {
+    
     [PFTwitterUtils logInWithBlock:^(PFUser *user, NSError *error) {
         if (!user) {
             NSLog(@"Uh oh. The user cancelled the Twitter login.");
             return;
         } else if (user.isNew) {
-            NSLog(@"User signed up and logged in with Twitter!");
-            NSString *twitterScreenName = [PFTwitterUtils twitter].screenName;
-            [PFUser currentUser].username = twitterScreenName;
-            [[PFUser currentUser] saveInBackground];
-            [self proceedToAccountOverviewOrSignup];
-
-
+            
+            NSString *error = @"";
+            
+            //Checks for valid info for login/signup and displays alert to user.
+            
+            if([self validateEmail:_email.text] != 1) {
+                error = @"Looks like this is your first time logging in. Please enter an email before logging in with Twitter.";
+            }
+            
+            if (![error isEqualToString:@""]) {
+                [self displayErrorAlertWithTitle:@"Whoops!" andError:error];
+            } else {
+                //Data is valid. Send to Parse. Show activity spinner while running.
+                NSLog(@"User signed up and logged in with Twitter!");
+                NSString *twitterScreenName = [PFTwitterUtils twitter].screenName;
+                [PFUser currentUser].username = twitterScreenName;
+                [PFUser currentUser].email = _email.text;
+                [[PFUser currentUser] saveInBackground];
+                [self proceedToAccountOverviewOrSignup];
+            }
+            
         } else {
             NSLog(@"User logged in with Twitter!");
             NSString *twitterScreenName = [PFTwitterUtils twitter].screenName;
             [PFUser currentUser].username = twitterScreenName;
             [[PFUser currentUser] saveInBackground];
             [self proceedToAccountOverviewOrSignup];
-
+            
         }
     }];
 }
@@ -318,4 +376,7 @@
     
 }
 
+- (IBAction)resetPassword:(id)sender {
+    [self performSegueWithIdentifier:@"goToPasswordReset" sender:self];
+}
 @end

@@ -94,7 +94,7 @@
         [Datasource sharedInstance].showTrackingAccountController = NO;
         
         //Ask user if they want to select the same bank for funding.
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Need another bank?", @"Storage Option Title") message:NSLocalizedString(@"Do you want to use this bank for funding donations or choose another?", @"Funding Option Message") preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Need another bank?", @"Bank Option Title") message:NSLocalizedString(@"Do you want to use this bank for funding donations or choose another?", @"Funding Option Message") preferredStyle:UIAlertControllerStyleActionSheet];
         
         UIAlertAction *useExistingBank = [UIAlertAction actionWithTitle:NSLocalizedString(@"Use this bank", @"Use Existing Bank Option") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
             NSLog(@"Use this bank clicked");

@@ -17,6 +17,8 @@
 
 @implementation Datasource
 
+#pragma mark - initialization
+
 + (instancetype) sharedInstance {
     static dispatch_once_t once;
     static id sharedInstance;
@@ -25,25 +27,6 @@
     });
     
     return sharedInstance;
-}
-
-- (void) fakeMonthlySummaries {
-    for (int i = 0; i < 10; i++) {
-        MonthlySummary *fakeSummary = [[MonthlySummary alloc] init];
-        
-        //Subtract month to current date.
-        NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
-        dateComponents.month = -i;
-        NSCalendar *calendar = [NSCalendar currentCalendar];
-        fakeSummary.monthCreated = [calendar dateByAddingComponents:dateComponents toDate:fakeSummary.monthCreated options:0];
-
-        fakeSummary.transactions = self.currentMonthlySummary.transactions;
-        fakeSummary.donation = 12 * i;
-        
-        [self.monthlySummaries addObject:fakeSummary]; 
-        
-    }
-    
 }
 
 - (instancetype) init {
@@ -61,8 +44,30 @@
     return self;
 }
 
+
 #pragma mark - Data Gathering and Calcuation
-//Get all data to be local. This way account overview is Parse independent. TODO: This data is never stored so if user logs out, data is removed.
+
+- (void) fakeMonthlySummaries {
+    if (self.monthlySummaries.count == 0) {
+        for (int i = 0; i < 10; i++) {
+            MonthlySummary *fakeSummary = [[MonthlySummary alloc] init];
+            
+            //Subtract month to current date.
+            NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+            dateComponents.month = -i;
+            NSCalendar *calendar = [NSCalendar currentCalendar];
+            fakeSummary.monthCreated = [calendar dateByAddingComponents:dateComponents toDate:fakeSummary.monthCreated options:0];
+            
+            fakeSummary.transactions = self.currentMonthlySummary.transactions;
+            fakeSummary.donation = 12 * i;
+            
+            [self.monthlySummaries addObject:fakeSummary];
+            
+        }
+    }
+}
+
+
 - (void) getUserDataForReturningUser {
     if ([PFUser currentUser][@"selectedDonee"] != nil) {
         PFUser *currentUser = [PFUser currentUser];
@@ -103,7 +108,7 @@
         _averageDonation = 0;
         
         for (MonthlySummary *summary in _monthlySummaries) {
-            
+    
             //Add all transactions to all time and average donations
             _donationsAllTime += summary.donation;
             _averageDonation += summary.donation;
@@ -178,6 +183,64 @@
             }
         }
     }];
+}
+
+#pragma mark - Transaction Updates
+
+//TODO - add function to specify date to plaid. Setup key value items for changing values.
+- (void) updateAccountTransactionsWithCompletionHandler:(CompletionHandler)handler {
+    if (![self.accessTokens[@"trackingToken"] isEqualToString:@""]) {
+        //We have an access token, get available transactions for that account.
+        NSString *accountID = self.bankForTracking.selectedAccount[@"_id"];
+        
+        [Plaid getTransactionalDataWithAccessToken:self.accessTokens[@"trackingToken"] WithCompletionHandler:^(NSDictionary *output) {
+            NSDictionary *recentTransactions = output[@"transactions"];
+            //Remove objects from account transactions to make way for new ones.
+            [self.currentMonthlySummary.transactions removeAllObjects];
+            [self.currentMonthlySummary.transactionRoundups removeAllObjects];
+            self.currentMonthlySummary.donation = 0;
+            
+            for (NSDictionary *transaction in recentTransactions) {
+                if ([transaction[@"_account"] isEqualToString:accountID]) {
+                    [self.currentMonthlySummary.transactions addObject:transaction];
+                    [self roundUpTransaction:transaction];
+                }
+            }
+            
+            NSMutableArray *tmpRoundups = [[NSMutableArray alloc] init];
+            NSMutableArray *tmpTransactions = [[NSMutableArray alloc] init];
+            
+            for (NSNumber *roundUp in self.currentMonthlySummary.transactionRoundups) {
+                if (roundUp.doubleValue > 0.01) {
+                    
+                    NSInteger index = [self.currentMonthlySummary.transactionRoundups indexOfObject:roundUp];
+                    [tmpRoundups addObject:roundUp];
+                    [tmpTransactions addObject:self.currentMonthlySummary.transactions[index]];
+                    
+                }
+            }
+            
+            self.currentMonthlySummary.transactionRoundups = tmpRoundups;
+            self.currentMonthlySummary.transactions = tmpTransactions;
+            
+            [self fakeMonthlySummaries];
+            
+            if (handler) {
+                handler();
+            }
+        }];
+        
+    }
+}
+
+- (void) roundUpTransaction:(NSDictionary *)transaction {
+    double transactionAmount = [transaction[@"amount"] doubleValue];
+    double roundedUpTransactionAmount = ceil(transactionAmount);
+    double roundUpAmount = roundedUpTransactionAmount - transactionAmount;
+    [self.currentMonthlySummary.transactionRoundups addObject:[NSNumber numberWithDouble:roundUpAmount]];
+    
+    self.currentMonthlySummary.donation += roundUpAmount;
+    
 }
 
 #pragma mark - Payment Date
@@ -260,61 +323,5 @@
     return NO;
 }
 
-#pragma mark - Transaction Updates
-//TODO - add function to specify date to plaid. Setup key value items for changing values.
-- (void) updateAccountTransactionsWithCompletionHandler:(CompletionHandler)handler {
-    if (![self.accessTokens[@"trackingToken"] isEqualToString:@""]) {
-        //We have an access token, get available transactions for that account.
-        NSString *accountID = self.bankForTracking.selectedAccount[@"_id"];
-        
-        [Plaid getTransactionalDataWithAccessToken:self.accessTokens[@"trackingToken"] WithCompletionHandler:^(NSDictionary *output) {
-            NSDictionary *recentTransactions = output[@"transactions"];
-            //Remove objects from account transactions to make way for new ones.
-            [self.currentMonthlySummary.transactions removeAllObjects];
-            [self.currentMonthlySummary.transactionRoundups removeAllObjects]; 
-            self.currentMonthlySummary.donation = 0;
-            
-            for (NSDictionary *transaction in recentTransactions) {
-                if ([transaction[@"_account"] isEqualToString:accountID]) {
-                    [self.currentMonthlySummary.transactions addObject:transaction];
-                    [self roundUpTransaction:transaction];
-                }
-            }
-            
-            NSMutableArray *tmpRoundups = [[NSMutableArray alloc] init];
-            NSMutableArray *tmpTransactions = [[NSMutableArray alloc] init];
-            
-            for (NSNumber *roundUp in self.currentMonthlySummary.transactionRoundups) {
-                if (roundUp.doubleValue > 0.01) {
-                    
-                    NSInteger index = [self.currentMonthlySummary.transactionRoundups indexOfObject:roundUp];
-                    [tmpRoundups addObject:roundUp];
-                    [tmpTransactions addObject:self.currentMonthlySummary.transactions[index]];
-                    
-                }
-            }
-            
-            self.currentMonthlySummary.transactionRoundups = tmpRoundups;
-            self.currentMonthlySummary.transactions = tmpTransactions;
-            
-            [self fakeMonthlySummaries]; 
-
-            if (handler) {
-                handler();
-            }
-        }];
-        
-    }
-}
-
-- (void) roundUpTransaction:(NSDictionary *)transaction {
-    double transactionAmount = [transaction[@"amount"] doubleValue]; 
-    double roundedUpTransactionAmount = ceil(transactionAmount);
-    double roundUpAmount = roundedUpTransactionAmount - transactionAmount;
-    [self.currentMonthlySummary.transactionRoundups addObject:[NSNumber numberWithDouble:roundUpAmount]];
-    
-    self.currentMonthlySummary.donation += roundUpAmount;
-
-}
 
 @end

@@ -20,13 +20,15 @@
 
 - (void) displayErrorAlertWithTitle:(NSString *)title andError:(NSString *)errorString {
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-                                                    message:errorString
-                                                   delegate:self
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles: nil];
-    [alert show];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:errorString preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    
+    [alert addAction:cancelAction];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -43,7 +45,7 @@
     self.view.backgroundColor = [UIColor colorWithRed:35/255.0 green:192/255.0 blue:161/255.0 alpha:1.0];
     _webview.backgroundColor = [UIColor clearColor];
     
-    NSString *htmlFile = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
+    NSString *htmlFile = [[NSBundle mainBundle] pathForResource:@"signOnBankLink" ofType:@"html"];
     if ([htmlFile length]) {
         
         // Get the contents of the html file

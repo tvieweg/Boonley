@@ -32,12 +32,13 @@
 
 - (void) displayErrorAlertWithTitle:(NSString *)title andError:(NSString *)errorString {
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-                                                    message:errorString
-                                                   delegate:self
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles: nil];
-    [alert show];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:errorString preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    
+    [alert addAction:cancelAction];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)viewDidLoad {
@@ -47,6 +48,13 @@
     CAGradientLayer *bgLayer = [BackgroundLayer greenGradient];
     bgLayer.frame = self.view.bounds;
     [self.view.layer insertSublayer:bgLayer atIndex:0];
+    
+    _activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+    _activityIndicator.center = self.view.center;
+    _activityIndicator.hidesWhenStopped = YES;
+    _activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    
+    [self.view addSubview:_activityIndicator];
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(didPressDone)];
     _minDonation.text = [[Datasource sharedInstance].minDonation stringValue];

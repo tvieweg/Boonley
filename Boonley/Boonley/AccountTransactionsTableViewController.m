@@ -47,7 +47,8 @@
     MonthlySummary *currentMonthlySummary = [Datasource sharedInstance].currentMonthlySummary;
     NSNumber *amount = (NSNumber *)currentMonthlySummary.transactions[indexPath.row][@"amount"];
     
-    cell.roundupAmount.text = [NSString stringWithFormat:@"$%@", currentMonthlySummary.transactionRoundups[indexPath.row] ];
+    NSNumber *roundUpAmount = currentMonthlySummary.transactionRoundups[indexPath.row];
+    cell.roundupAmount.text = [NSString stringWithFormat:@"$%0.2f", [roundUpAmount floatValue]];
     
     cell.transactionLabel.text = [NSString stringWithFormat:@"$%@ %@", amount, currentMonthlySummary.transactions[indexPath.row][@"name"]];
     
