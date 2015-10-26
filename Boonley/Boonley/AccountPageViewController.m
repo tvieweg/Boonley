@@ -34,6 +34,9 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     //Check if user is logged in and if not, return to login screen.
+    
+    self.navigationItem.hidesBackButton = YES;
+
     if (![PFUser currentUser]) {
         [self.navigationController popToRootViewControllerAnimated:YES];
     } else {
@@ -73,19 +76,18 @@
     _activityIndicator.hidesWhenStopped = YES;
     _activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     
+    //Set background
     CAGradientLayer *bgLayer = [BackgroundLayer greenGradient];
     bgLayer.frame = self.view.bounds;
     [self.view.layer insertSublayer:bgLayer atIndex:0];
     
     [self.view addSubview:_activityIndicator];
     
-    //set page controller background
-    self.view.backgroundColor = [UIColor colorWithRed:35/255.0 green:192/255.0 blue:161/255.0 alpha:1.0];
-    
     //make sure navigation bar is visible if coming in from login page.
+    [[UINavigationBar appearance] setTintColor:[UIColor darkGrayColor]];
     self.navigationController.navigationBarHidden = NO;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"settings"] style:UIBarButtonItemStylePlain target:self action:@selector(didPressSettingButton)];
-    self.navigationItem.hidesBackButton = YES;
+    [self.navigationController.navigationBar setTintColor:[UIColor darkGrayColor]];
     
 }
 

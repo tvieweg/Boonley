@@ -13,6 +13,8 @@
 		7B00CBAF1BC9CDDB003908DD /* BankAccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B00CBAE1BC9CDDB003908DD /* BankAccountTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		7B4F36491BCB2766008AF4A9 /* ChangeBankAccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4F36481BCB2766008AF4A9 /* ChangeBankAccountTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		7B4F364C1BCCB0D2008AF4A9 /* BackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4F364B1BCCB0D2008AF4A9 /* BackgroundLayer.m */; settings = {ASSET_TAGS = (); }; };
+		7B545A551BDD510900CE1E48 /* InstructionsPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B545A541BDD510900CE1E48 /* InstructionsPageViewController.m */; settings = {ASSET_TAGS = (); }; };
+		7B545A611BDD843200CE1E48 /* InstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B545A601BDD843200CE1E48 /* InstructionsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		7B5B1B511BCAE4F400EBD84E /* RoundupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5B1B501BCAE4F400EBD84E /* RoundupTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		7BB815111BD2CED400E86E89 /* changeBankLink.html in Resources */ = {isa = PBXBuildFile; fileRef = 7BB815101BD2CED400E86E89 /* changeBankLink.html */; settings = {ASSET_TAGS = (); }; };
 		7BE3AA551BD2B5F300AC085C /* ChangeDoneeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE3AA541BD2B5F300AC085C /* ChangeDoneeTableViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -86,6 +88,10 @@
 		7B4F36481BCB2766008AF4A9 /* ChangeBankAccountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeBankAccountTableViewCell.m; sourceTree = "<group>"; };
 		7B4F364A1BCCB0D2008AF4A9 /* BackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundLayer.h; sourceTree = "<group>"; };
 		7B4F364B1BCCB0D2008AF4A9 /* BackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundLayer.m; sourceTree = "<group>"; };
+		7B545A531BDD510900CE1E48 /* InstructionsPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionsPageViewController.h; sourceTree = "<group>"; };
+		7B545A541BDD510900CE1E48 /* InstructionsPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionsPageViewController.m; sourceTree = "<group>"; };
+		7B545A5F1BDD843200CE1E48 /* InstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionsViewController.h; sourceTree = "<group>"; };
+		7B545A601BDD843200CE1E48 /* InstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionsViewController.m; sourceTree = "<group>"; };
 		7B5B1B4F1BCAE4F400EBD84E /* RoundupTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundupTableViewCell.h; sourceTree = "<group>"; };
 		7B5B1B501BCAE4F400EBD84E /* RoundupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundupTableViewCell.m; sourceTree = "<group>"; };
 		7BB815101BD2CED400E86E89 /* changeBankLink.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = changeBankLink.html; sourceTree = "<group>"; };
@@ -310,6 +316,10 @@
 		B16293301B93C551009C353A /* Signup */ = {
 			isa = PBXGroup;
 			children = (
+				7B545A531BDD510900CE1E48 /* InstructionsPageViewController.h */,
+				7B545A541BDD510900CE1E48 /* InstructionsPageViewController.m */,
+				7B545A5F1BDD843200CE1E48 /* InstructionsViewController.h */,
+				7B545A601BDD843200CE1E48 /* InstructionsViewController.m */,
 				B1F57ACF1B819AA700A03B45 /* BankAccountTableViewController.h */,
 				B1F57AD01B819AA700A03B45 /* BankAccountTableViewController.m */,
 				7B00CBAD1BC9CDDB003908DD /* BankAccountTableViewCell.h */,
@@ -561,6 +571,7 @@
 				B108B1561B82F0F200B56CB0 /* LinkViewController.m in Sources */,
 				B162932F1B935770009C353A /* Donation.m in Sources */,
 				B10F16E01B9B45F600A6A3E2 /* MonthlySummary.m in Sources */,
+				7B545A611BDD843200CE1E48 /* InstructionsViewController.m in Sources */,
 				69220E741B82823E00AAF426 /* LimitsViewController.m in Sources */,
 				B103F6101B84F91700696FAC /* AccountPageViewController.m in Sources */,
 				B103F6131B8501D500696FAC /* AccountSummaryViewController.m in Sources */,
@@ -568,6 +579,7 @@
 				B162932C1B8F598A009C353A /* ProfileViewController.m in Sources */,
 				B10D3DEA1B8E53D4007D2DD7 /* AccountTotalsOverviewViewController.m in Sources */,
 				7B00CBAF1BC9CDDB003908DD /* BankAccountTableViewCell.m in Sources */,
+				7B545A551BDD510900CE1E48 /* InstructionsPageViewController.m in Sources */,
 				B1DFB54A1B7E881B00901DC5 /* DoneeSelectionTableViewController.m in Sources */,
 				B1D28F741BA7BA900051E38D /* BankAccountSettingsViewController.m in Sources */,
 				690FC7071B879276003C8D02 /* AccountTransactionsTableViewController.m in Sources */,
