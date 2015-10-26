@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Plaid.h"
+#import "Datasource.h"
 #import <Parse/Parse.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
@@ -22,6 +23,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"]) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        [Datasource sharedInstance].showInstructions = YES; 
+    }
     
     //Plaid setup
     [Plaid setClient:@"PLACE_PRODUCTION_CLIENT_HERE" setSecret:@"PLACE_PRODUCTION_SECRET_HERE" inProduction:NO];

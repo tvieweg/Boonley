@@ -63,9 +63,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    [[UINavigationBar appearance] setTintColor:[UIColor darkGrayColor]];
-    
+        
     CAGradientLayer *bgLayer = [BackgroundLayer greenGradient];
     bgLayer.frame = self.view.bounds;
     [self.view.layer insertSublayer:bgLayer atIndex:0];
@@ -98,9 +96,6 @@
     [self.view addSubview:_activityIndicator];
     
     _password.secureTextEntry = YES; 
-    
-    self.navigationController.navigationBarHidden = YES;
-    self.navigationController.toolbarHidden = YES; 
     
     _signupActive = YES;
     
@@ -379,4 +374,5 @@
 - (IBAction)resetPassword:(id)sender {
     [self performSegueWithIdentifier:@"goToPasswordReset" sender:self];
 }
+
 @end

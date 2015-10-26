@@ -37,6 +37,7 @@ typedef void (^CompletionHandler)();
 @property (strong, nonatomic) NSString *userCharitySelection;
 
 //Flags for view controllers
+@property (assign, nonatomic) BOOL showInstructions;
 @property (assign, nonatomic) BOOL showTrackingAccountController;
 @property (assign, nonatomic) BOOL changingSettings;
 @property (nonatomic) BOOL hasCompletedSignUp;
