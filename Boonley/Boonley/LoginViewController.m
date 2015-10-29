@@ -71,15 +71,6 @@
     _signupButton.layer.borderColor = [[UIColor whiteColor] CGColor];
     _signupButton.layer.borderWidth = 1.0;
     _signupButton.layer.cornerRadius = 5.0;
-    
-    _loginToggleButton.layer.borderColor = [[UIColor whiteColor] CGColor];
-    _loginToggleButton.layer.borderWidth = 1.0;
-    _loginToggleButton.layer.cornerRadius = 5.0;
-    
-    _resetPasswordButton.layer.borderColor = [[UIColor whiteColor] CGColor];
-    _resetPasswordButton.layer.borderWidth = 1.0;
-    _resetPasswordButton.layer.cornerRadius = 5.0;
-
 
     _activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
     _activityIndicator.center = self.view.center;
